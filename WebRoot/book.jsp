@@ -103,7 +103,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td><strong>5</strong> <em>(一般)</em></td>
 						</tr> 
 						<tr> 
-							<th>更新：</th> 
+							<th>新颖：</th> 
 							<td><span class="star5" id="item2" v="5"><small>1</small><small>2</small><small>3</small><small>4</small><small>5</small><small>6</small><small>7</small><small>8</small><small>9</small><small>10</small></span></td> 
 							<td><strong>5</strong> <em>(一般)</em></td>
 						</tr> 
