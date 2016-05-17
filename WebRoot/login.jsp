@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
     <script language="javascript" type="text/javascript">
      
-     var code ; //在全局 定义验证码
+     var code ; 
      function createCode()
      { 
        code = "";
