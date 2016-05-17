@@ -1,0 +1,122 @@
+@CHARSET "US-ASCII";
+.book-pic{
+	position:absolute;
+	top:20px;
+	left:30px;
+	width:250px;
+	height:300px;
+	background:#000;
+}
+.book{
+	position:absolute;
+	left:38px;
+	width:1200px;
+	height:700px;
+	background:#ffe600;
+	
+}
+.book-title{
+	position:absolute;
+	top:20px;
+	left:290px;
+	width:500px;
+	height:100px;
+	background:#fff;
+}
+.book-title-1{
+	width:485px;
+	height:85px;
+	position:relative;
+	top:5px;
+	left:5px;
+	background:#000;
+}
+.book-pr{
+	position:absolute;
+	top:140px;
+	left:290px;
+	width:500px;
+	height:180px;
+	background:#fff;
+}
+.book-shop{
+	position:absolute;
+	top:20px;
+	left:800px;
+	width:380px;
+	height:300px;
+	background:#fff;
+}
+.book-detail{
+	position:absolute;
+	top:340px;
+	left:30px;
+	width:1150px;
+	height:270px;
+	background:#fff;
+}
+.book-shop-title{
+	position:relative;
+	left:160px;
+}
+
+.book-shop-box{
+	position:relative;
+	top:10px;
+	left:10px;
+	height:200px;
+	width:355px;
+	background:#fff;
+}
+.book-shop-box-price{
+	font-size:20px;
+}
+.book-shop-box-price1{
+	position:relative;
+	left:10px;
+	left:20px;
+	font-size:20px;
+	background:#000;
+	width:150px;
+	height:30px;
+	color:red;
+}
+.book-shop-pic{
+	position:relative;
+	top:15px;
+	left:140px;
+}
+.book-shop-box-mount{
+	font-size:20px;
+}
+.book-shop-box-mount1{
+	position:relative;
+	top:10px;
+	left:20px;
+}
+.writername{
+	position:relative;
+	left:40px;
+	top:-18px;
+	width:80px;
+	height:20px;
+	background:#000;
+	color:red;
+}
+.sale-1{
+	position:relative;
+	width:350px;
+	height:20px;
+	background:#000;
+	left:70px;
+	top:-18px;
+	color:#000;
+}
+.book-pinglun{
+	position:absolute;
+	top:800px;
+	left:30px;
+	width:1150px;
+	height:300px;
+	background:#fff;
+}
