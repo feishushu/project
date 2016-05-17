@@ -18,6 +18,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	
 	<link rel="stylesheet" type="text/css" href="book.css">
+	<link media="screen" href="statics/grade.css" type="text/css" rel="stylesheet" /> 
+
+<script src="statics/jquery-latest.pack.js" type="text/javascript"></script> 
+<script src="statics/grade.js" type="text/javascript"></script> 
+	
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
@@ -76,9 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<a href="#"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
    		</div>
     <div class="book-detail">书目简介</div>
+    
     <div class="book-pinglun">
     	<div id="box"> 
-	<h4>我的评分</h4> 
+	<h4>请您评分</h4> 
 	<div class="content"> 
 		<div id="myPoint">
 			<span><big>5</big><small>.0</small></span> 
@@ -88,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div> 
 		<div id="doPoint"> 
-			<p>请点击以下星级进行评分：我的评分=(故事+更新+文笔)/3</p> 
+			
 			<table cellspacing="0" cellpadding="0" border="0"> 
 					<tbody> 
 						<tr> 
@@ -113,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<input id="pointV1" type="hidden" value="5" name="pointV1" /> 
 			<input id="pointV2" type="hidden" value="5" name="pointV2" /> 
 			<input id="pointV3" type="hidden" value="5" name="pointV3" /> 
-			<label>评论内容：<textarea id="content" name="content" rows="5" cols="50"></textarea></label>
+			<label>你的评论：<textarea id="content" name="content" rows="5" cols="50"></textarea></label>
 			<button type="submit">提交</button> 
 		</form>
 	</div>
