@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,41 +24,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="register_box">
 	<h3>s t a r b o o k s</h3>
-	<form action="#" name="r" method="post">
+	<form action="servlet_register" name="r" method="post">
 		<div class="input">
-			<input name="registername" class="text" onFocus=" if(this.value=='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)') this.value=''" onBlur="if(this.value=='') this.value='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)'" value="ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)" style="color: #FFFFFF !important" type="text">
+			<input name="registername" class="text" onFocus=" if(this.value=='è¾“å…¥ç”¨æˆ·å(æ”¯æŒæ•°å­—ï¼Œå­—æ¯)') this.value=''" onBlur="if(this.value=='') this.value='è¾“å…¥ç”¨æˆ·å(æ”¯æŒæ•°å­—ï¼Œå­—æ¯)'" value="è¾“å…¥ç”¨æˆ·å(æ”¯æŒæ•°å­—ï¼Œå­—æ¯)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-		<!--  <label class="l-register register_password" style="color: rgb(255, 255, 255);">ÉèÖÃÃÜÂë</label> -->
-		<input name="registerpass" class="text" onFocus=" if(this.value=='ÉèÖÃÃÜÂë(Ö§³ÖÊý×Ö£¬×ÖÄ¸£¬·ûºÅ)') this.value=''" onBlur="if(this.value=='') this.value='ÉèÖÃÃÜÂë(Ö§³ÖÊý×Ö£¬×ÖÄ¸£¬·ûºÅ)'" value="ÉèÖÃÃÜÂë(Ö§³ÖÊý×Ö£¬×ÖÄ¸£¬·ûºÅ)" style="color: #FFFFFF !important" type="text">
+		<!--  <label class="l-register register_password" style="color: rgb(255, 255, 255);">è®¾ç½®å¯†ç </label> -->
+		<input name="registerpass" class="text" onFocus=" if(this.value=='è®¾ç½®å¯†ç (æ”¯æŒæ•°å­—ï¼Œå­—æ¯ï¼Œç¬¦å·)') this.value=''" onBlur="if(this.value=='') this.value='è®¾ç½®å¯†ç (æ”¯æŒæ•°å­—ï¼Œå­—æ¯ï¼Œç¬¦å·)'" value="è®¾ç½®å¯†ç (æ”¯æŒæ•°å­—ï¼Œå­—æ¯ï¼Œç¬¦å·)" style="color: #FFFFFF !important" type="text">
 		<!-- <input name="registerpass" class="text" style="color: #FFFFFF !important;z-index:100;" onFocus="$('.register_password').hide()" onBlur="if(this.value=='') $('.register_password').show()" value="" type="password"> -->
 		</div>
 		
 		<div class="input">
-			<input name="registerTname" class="text" onFocus=" if(this.value=='ÕæÊµÐÕÃû') this.value=''" onBlur="if(this.value=='') this.value='ÕæÊµÐÕÃû'" value="ÕæÊµÐÕÃû" style="color: #FFFFFF !important" type="text">
+			<input name="registerTname" class="text" onFocus=" if(this.value=='çœŸå®žå§“å') this.value=''" onBlur="if(this.value=='') this.value='çœŸå®žå§“å'" value="çœŸå®žå§“å" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registeremail" class="text" onFocus=" if(this.value=='ÓÊÏäµØÖ·') this.value=''" onBlur="if(this.value=='') this.value='ÓÊÏäµØÖ·'" value="ÓÊÏäµØÖ·" style="color: #FFFFFF !important" type="text">
+			<input name="registeremail" class="text" onFocus=" if(this.value=='é‚®ç®±åœ°å€') this.value=''" onBlur="if(this.value=='') this.value='é‚®ç®±åœ°å€'" value="é‚®ç®±åœ°å€" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerphone" class="text" onFocus=" if(this.value=='ÊÖ»úºÅÂë') this.value=''" onBlur="if(this.value=='') this.value='ÊÖ»úºÅÂë'" value="ÊÖ»úºÅÂë" style="color: #FFFFFF !important" type="text">
+			<input name="registerphone" class="text" onFocus=" if(this.value=='æ‰‹æœºå·ç ') this.value=''" onBlur="if(this.value=='') this.value='æ‰‹æœºå·ç '" value="æ‰‹æœºå·ç " style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerbir" class="text" onFocus=" if(this.value=='ÉúÈÕÐÅÏ¢(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='ÉúÈÕÐÅÏ¢(1990-1-1)'" value="ÉúÈÕÐÅÏ¢(1990-1-1)" style="color: #FFFFFF !important" type="text">
+			<input name="registerbir" class="text" onFocus=" if(this.value=='ç”Ÿæ—¥ä¿¡æ¯(1990-1-1)') this.value='1990-1-1'" onBlur="if(this.value=='1990-1-1') this.value='ç”Ÿæ—¥ä¿¡æ¯(1990-1-1)'" value="ç”Ÿæ—¥ä¿¡æ¯(1990-1-1)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input-radio">
-			<input name="registersex" type="radio" value="M" /> ÄÐ   
-			<input name="registersex" type="radio" value="W" /> Å®
+			<input name="registersex" type="radio" value="ç”·" checked  /> ç”·   
+			<input name="registersex" type="radio" value="å¥³" /> å¥³
 		</div>
 		
 		
 		
-		<div class="button"><a class="register-buttom submit" href="login.jsp" style="color: #FFFFFF">Íê³É×¢²á</a></div>
+		<div class="button"><input class="register-buttom submit" type="submit" value="æ³¨å†Œ" name=submit style="color: #FFFFFF">
+</div>
 		
 	</form>
 	

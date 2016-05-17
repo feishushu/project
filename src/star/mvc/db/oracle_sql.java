@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class oracle_sql {
 	
@@ -12,30 +15,76 @@ public class oracle_sql {
 	private static Statement stat = null;
 	private static PreparedStatement pre = null;
 	private static ResultSet result = null;
-	//....
-	public static void select_user(String id, String password){
+	//validate logon
+	public static boolean select_user(String id, String password){
 		
-		return;
+		boolean bean = false;
+		
+		con = oracle_link.oraclesql();
+		String sql = "select * from book_user";
+		try
+		{
+			pre = con.prepareStatement(sql);
+			
+			result = pre.executeQuery();
+			
+			while(result.next()){
+				if(id.equals(result.getString("id"))){
+					if(password.equals(result.getString("password"))){
+						
+						System.out.println(result.getString("id")+result.getString("password"));
+						
+						bean = true;
+					}
+				}
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		jdbc_move();//¹Ø±Õoracle
+		return bean;
 	}
 	//link mao db ,insert number in book_user
 	public static boolean oracle_user(String id, String password,String truename, String postcode, 
 			String mphone, String sex, String birthday){
+		boolean bean = true;
+		
 		con = oracle_link.oraclesql();
-		String sql = "insert into book_user(id,password,truename,postcode,mphone,sex,birthday) values"
-				+ "('"+id+"','"+password+"','"+truename+"','"+postcode+"',"
-						+ "'"+mphone+"','"+sex+"','"+birthday+"')";
+		
+		Date date = null;
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
-			stat = con.createStatement();
-			stat.executeUpdate(sql);
+			date = format.parse(birthday);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String sql = "insert into book_user(id,password,truename,postcode,mphone,sex,birthday) values(?,?,?,?,?,?,?)";
+				/* "('"+id+"','"+password+"','"+truename+"','"+postcode+"',"
+						+ "'"+mphone+"','"+sex+"','"+da.+"')";*/
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setString(2, password);
+			ps.setString(3, truename);
+			ps.setString(4, postcode);
+			ps.setString(5, mphone);
+			ps.setString(6, sex);
+			ps.setDate(7, new java.sql.Date(date.getTime()));
+			if(ps.executeUpdate()==0){
+				bean = false;
+			}
+			//stat = con.createStatement();
+			//stat.executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
-		
 		jdbc_move();//¹Ø±Õoracle
-		return true;
+		return bean;
 	}
 	//over jdbc link
 	public static void jdbc_move(){
