@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
-	//获得文本框对象
+	
    var t = $("#text_box");
 	//初始化数量为1,并失效减
 	$('#min').attr('disabled',true);
