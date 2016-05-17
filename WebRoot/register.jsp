@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h3>s t a r b o o k s</h3>
 	<form action="#" name="r" method="post">
 		<div class="input">
-			<input name="registername" class="text" onFocus=" if(this.value=='输入用户名(支持中文，数字，字母)') this.value=''" onBlur="if(this.value=='') this.value='输入用户名(支持中文，数字，字母)'" value="输入用户名(支持中文，数字，字母)" style="color: #FFFFFF !important" type="text">
+			<input name="registername" class="text" onFocus=" if(this.value=='输入用户名(支持数字，字母)') this.value=''" onBlur="if(this.value=='') this.value='输入用户名(支持数字，字母)'" value="输入用户名(支持数字，字母)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
@@ -40,15 +40,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<div class="input">
-			<input name="registeremail" class="text" onFocus=" if(this.value=='邮箱地址/手机号码') this.value=''" onBlur="if(this.value=='') this.value='邮箱地址/手机号码'" value="邮箱地址/手机号码" style="color: #FFFFFF !important" type="text">
+			<input name="registeremail" class="text" onFocus=" if(this.value=='邮箱地址') this.value=''" onBlur="if(this.value=='') this.value='邮箱地址'" value="邮箱地址" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registersex" class="text" onFocus=" if(this.value=='输入性别') this.value=''" onBlur="if(this.value=='') this.value='输入性别'" value="输入性别" style="color: #FFFFFF !important" type="text">
+			<input name="registerphone" class="text" onFocus=" if(this.value=='手机号码') this.value=''" onBlur="if(this.value=='') this.value='手机号码'" value="手机号码" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerbir" class="text" onFocus=" if(this.value=='生日信息') this.value=''" onBlur="if(this.value=='') this.value='生日信息'" value="生日信息" style="color: #FFFFFF !important" type="text">
+			<input name="registerbir" class="text" onFocus=" if(this.value=='生日信息(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='生日信息(1990-1-1)'" value="生日信息(1990-1-1)" style="color: #FFFFFF !important" type="text">
+		</div>
+		
+		<div class="input-radio">
+			<input name="registersex" type="radio" value="M" /> 男   
+			<input name="registersex" type="radio" value="W" /> 女
 		</div>
 		
 		

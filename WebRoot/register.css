@@ -85,5 +85,10 @@ body{
 	visibility: hidden;
 	height: 0;
 }
-
+.input-radio{
+	position:relative;
+	left:84px;
+	top:-10px;
+	font: 30px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+}
 </style>
