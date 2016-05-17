@@ -120,3 +120,10 @@
 	height:410px;
 	background:#fff;
 }
+.book-detail-write{
+	position:relative;
+	background:#000;
+	width:1130px;
+	height:240px;
+	left:10px;
+}

@@ -80,7 +80,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     		<a href="#"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
    		</div>
-    <div class="book-detail">书目简介</div>
+    <div class="book-detail">书目简介
+    	<div class="book-detail-write"></div>
+    </div>
     
     <div class="book-pinglun">
     	<div id="box"> 
