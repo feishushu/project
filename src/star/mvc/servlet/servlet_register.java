@@ -57,16 +57,22 @@ public class servlet_register extends HttpServlet {
 		response.setContentType("text/html;charset = utf-8");
 		PrintWriter out = response.getWriter();
 		
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		
 		if(oracle_sql.oracle_user(id, password, truename, postcode, mphone, sex, birthday)){
-			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-			out.println("<HTML>");
-			out.println("<script language = javascript>alert('×¢²á³É¹¦£¡');");
+			
+			out.println("<script language = javascript>alert('Registration Successful!');");
 			out.print("window.location.href='login.jsp'");
 			out.println("</script>");
-			out.println("</HTML>");
+			
 			//response.sendRedirect("login.jsp");
+		}else{
+			out.println("<script language = javascript>alert('Registration failed!');");
+			out.print("window.location.href='register.jsp'");
+			out.println("</script>");
 		}
-		
+		out.println("</HTML>");
 		out.flush();
 		out.close();
 	}

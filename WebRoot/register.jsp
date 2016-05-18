@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<div class="input">
-			<input name="registerbir" class="text" onFocus=" if(this.value=='生日信息(1990-1-1)') this.value='1990-1-1'" onBlur="if(this.value=='1990-1-1') this.value='生日信息(1990-1-1)'" value="生日信息(1990-1-1)" style="color: #FFFFFF !important" type="text">
+			<input name="registerbir" class="text" onFocus=" if(this.value=='生日信息(1990-1-1)') this.value='1990-1-1'" onBlur="if(this.value=='') this.value='生日信息(1990-1-1)'" value="生日信息(1990-1-1)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input-radio">

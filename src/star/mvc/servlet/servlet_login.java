@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,25 +43,42 @@ public class servlet_login extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		
-		String id = request.getParameter("logname");
+		int bean;
+		
+		String id 		= request.getParameter("logname");
 		String password = request.getParameter("logpass");
+		String chk		= request.getParameter("savesid");
 		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
-		if(oracle_sql.select_user(id, password)){
-
-			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-			out.println("<HTML>");
-			out.println("<script language = javascript>alert('µÇÂ¼³É¹¦£¡');");
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		
+		if((bean = oracle_sql.select_user(id, password)) == 1){
+			if(chk!=null){
+				Cookie cookie = new Cookie("user",id+"-"+password);
+				cookie.setMaxAge(36000*3);
+				cookie.setPath("/");
+				response.addCookie(cookie);
+			}
+			out.println("<script language = javascript>alert('Login Successful!');");
 			out.print("window.location.href='index.jsp'");
 			out.println("</script>");
-			out.println("</HTML>");
-			out.flush();
-			out.close();
-			
+		}else{
+			if(bean == 0){
+				out.println("<script language = javascript>alert('user name does not exist!');");
+				out.print("window.location.href='login.jsp'");
+				out.println("</script>");
+			}else{
+				out.println("<script language = javascript>alert('password error!');");
+				out.print("window.location.href='login.jsp'");
+				out.println("</script>");
+			}
 		}
-		
+		out.println("</HTML>");
+		out.flush();
+		out.close();
 		
 	}
 

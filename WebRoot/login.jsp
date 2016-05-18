@@ -2,6 +2,24 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+String name 	= "";
+String password = "";
+
+request.setAttribute("name", name);
+request.setAttribute("password",password);
+
+Cookie[] cookies = request.getCookies();
+if(cookies != null){
+	for(int i=0;i<cookies.length;i++){   
+		if(cookies[i].getName().equals("user")){    
+			name	 = cookies[i].getValue().split("-")[0];
+			password = cookies[i].getValue().split("-")[1];   
+			request.setAttribute("name", name);
+			request.setAttribute("password",password);
+		}
+	}
+}
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -45,12 +63,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<form action="servlet_login" name="login" method="post">
 		<div class="input">
 			<span class="u_user"></span>
-			<input name="logname" class="text" onFocus=" if(this.value=='输入ID或用户名登录') this.value=''" onBlur="if(this.value=='') this.value='输入ID或用户名登录'" value="输入ID或用户名登录" style="color: #FFFFFF !important" type="text">
+			<input name="logname" class="text" onFocus=" if(this.value=='输入ID或用户名登录') this.value=''" onBlur="if(this.value=='') this.value='输入ID或用户名登录'" value="${name}" style="color: #FFFFFF !important" type="text">
 		</div>
 		<div class="input">
 			<span class="us_uer"></span>
 			<label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">输入密码</label>
-			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="" type="password">
+			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="${password}" type="password">
 		</div>
 		<div class="button""><input class="act-but submit" type="submit" value="登录" name=submit style="color: #FFFFFF">
 </div>

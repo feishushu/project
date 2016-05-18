@@ -16,9 +16,9 @@ public class oracle_sql {
 	private static PreparedStatement pre = null;
 	private static ResultSet result = null;
 	//validate logon
-	public static boolean select_user(String id, String password){
+	public static int select_user(String id, String password){
 		
-		boolean bean = false;
+		int bean = 0;
 		
 		con = oracle_link.oraclesql();
 		String sql = "select * from book_user";
@@ -31,8 +31,9 @@ public class oracle_sql {
 			while(result.next()){
 				if(id.equals(result.getString("uname"))){
 					if(password.equals(result.getString("password"))){
-						
-						bean = true;
+						bean = 1;
+					}else{
+						bean = -1;
 					}
 				}
 			}
@@ -46,7 +47,7 @@ public class oracle_sql {
 	//link mao db ,insert number in book_user
 	public static boolean oracle_user(String uname, String password,String truename, String email, 
 			String mphone, String sex, String birthday){
-		boolean bean = true;
+		boolean bean = false;
 		
 		con = oracle_link.oraclesql();
 		
@@ -71,8 +72,10 @@ public class oracle_sql {
 			ps.setString(5, sex);
 			ps.setDate(6, new java.sql.Date(date.getTime()));
 			ps.setString(7, email);
-			if(ps.executeUpdate()==0){
-				bean = false;
+			int i = ps.executeUpdate();
+			//System.out.println(i);
+			if(i>0){
+				bean = true;
 			}
 			//stat = con.createStatement();
 			//stat.executeUpdate(sql);
