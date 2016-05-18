@@ -18,17 +18,17 @@ public class oracle_link {
 		try
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("开始连接数据库");
+			System.out.println("star link oracle!");
 			String url = "jdbc:oracle:thin:@210.41.224.68:1521:MAO";
 			String user = "scott";
 			String password = "Qq289203021";
 			
 			con = DriverManager.getConnection(url, user, password);//获取连接
-			System.out.println("连接成功");
+			System.out.println("oracle ok!");
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			System.out.println("连接失败");
+			System.out.println("oracle not!");
 		}
 		
 		return con;

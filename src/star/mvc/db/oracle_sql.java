@@ -41,7 +41,7 @@ public class oracle_sql {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		jdbc_move();//关闭oracle
+		jdbc_move();//stop oracle
 		return bean;
 	}
 	//link mao db ,insert number in book_user
@@ -84,15 +84,14 @@ public class oracle_sql {
 			e.printStackTrace();
 		}
 		
-		jdbc_move();//关闭oracle
+		jdbc_move();//stop oracle
 		return bean;
 	}
 	//over jdbc link
 	public static void jdbc_move(){
 		try
         {
-            // 逐一将上面的几个对象关闭，因为不关闭的话会影响性能、并且占用资源
-            // 注意关闭的顺序，最后使用的最先关闭
+            
             if (result != null)
                 result.close();
             if (pre != null)
@@ -101,7 +100,7 @@ public class oracle_sql {
             	stat.close();
             if (con != null)
                 con.close();
-            System.out.println("数据库连接已关闭！");
+            System.out.println("stop oracle!");
         }
         catch (Exception e)
         {
