@@ -93,4 +93,17 @@ body{
 	top:-10px;
 	font: 30px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
 }
+.tishi{
+	position:relative;
+	left:100px;
+}
+.l-login{
+	position: absolute;
+	z-index: 1;
+	left: 23px;
+	top: 0;
+	height: 46px;
+	font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+	line-height: 46px;
+}
 </style>
