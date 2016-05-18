@@ -29,10 +29,8 @@ public class oracle_sql {
 			result = pre.executeQuery();
 			
 			while(result.next()){
-				if(id.equals(result.getString("id"))){
+				if(id.equals(result.getString("uname"))){
 					if(password.equals(result.getString("password"))){
-						
-						System.out.println(result.getString("id")+result.getString("password"));
 						
 						bean = true;
 					}
@@ -46,7 +44,7 @@ public class oracle_sql {
 		return bean;
 	}
 	//link mao db ,insert number in book_user
-	public static boolean oracle_user(String id, String password,String truename, String postcode, 
+	public static boolean oracle_user(String uname, String password,String truename, String email, 
 			String mphone, String sex, String birthday){
 		boolean bean = true;
 		
@@ -61,18 +59,18 @@ public class oracle_sql {
 			e.printStackTrace();
 		}
 		
-		String sql = "insert into book_user(id,password,truename,postcode,mphone,sex,birthday) values(?,?,?,?,?,?,?)";
+		String sql = "insert into book_user(uname,password,truename,mphone,sex,birthday,email) values(?,?,?,?,?,?,?)";
 				/* "('"+id+"','"+password+"','"+truename+"','"+postcode+"',"
 						+ "'"+mphone+"','"+sex+"','"+da.+"')";*/
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, id);
+			ps.setString(1, uname);
 			ps.setString(2, password);
 			ps.setString(3, truename);
-			ps.setString(4, postcode);
-			ps.setString(5, mphone);
-			ps.setString(6, sex);
-			ps.setDate(7, new java.sql.Date(date.getTime()));
+			ps.setString(4, mphone);
+			ps.setString(5, sex);
+			ps.setDate(6, new java.sql.Date(date.getTime()));
+			ps.setString(7, email);
 			if(ps.executeUpdate()==0){
 				bean = false;
 			}
