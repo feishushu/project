@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
 <%
 String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String basePath = request.getScheme()"://"request.getServerName()":"request.getServerPort()path"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -17,6 +17,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="register.css">
+	<script>
+ 		function pw(){
+ 			var pw1 = document.getElementById("registerpass").value;
+ 			var pw2 = document.getElementById("registernewpass").value;
+ 			if(pw1==pw2){
+ 				document.getElementById("tishi").innerHTML="<font color='red'>å¯†ç ç›¸åŒ</font>";
+ 				document.getElementById("submit").disabled=false;
+ 			}else{
+ 				document.getElementById("tishi").innerHTML="<font color='red'>å¯†ç ä¸ç›¸åŒ</font>";
+ 				document.getElementById("submit").disabled=true;
+ 			}
+ 		}
+ 	</script>
   </head>
   
   <body>
@@ -26,39 +39,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h3>s t a r b o o k s</h3>
 	<form action="#" name="r" method="post">
 		<div class="input">
-			<input name="registername" class="text" onFocus=" if(this.value=='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊı×Ö£¬×ÖÄ¸)') this.value=''" onBlur="if(this.value=='') this.value='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊı×Ö£¬×ÖÄ¸)'" value="ÊäÈëÓÃ»§Ãû(Ö§³ÖÊı×Ö£¬×ÖÄ¸)" style="color: #FFFFFF !important" type="text">
+			<input name="registername" class="text" onFocus=" if(this.value=='ÃŠÃ¤ÃˆÃ«Ã“ÃƒÂ»Â§ÃƒÃ»(Ã–Â§Â³Ã–ÃŠÃ½Ã—Ã–Â£Â¬Ã—Ã–Ã„Â¸)') this.value=''" onBlur="if(this.value=='') this.value='ÃŠÃ¤ÃˆÃ«Ã“ÃƒÂ»Â§ÃƒÃ»(Ã–Â§Â³Ã–ÃŠÃ½Ã—Ã–Â£Â¬Ã—Ã–Ã„Â¸)'" value="ÃŠÃ¤ÃˆÃ«Ã“ÃƒÂ»Â§ÃƒÃ»(Ã–Â§Â³Ã–ÃŠÃ½Ã—Ã–Â£Â¬Ã—Ã–Ã„Â¸)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-		<!--  <label class="l-register register_password" style="color: rgb(255, 255, 255);">ÉèÖÃÃÜÂë</label> -->
-		<input name="registerpass" class="text" onFocus=" if(this.value=='ÉèÖÃÃÜÂë(Ö§³ÖÊı×Ö£¬×ÖÄ¸£¬·ûºÅ)') this.value=''" onBlur="if(this.value=='') this.value='ÉèÖÃÃÜÂë(Ö§³ÖÊı×Ö£¬×ÖÄ¸£¬·ûºÅ)'" value="ÉèÖÃÃÜÂë(Ö§³ÖÊı×Ö£¬×ÖÄ¸£¬·ûºÅ)" style="color: #FFFFFF !important" type="text">
-		<!-- <input name="registerpass" class="text" style="color: #FFFFFF !important;z-index:100;" onFocus="$('.register_password').hide()" onBlur="if(this.value=='') $('.register_password').show()" value="" type="password"> -->
+		<!--  <label class="l-register register_password" style="color: rgb(255, 255, 255);">Ã‰Ã¨Ã–ÃƒÃƒÃœÃ‚Ã«</label> -->
+		<label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">è¾“å…¥å¯†ç ï¼ˆæ”¯æŒæ•°å­—ï¼Œå­—æ¯ï¼Œç¬¦å·ï¼‰</label>
+		<input name="registerpass" id="registerpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="${password}" type="password">
+		</div>
+
+		<div class="input">
+ 			<label class="l-login login_newpassword" style="color: rgb(255, 255, 255);display: block;">ç¡®è®¤å¯†ç </label>
+ 			<input name="registernewpass" id="registernewpass" onkeyup="pw()" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_newpassword').hide()" onBlur="if(this.value=='') $('.login_newpassword').show()" value="${password}" type="password">
+ 		</div><span id="tishi" class="tishi"></span>
+ 
+		
+		<div class="input">
+			<input name="registerTname" class="text" onFocus=" if(this.value=='Ã•Ã¦ÃŠÂµÃÃ•ÃƒÃ»') this.value=''" onBlur="if(this.value=='') this.value='Ã•Ã¦ÃŠÂµÃÃ•ÃƒÃ»'" value="Ã•Ã¦ÃŠÂµÃÃ•ÃƒÃ»" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerTname" class="text" onFocus=" if(this.value=='ÕæÊµĞÕÃû') this.value=''" onBlur="if(this.value=='') this.value='ÕæÊµĞÕÃû'" value="ÕæÊµĞÕÃû" style="color: #FFFFFF !important" type="text">
+			<input name="registeremail" class="text" onFocus=" if(this.value=='Ã“ÃŠÃÃ¤ÂµÃ˜Ã–Â·') this.value=''" onBlur="if(this.value=='') this.value='Ã“ÃŠÃÃ¤ÂµÃ˜Ã–Â·'" value="Ã“ÃŠÃÃ¤ÂµÃ˜Ã–Â·" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registeremail" class="text" onFocus=" if(this.value=='ÓÊÏäµØÖ·') this.value=''" onBlur="if(this.value=='') this.value='ÓÊÏäµØÖ·'" value="ÓÊÏäµØÖ·" style="color: #FFFFFF !important" type="text">
+			<input name="registerphone" class="text" onFocus=" if(this.value=='ÃŠÃ–Â»ÃºÂºÃ…Ã‚Ã«') this.value=''" onBlur="if(this.value=='') this.value='ÃŠÃ–Â»ÃºÂºÃ…Ã‚Ã«'" value="ÃŠÃ–Â»ÃºÂºÃ…Ã‚Ã«" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerphone" class="text" onFocus=" if(this.value=='ÊÖ»úºÅÂë') this.value=''" onBlur="if(this.value=='') this.value='ÊÖ»úºÅÂë'" value="ÊÖ»úºÅÂë" style="color: #FFFFFF !important" type="text">
-		</div>
-		
-		<div class="input">
-			<input name="registerbir" class="text" onFocus=" if(this.value=='ÉúÈÕĞÅÏ¢(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='ÉúÈÕĞÅÏ¢(1990-1-1)'" value="ÉúÈÕĞÅÏ¢(1990-1-1)" style="color: #FFFFFF !important" type="text">
+			<input name="registerbir" class="text" onFocus=" if(this.value=='Ã‰ÃºÃˆÃ•ÃÃ…ÃÂ¢(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='Ã‰ÃºÃˆÃ•ÃÃ…ÃÂ¢(1990-1-1)'" value="Ã‰ÃºÃˆÃ•ÃÃ…ÃÂ¢(1990-1-1)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input-radio">
-			<input name="registersex" type="radio" value="M" /> ÄĞ   
-			<input name="registersex" type="radio" value="W" /> Å®
+			<input name="registersex" type="radio" value="M" /> Ã„Ã   
+			<input name="registersex" type="radio" value="W" /> Ã…Â®
 		</div>
 		
 		
 		
-		<div class="button"><input class="register-buttom submit" type="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
+		<div class="button"><input class="register-buttom submit" id="submit" value="ÂµÃ‡Ã‚Â¼" name=submit style="color: #FFFFFF"></div>
 		
 	</form>
 	
