@@ -1,25 +1,7 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
-String name 	= "";
-String password = "";
-
-request.setAttribute("name", name);
-request.setAttribute("password",password);
-
-Cookie[] cookies = request.getCookies();
-if(cookies != null){
-	for(int i=0;i<cookies.length;i++){   
-		if(cookies[i].getName().equals("user")){    
-			name	 = cookies[i].getValue().split("-")[0];
-			password = cookies[i].getValue().split("-")[1];   
-			request.setAttribute("name", name);
-			request.setAttribute("password",password);
-		}
-	}
-}
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -52,7 +34,53 @@ if(cookies != null){
             border:0;
         }
     </style>
-   
+    <script language="javascript" type="text/javascript">
+     
+     var code ; 
+     function createCode()
+     { 
+       code = "";
+       var codeLength = 6;//ÑéÖ¤ÂëµÄ³¤¶È
+       var checkCode = document.getElementById("checkCode");
+       var selectChar = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');//ËùÓĞºòÑ¡×é³ÉÑéÖ¤ÂëµÄ×Ö·û£¬µ±È»Ò²¿ÉÒÔÓÃÖĞÎÄµÄ
+         
+       for(var i=0;i<codeLength;i++)
+       {
+       
+         
+       var charIndex = Math.floor(Math.random()*36);
+       code +=selectChar[charIndex];
+        
+        
+       }
+//       alert(code);
+       if(checkCode)
+       {
+         checkCode.className="code";
+         checkCode.value = code;
+       }
+        
+     }
+     function validate ()
+     {
+       var inputCode = document.getElementById("input1").value;
+       if(inputCode.length <=0)
+       {
+           alert("ÇëÊäÈëÑéÖ¤Âë£¡");
+       }
+       else if(inputCode != code )
+       {
+          alert("ÑéÖ¤ÂëÊäÈë´íÎó£¡");
+          createCode();//Ë¢ĞÂÑéÖ¤Âë
+       }
+       else
+       {
+         alert("ÕıÈ·");
+       }
+        
+       }
+        
+    </script>
   </head>
   
   <body onload="createCode()">
@@ -60,17 +88,16 @@ if(cookies != null){
 
 <div class="logo_box">
 	<h3>s t a r b o o k s</h3>
-	<form action="servlet_login" name="login" method="post">
+	<form action="#" name="login" method="post">
 		<div class="input">
 			<span class="u_user"></span>
-			<input name="logname" class="text" onFocus=" if(this.value=='è¾“å…¥IDæˆ–ç”¨æˆ·åç™»å½•') this.value=''" onBlur="if(this.value=='') this.value='è¾“å…¥IDæˆ–ç”¨æˆ·åç™»å½•'" value="${name}" style="color: #FFFFFF !important" type="text">
+			<input name="logname" class="text" onFocus=" if(this.value=='ÊäÈëID»òÓÃ»§ÃûµÇÂ¼') this.value=''" onBlur="if(this.value=='') this.value='ÊäÈëID»òÓÃ»§ÃûµÇÂ¼'" value="ÊäÈëID»òÓÃ»§ÃûµÇÂ¼" style="color: #FFFFFF !important" type="text">
 		</div>
 		<div class="input">
 			<span class="us_uer"></span>
-			<label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">è¾“å…¥å¯†ç </label>
-			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="${password}" type="password">
+			<label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">ÊäÈëÃÜÂë</label>
+			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="" type="password">
 		</div>
-<<<<<<< HEAD
 		
 		<div class="prov">
 		 	<input  type="text"   id="input1" />
@@ -79,14 +106,9 @@ if(cookies != null){
     
 		<div class="button" onclick="validate();"><input class="act-but submit" type="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
 		<input name="savesid" value="0" id="check-box" class="checkbox" type="checkbox"><span>¼Ç×¡ÓÃ»§ÃûÃÜÂë</span>
-=======
-		<div class="button""><input class="act-but submit" type="submit" value="ç™»å½•" name=submit style="color: #FFFFFF">
-</div>
-		<input name="savesid" value="0" id="check-box" class="checkbox" type="checkbox"><span>è®°ä½ç”¨æˆ·åå¯†ç </span>
->>>>>>> refs/remotes/origin/sd
 	</form>
 	<div class="sas">
-		<a href="register.jsp">è¿˜æ²¡æ³¨å†Œè´¦å·?</a>
+		<a href="register.jsp">»¹Ã»×¢²áÕËºÅ?</a>
 	</div>
 	
 </div>
