@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		
 		
-		<div class="button"><a class="register-buttom submit" href="login.jsp" style="color: #FFFFFF">Íê³É×¢²á</a></div>
+		<div class="button"><input class="register-buttom submit" type="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
 		
 	</form>
 	

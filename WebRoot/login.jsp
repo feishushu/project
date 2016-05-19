@@ -104,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="unchanged" style="width: 80px"  /><br />
     		</div>
     
-		<div class="button" onclick="validate();"><a class="act-but submit" href="index.jsp" style="color: #FFFFFF">登录</a></div>
+		<div class="button" onclick="validate();"><input class="act-but submit" type="submit" value="登录" name=submit style="color: #FFFFFF"></div>
 		<input name="savesid" value="0" id="check-box" class="checkbox" type="checkbox"><span>记住用户名密码</span>
 	</form>
 	<div class="sas">
