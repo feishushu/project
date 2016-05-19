@@ -78,7 +78,7 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
 		
 		
 		
-		<div class="button"><input class="register-buttom submit" id="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
+		<div class="button"><input class="register-buttom submit" id="submit"  type="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
 		
 	</form>
 	
