@@ -48,11 +48,53 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     })
    
 });
-</script>  
+</script> 
+ 
+ <script>    
+        // 定义菜单栏离页面顶部的距离，默认为200    
+        var divOffsetTop = 500;    
+        //滚动事件    
+        window.onscroll=function(){    
+            var div = document.getElementById("divId");    
+            // 计算页面滚动了多少（需要区分不同浏览器）    
+            var topVal = 0;    
+            if(window.pageYOffset){//这一条滤去了大部分， 只留了IE678    
+                topVal = window.pageYOffset;    
+            }    
+            else if(document.documentElement.scrollTop ){//IE678 的非quirk模式    
+                topVal = document.documentElement.scrollTop;    
+            }    
+            else if(document.body.scrolltop){//IE678 的quirk模式    
+                topVal = document.body.scrolltop;    
+            }    
+            if(topVal <= divOffsetTop){    
+                div.style.position = "";    
+            }    
+            else {    
+                div.style.position = "fixed";    
+            }    
+        };    
+        // 页面加载完之后，计算菜单栏到页面顶部的实际距离    
+        window.onload=function(){    
+            var div = document.getElementById("divId");    
+            divOffsetTop = div.offsetTop;    
+        };    
+        </script>    
 
   </head>
   
   <body>
+  <div class="nav" id="divId">
+ <ul>
+   <li><a href="index.jsp#page1">首页</a></li>
+   <li><a href="index.jsp#page2">图书分类</a></li>
+   <li><a href="index.jsp#page3">图书搜索</a></li>
+   <li><a href="index.jsp#page4">关于我们</a></li>
+   <div class="caidan">s t a r b o o k s</div>
+   <a href="#"><div class="caidan-shop">我的购物</div>
+ </ul>
+ 
+</div><br>
   
   <div class="book">
     <div class="book-pic"></div>
