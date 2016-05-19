@@ -165,18 +165,13 @@
 	color:red;
 	background:#FFF;
 }
-.caidan{
-	position:relative;
-	
-	font: 36px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
-	top:-4px;
-	color:white;
-	
-}
+
 .caidan-shop{
 	position:relative;
-	top:-42px;
+	top:-35px;
 	left:950px;
 	width:200px;
 	height:40px;
+	color:#000;
+	font: 30px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
 }
