@@ -38,7 +38,7 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
 
 <div class="register_box">
 	<h3>s t a r b o o k s</h3>
-	<form action="#" name="r" method="post">
+	<form action="servlet_register" name="r" method="post">
 		<div class="input">
 			<input name="registername" class="text" onFocus=" if(this.value=='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)') this.value=''" onBlur="if(this.value=='') this.value='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)'" value="ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)" style="color: #FFFFFF !important" type="text">
 		</div>
