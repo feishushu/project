@@ -10,6 +10,7 @@ import star.mvc.modle.book;
 
 public class bookdao {
 	
+	//need fix picture
 	public static ArrayList getHotsBookMsg(){
 		Connection con = null;
 		Statement stmt = null;
@@ -43,5 +44,60 @@ public class bookdao {
 		return hotsbookList;
 	}
 	
+	//need fix picture and page
+	public static ArrayList getMsgBySuperID(String supertypeid){
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList supertypeList = new ArrayList();
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			rs = stmt.executeQuery("select picture,nowprice,bookname from book where supertypeid='"+supertypeid+"'");
+			while(rs.next()){
+				book b = new book();
+				b.setPicture(rs.getString(1));
+				b.setNowprice(rs.getString(2));
+				b.setBookname(rs.getString(3));
+				supertypeList.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		finally{
+			oracle_link.close(con, stmt, rs);
+		}
+		return supertypeList;
+	}
+	
+	//need fix picture and page
+		public static ArrayList getMsgBySubID(String subtypeid){
+			Connection con = null;
+			Statement stmt = null;
+			ResultSet rs = null;
+			ArrayList subtypeList = new ArrayList();
+			try {
+				con = oracle_link.oraclesql();
+				stmt = con.createStatement();
+				rs = stmt.executeQuery("select picture,nowprice,bookname from book where subtypeid='"+subtypeid+"'");
+				while(rs.next()){
+					book b = new book();
+					b.setPicture(rs.getString(1));
+					b.setNowprice(rs.getString(2));
+					b.setBookname(rs.getString(3));
+					subtypeList.add(b);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+			finally{
+				oracle_link.close(con, stmt, rs);
+			}
+			return subtypeList;
+		}
+		
+		
 	
 }
