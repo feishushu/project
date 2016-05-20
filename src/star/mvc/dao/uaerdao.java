@@ -55,14 +55,14 @@ public class uaerdao {
 			
 		con = oracle_link.oraclesql();
 			
-		Date date = null;
+		/*Date date = null;
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			date = format.parse(birthday);
 		} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-		}
+		}*/
 			
 		String sql = "insert into book_user(uname,password,truename,mphone,sex,birthday,email) values(?,?,?,?,?,?,?)";
 		try {
@@ -72,7 +72,7 @@ public class uaerdao {
 			ps.setString(3, truename);
 			ps.setString(4, mphone);
 			ps.setString(5, sex);
-			ps.setDate(6, new java.sql.Date(date.getTime()));
+			ps.setString(6, birthday);
 			ps.setString(7, email);
 			int i = ps.executeUpdate();
 			//System.out.println(i);
