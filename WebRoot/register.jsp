@@ -40,7 +40,7 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
 	<h3>s t a r b o o k s</h3>
 	<form action="servlet_register" name="r" method="post">
 		<div class="input">
-			<input name="registername" class="text" onFocus=" if(this.value=='输入用户名)') this.value=''" onBlur="if(this.value=='') this.value='输入用户名'" value="输入用户名" style="color: #FFFFFF !important" type="text">
+			<input name="registername" class="text" onFocus=" if(this.value=='输入用户名') this.value=''" onBlur="if(this.value=='') this.value='输入用户名'" value="输入用户名" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
