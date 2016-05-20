@@ -180,19 +180,19 @@ public class uaerdao {
 		return allUserList;
 	}
 	
-	public static int delUserByUname(String Uname) {
+	public static boolean delUserByUname(String Uname) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		int result = 0;
+		boolean result = false;
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			stmt.executeUpdate("delete from book_user where uname='"+Uname+"'");
-			result = 1;
+			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			result = 0;
+			result = false;
 			return result;
 		}
 		finally{
