@@ -40,7 +40,7 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
 	<h3>s t a r b o o k s</h3>
 	<form action="servlet_register" name="r" method="post">
 		<div class="input">
-			<input name="registername" class="text" onFocus=" if(this.value=='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)') this.value=''" onBlur="if(this.value=='') this.value='ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)'" value="ÊäÈëÓÃ»§Ãû(Ö§³ÖÊý×Ö£¬×ÖÄ¸)" style="color: #FFFFFF !important" type="text">
+			<input name="registername" class="text" onFocus=" if(this.value=='输入用户名)') this.value=''" onBlur="if(this.value=='') this.value='输入用户名'" value="输入用户名" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
@@ -56,29 +56,29 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
  
 		
 		<div class="input">
-			<input name="registerTname" class="text" onFocus=" if(this.value=='ÕæÊµÐÕÃû') this.value=''" onBlur="if(this.value=='') this.value='ÕæÊµÐÕÃû'" value="ÕæÊµÐÕÃû" style="color: #FFFFFF !important" type="text">
+			<input name="registerTname" class="text" onFocus=" if(this.value=='真实姓名') this.value=''" onBlur="if(this.value=='') this.value='真实姓名'" value="真实姓名" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registeremail" class="text" onFocus=" if(this.value=='ÓÊÏäµØÖ·') this.value=''" onBlur="if(this.value=='') this.value='ÓÊÏäµØÖ·'" value="ÓÊÏäµØÖ·" style="color: #FFFFFF !important" type="text">
+			<input name="registeremail" class="text" onFocus=" if(this.value=='邮箱') this.value=''" onBlur="if(this.value=='') this.value='邮箱'" value="邮箱" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerphone" class="text" onFocus=" if(this.value=='ÊÖ»úºÅÂë') this.value=''" onBlur="if(this.value=='') this.value='ÊÖ»úºÅÂë'" value="ÊÖ»úºÅÂë" style="color: #FFFFFF !important" type="text">
+			<input name="registerphone" class="text" onFocus=" if(this.value=='手机号码') this.value=''" onBlur="if(this.value=='') this.value='手机号码'" value="手机号码" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input">
-			<input name="registerbir" class="text" onFocus=" if(this.value=='ÉúÈÕÐÅÏ¢(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='ÉúÈÕÐÅÏ¢(1990-1-1)'" value="ÉúÈÕÐÅÏ¢(1990-1-1)" style="color: #FFFFFF !important" type="text">
+			<input name="registerbir" class="text" onFocus=" if(this.value=='出生日期(1990-1-1)') this.value=''" onBlur="if(this.value=='') this.value='出生日期(1990-1-1)'" value="出生日期(1990-1-1)" style="color: #FFFFFF !important" type="text">
 		</div>
 		
 		<div class="input-radio">
-			<input name="registersex" type="radio" value="M" /> ÄÐ   
-			<input name="registersex" type="radio" value="W" /> Å®
+			<input name="registersex" type="radio" checked="checked" value="M" /> 男   
+			<input name="registersex" type="radio" value="W" /> 女
 		</div>
 		
 		
 		
-		<div class="button"><input class="register-buttom submit" id="submit"  type="submit" value="µÇÂ¼" name=submit style="color: #FFFFFF"></div>
+		<div class="button"><input class="register-buttom submit" id="submit"  type="submit" value="注册" name=submit style="color: #FFFFFF"></div>
 		
 	</form>
 	

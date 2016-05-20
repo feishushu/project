@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body bgcolor="#d7f4db">
   <div class="nav" id="divId">
  <ul>
    <li><a href="index.jsp#page1">首页</a></li>
@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <li><a href="index.jsp#page4">关于我们</a></li>
    <a href="#"><div class="caidan-shop">我的购物</div></a>
  </ul>
-</div><br>
+</div>
   
   <div class="book">
     <div class="book-pic"></div>

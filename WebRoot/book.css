@@ -1,4 +1,5 @@
 @CHARSET "US-ASCII";
+
 .book-pic{
 	position:absolute;
 	top:20px;
@@ -12,7 +13,7 @@
 	left:38px;
 	width:1200px;
 	height:1050px;
-	background:#ffe600;
+	background-image:url(picture/123.png);
 	
 }
 .book-title{
@@ -37,7 +38,7 @@
 	left:290px;
 	width:500px;
 	height:180px;
-	background:#fff;
+	background-image:url(picture/123.png);
 }
 .book-shop{
 	position:absolute;
@@ -45,7 +46,7 @@
 	left:800px;
 	width:380px;
 	height:300px;
-	background:#fff;
+	background-image:url(picture/123.png);
 }
 .book-detail{
 	position:absolute;
@@ -53,7 +54,7 @@
 	left:30px;
 	width:1150px;
 	height:270px;
-	background:#fff;
+	background-image:url(picture/123.png);
 }
 .book-shop-title{
 	position:relative;
@@ -118,7 +119,7 @@
 	left:30px;
 	width:1150px;
 	height:410px;
-	background:#fff;
+	background-image:url(picture/123.png);
 }
 .book-detail-write{
 	position:relative;
@@ -132,8 +133,8 @@
 	z-index:999;
 	width:1260px;
 	height:40px;
-	background:#03d5fa;
-	top:0;
+	background:#d7f4db;
+	top:0px;
 }
 .nav ul{
 	width:980px;
@@ -173,5 +174,5 @@
 	width:200px;
 	height:40px;
 	color:#000;
-	font: 30px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	font: 25px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
 }
