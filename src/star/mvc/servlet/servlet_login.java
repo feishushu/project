@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import star.mvc.db.oracle_sql;
+import star.mvc.service.userservice;
 
 public class servlet_login extends HttpServlet {
 
@@ -55,7 +56,7 @@ public class servlet_login extends HttpServlet {
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		
-		if((bean = oracle_sql.select_user(id, password)) == 1){
+		if((bean = userservice.setLogin(id, password)) == 1){
 			if(chk!=null){
 				Cookie cookie = new Cookie("user",id+"-"+password);
 				cookie.setMaxAge(36000*3);

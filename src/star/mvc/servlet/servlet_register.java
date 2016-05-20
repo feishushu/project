@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import star.mvc.db.oracle_sql;
+import star.mvc.service.userservice;
 
 public class servlet_register extends HttpServlet {
 
@@ -48,7 +49,7 @@ public class servlet_register extends HttpServlet {
 		String id 		= request.getParameter("registername");
 		String password = request.getParameter("registerpass");
 		String truename = request.getParameter("registerTname");
-		String postcode = request.getParameter("registeremail");
+		String email 	= request.getParameter("registeremail");
 		String mphone 	= request.getParameter("registerphone");
 		String sex 		= request.getParameter("registersex");
 		String birthday = request.getParameter("registerbir");
@@ -60,7 +61,7 @@ public class servlet_register extends HttpServlet {
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		
-		if(oracle_sql.oracle_user(id, password, truename, postcode, mphone, sex, birthday)){
+		if(userservice.setRegister(id, password, truename,email, mphone, sex, birthday)){
 			
 			out.println("<script language = javascript>alert('Registration Successful!');");
 			out.print("window.location.href='login.jsp'");
