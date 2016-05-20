@@ -98,7 +98,7 @@ public class uaerdao {
 		return bean;
 	}
 	
-	public String getTrueNameByUname(String uname) {
+	public static String getTrueNameByUname(String uname) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;

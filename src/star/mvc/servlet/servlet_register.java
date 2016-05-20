@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import star.mvc.db.oracle_sql;
 import star.mvc.service.userservice;
 
 public class servlet_register extends HttpServlet {
