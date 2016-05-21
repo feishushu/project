@@ -11,16 +11,16 @@ import star.mvc.modle.book;
 public class bookdao {
 	
 	//need fix picture
-	public static ArrayList getHotsBookMsg(){
+	public static ArrayList getFlagBookMsgByname(String name){
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		int i = 0;
-		ArrayList hotsbookList = new ArrayList();
+		ArrayList bookList = new ArrayList();
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery("select nowprice,author,introduce,picture from book where hotsbook='1'");
+			rs = stmt.executeQuery("select nowprice,author,introduce,picture from book where "+name+"='1'");
 			while(rs.next()){
 				book b = new book();
 				b.setNowprice(rs.getString(1));
@@ -28,7 +28,7 @@ public class bookdao {
 				b.setAuthor(rs.getString(3));
 				b.setIntroduce(rs.getString(4));
 				b.setPicture(rs.getString(5));
-				hotsbookList.add(b);
+				bookList.add(b);
 				i++;
 				if(i == 4){
 					break;
@@ -41,7 +41,7 @@ public class bookdao {
 		finally{
 			oracle_link.close(con, stmt, rs);
 		}
-		return hotsbookList;
+		return bookList;
 	}
 	
 	//need fix picture and page
@@ -97,6 +97,7 @@ public class bookdao {
 			}
 			return subtypeList;
 		}
+		
 		
 		
 	
