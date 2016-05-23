@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.persistence.Tuple;
+
 import star.mvc.common.oracle_link;
 import star.mvc.modle.book;
 
@@ -137,5 +139,54 @@ public class bookdao {
 		}
 		return detailList;
 	}
-
+	
+	/**
+	 * this is a test function that insert a pic in table "book"
+	 */
+	public static boolean addMsgBylocal(String BOOKID, String PICTURE){
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		boolean flag = false;
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			int i  =  stmt.executeUpdate("insert into book(bookid,picture) values('"+BOOKID+"','"+PICTURE+"')");
+			if(i > 0){
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return flag;
+		}finally{
+			oracle_link.close(con, stmt, rs);
+		}
+		return flag;
+	}
+	
+	public static ArrayList getPicByID(String BOOKID) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList detailList = new ArrayList();
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			rs = stmt
+					.executeQuery("select bookid,picture from book where bookid='"
+							+ BOOKID + "'");
+			while (rs.next()) {
+				book b = new book();
+				b.setBookid(rs.getString(1));
+				b.setPicture(rs.getString(2));
+				detailList.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return detailList;
+	}
 }
