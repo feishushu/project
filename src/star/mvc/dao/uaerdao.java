@@ -109,8 +109,8 @@ public class uaerdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery("select '" + Msg
-					+ "' from book_user where uanme = '" + Uname + "'");
+			rs = stmt.executeQuery("select " + Msg
+					+ " from book_user where uanme = '" + Uname + "'");
 			rs.next();
 			data = rs.getString(1);
 		} catch (Exception e) {

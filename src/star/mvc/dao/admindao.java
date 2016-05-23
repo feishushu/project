@@ -16,10 +16,13 @@ public class admindao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery("select '" + Msg
-					+ "' from book_user where uanme = '" + Aname + "'");
+			rs = stmt.executeQuery("select " + Msg 
+					+ " from admin where aname = '" + Aname + "'");
+			
 			rs.next();
 			data = rs.getString(1);
+			System.out.println("select '" + Msg 
+					+ "' from admin where aname = '" + Aname + "'");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
