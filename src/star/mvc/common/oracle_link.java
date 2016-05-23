@@ -1,4 +1,4 @@
-package star.mvc.db;
+package star.mvc.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

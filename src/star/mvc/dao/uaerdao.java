@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import star.mvc.db.oracle_link;
+import star.mvc.common.oracle_link;
 import star.mvc.modle.user;
 
 public class uaerdao {

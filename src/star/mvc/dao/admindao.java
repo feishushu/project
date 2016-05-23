@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import star.mvc.db.oracle_link;
+import star.mvc.common.oracle_link;
 
 public class admindao {
 	

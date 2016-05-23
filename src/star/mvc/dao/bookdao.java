@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import star.mvc.db.oracle_link;
+import star.mvc.common.oracle_link;
 import star.mvc.modle.book;
 
 public class bookdao {

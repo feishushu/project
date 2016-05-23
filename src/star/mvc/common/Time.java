@@ -1,4 +1,4 @@
-package star.mvc.time;
+package star.mvc.common;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
