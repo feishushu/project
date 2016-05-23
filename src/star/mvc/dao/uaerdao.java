@@ -28,7 +28,7 @@ public class uaerdao {
 			stmt = con.createStatement();
 
 			rs = stmt.executeQuery(sql);
-			System.out.println(rs);
+			
 			if (rs != null) {
 				rs.next();
 				if (password.equals(rs.getString("password"))) {

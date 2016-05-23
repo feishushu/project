@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="section" id="section1">
 		<div class="slide" id="slide1">
 			<div align="center" top="100"><img src="picture/donghua5.gif" width="1250" height="750"></div>
-			<a href="index.jsp"><div style="position:absolute;width:150px;height:100px;font-size:35px;left:580;top:600;color:black;font-family:Microsoft YaHei">立即体验</div></a>
+			<a href="servlet_fist"><div style="position:absolute;width:150px;height:100px;font-size:35px;left:580;top:600;color:black;font-family:Microsoft YaHei">立即体验</div></a>
 			</div>
 			
 		</div>

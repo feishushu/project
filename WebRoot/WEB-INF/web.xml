@@ -15,6 +15,27 @@
     <servlet-name>servlet_register</servlet-name>
     <servlet-class>star.mvc.servlet.servlet_register</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_fist</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_fist</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_aminlogin</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_aminlogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_adminreg</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_adminreg</servlet-class>
+  </servlet>
+
+
+
 
 
   <servlet-mapping>
@@ -24,6 +45,18 @@
   <servlet-mapping>
     <servlet-name>servlet_register</servlet-name>
     <url-pattern>/servlet_register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_fist</servlet-name>
+    <url-pattern>/servlet_fist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_aminlogin</servlet-name>
+    <url-pattern>/servlet_aminlogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_adminreg</servlet-name>
+    <url-pattern>/servlet_adminreg</url-pattern>
   </servlet-mapping>
 
 </web-app>

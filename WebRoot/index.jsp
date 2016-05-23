@@ -79,8 +79,13 @@ ul,li,dl,dt,dd{
 			<li><a class="tooltip tooltip-effect-5" href="index.jsp#page3">图书搜索<span class="tooltip-content"><i class="fa fa-fw fa-binoculars"></i></span></a></li>
 			<li><a class="tooltip tooltip-effect-2" href="index.jsp#page4">关于我们<span class="tooltip-content"><i class="fa fa-fw fa-user"></i></span></a></li>
 		</ul>
+		
 	</div>
-	<a href="login.jsp"><div class="denglu">登录/注册<li class="fa fa-fw fa-bank"></li></div></a>
+	<%if(session.getAttribute("login")==null){ %>
+		<a href="login.jsp"><div class="denglu">登录/注册<li class="fa fa-fw fa-bank"></li></div></a>
+	<%}else{ %>
+		<a href="#"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
+	<%} %>
 	</div>
 	
 	<div class="section" id="section2">

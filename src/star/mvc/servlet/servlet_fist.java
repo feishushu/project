@@ -4,20 +4,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import star.mvc.service.userservice;
-
-public class servlet_login extends HttpServlet {
+public class servlet_fist extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_login() {
+	public servlet_fist() {
 		super();
 	}
 
@@ -41,50 +38,32 @@ public class servlet_login extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html");
 		
 		HttpSession session = request.getSession();
+		session.setAttribute("login", null);
+		/*
+		 * 
+		 * 
+
+			Acquisition of recommended bibliography
+
+		 * 
+		 */
+		response.sendRedirect("index.jsp");
 		
-		int bean;
-		
-		String id 		= request.getParameter("logname");
-		String password = request.getParameter("logpass");
-		String chk		= request.getParameter("savesid");
-		
-		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
-		
-		if((bean = userservice.setLogin(id, password)) == 1){
-			if(chk!=null){
-				Cookie cookie = new Cookie("user",id+"-"+password);
-				cookie.setMaxAge(36000*3);
-				cookie.setPath("/");
-				response.addCookie(cookie);
-			}
-			session.setAttribute("login", id);
-			
-			out.println("<script language = javascript>alert('Login Successful!');");
-			out.print("window.location.href='index.jsp'");
-			out.println("</script>");
-		}else{
-			if(bean == 0){
-				out.println("<script language = javascript>alert('user name does not exist!');");
-				out.print("window.location.href='login.jsp'");
-				out.println("</script>");
-			}else{
-				out.println("<script language = javascript>alert('password error!');");
-				out.print("window.location.href='login.jsp'");
-				out.println("</script>");
-			}
-		}
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.print("    This is ");
+		out.print(this.getClass());
+		out.println(", using the GET method");
+		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
 		out.close();
-		
 	}
 
 	/**
