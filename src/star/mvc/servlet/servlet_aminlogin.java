@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import star.mvc.service.adminservice;
+
 public class servlet_aminlogin extends HttpServlet {
 
 	/**
@@ -41,6 +43,30 @@ public class servlet_aminlogin extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		
+		String aname 	= request.getParameter("aname");
+		String password = request.getParameter("password");
+		
+		System.out.println(aname+" "+ password);
+		
+		String data = adminservice.getSingleMsg(aname, "password");
+		
+		if(data == null){
+			out.println("<script language = javascript>alert('user name does not exist!');");
+			out.print("window.location.href='admin_login.jsp'");
+			out.println("</script>");
+		}
+		if(data.equals(password)){
+			out.println("<script language = javascript>alert('Login Successful!');");
+			out.print("window.location.href='index.jsp'");
+			out.println("</script>");
+		}else{
+			out.println("<script language = javascript>alert('password error!');");
+			out.print("window.location.href='admin_login.jsp'");
+			out.println("</script>");
+		}
+		
+		
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");

@@ -25,14 +25,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <center>
 		  <div>
-  			<form action = "denglu.jsp" name = "denglu" method = "post" onSubmit = "return check()">
-  				用户名  <input type = "text" name = "usercount" /> <br><br>
-  				密码 <input type = "password" name = "userpassword" /><br><br>
+  			<form action = "servlet_aminlogin" name = "denglu" method = "post" onSubmit = "return check()">
+  				用户名  <input type = "text" name = "aname" /> <br><br>
+  				密码 <input type = "password" name = "password" /><br><br>
   				<input type = "submit" name = "submit" value = "登录"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   				<br><br>
-  				
   			</form>
-  			<a href = "register.jsp" target = _self>注册用户</a>
   			</div>
   		</center>
   </body>
