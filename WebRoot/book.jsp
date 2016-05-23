@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="#"><div class="caidan-shop">我的购物</div></a>
+   <a href="shop.jsp"><div class="caidan-shop">我的购物</div></a>
  </ul>
 </div>
   
@@ -118,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<input id="add" name="" type="button" value="+" style="width:40px;"/>  
 			</div>
     	</div>
-    		<a href="#"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
+    		<a href="shop.jsp"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
    		</div>
     <div class="book-detail">书目简介
     	<div class="book-detail-write"></div>

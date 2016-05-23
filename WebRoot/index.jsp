@@ -13,9 +13,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/search.css" />
+	<script type="text/javascript" src="js/jquery-1.4.2.main.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
   <style type="text/css">
+  .section2{
+  	background-image:url(picture/444.png);
+  }
+  .section3{
+  	background-image:url(picture/123.png);
+  }
+ .section4{
+  	background-image:url(picture/444.png);
+  }
 div,ul,li,dl,dt,dd{
 	margin:0;
 	padding:0;
@@ -88,7 +99,7 @@ ul,li,dl,dt,dd{
 	<%} %>
 	</div>
 	
-	<div class="section" id="section2">
+	<div class="section section2" id="section2">
 	<div>
 	<img src="picture/donghua7.png">
 	</div>
@@ -191,9 +202,95 @@ ul,li,dl,dt,dd{
 
 </div>
 
-<div class="section" id="section3">123</div>
+<div class="section section3" id="section3">
+		<form class="sc form">
+			<input type="text" placeholder="搜索您想要的书籍" class="input">
+			<input name="search" type="submit" value="开始搜索" class="submit">
+		</form>
+ <div id="side">
+	 <ul id="side-menu">
+		 <li class="active">
+			 <a>优秀作者</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -20px;">
+				 <ul class="banner_menu_content_ul">
+					<li>刘缘</li>
+					<li>文潘东</li>
+					<li>毛灵</li>
+				 </ul>
+				 <ul class="banner_menu_content_ul">
+				
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>火热图书</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -62px;">
+				 <ul class="banner_menu_content_ul">
+				 	 <a><img src="picture/anni.jpg"></a></li>
+				 	 <a><img src="picture/caicai.jpg"></a></li>
+				 	 <a><img src="picture/guoji.jpg"></a></li>
+				 </ul>
+				 <ul class="banner_menu_content_ul">
+				 	<a><img src="picture/anni.jpg"></a></li>
+				 	<a><img src="picture/caicai.jpg"></a></li>
+				 	<a><img src="picture/caicai.jpg"></a></li>
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>最低价格</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -104px;">
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>经典书目</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -146px;">
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>大家都在看</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -188px;">
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>为您推荐</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -230px;">
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+			 </div>
+		 </li>
+		 <li>
+			 <a>旅游专题</a>
+			 <a class="banner_menu_i">&gt;</a>
+			 <div class="banner_menu_content" style="width: 600px; top: -272px;">
+				 <ul class="banner_menu_content_ul">
+				 </ul>
+			 </div>
+		 </li>
+	</lu>
+ </div>
+ <div class="search-pic"></div>
+ <script type="text/javascript" src="js/search.js"></script>
+</div>
 
-<div class="section" id="section4"   style="background:#17ab9f;">
+
+<div class="section section4" id="section4">
 <div class="demo-title">starbooks 开发成员</div>
 <div class="demo">
     <ul>
