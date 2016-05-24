@@ -163,7 +163,7 @@ ul,li,dl,dt,dd{
 		for(book hots:HotsBookList){
 			test = "test"+String.valueOf(i);
 	%>	
-			<a href="book.jsp"><figure class=<%=test %>>
+			<a href="getAllMsgByBook?bookid=<%=hots.getBookid() %>"><figure class=<%=test %>>
 			<img src=<%=hots.getPicture() %> width="170" height="170"> 
 			<figcaption>
 			<p>售价：<%=hots.getNowprice() %></p>
@@ -172,7 +172,6 @@ ul,li,dl,dt,dd{
 			</figcaption>
 			</figure></a>
 	<% i++;}}else{ %>
-		<a href="book.jsp"><figure class="test2">
 		<img src="picture/tongji.jpg" width="170" height="170"> 
 		<figcaption>
 		<p>售价：暂无</p>
@@ -191,9 +190,9 @@ ul,li,dl,dt,dd{
 		for(book Specia:SpeciaBookList){
 			fifth = "fifth-img"+String.valueOf(i);
 	%>
-		<a href="book.jsp"><div class=<%=fifth %>><img src=<%=Specia.getPicture() %> width="170" height="170"></div></a>
+		<a href="getAllMsgByBook?bookid=<%=Specia.getBookid() %>"><div class=<%=fifth %>><img src=<%=Specia.getPicture() %> width="170" height="170"></div></a>
 	<%i++;}}else{%>
-		<a href="book.jsp"><div class="fifth-img2"><img src="picture/dashengwu.jpg" width="170" height="170"></div></a>
+		<a href="#"><div class="fifth-img2"><img src="picture/dashengwu.jpg" width="170" height="170"></div></a>
 	<%} %>
 		
 </div>

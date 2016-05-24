@@ -1,7 +1,10 @@
+<%@page import="star.mvc.modle.*"%>
 <%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -95,13 +98,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
   
   <div class="book">
-    <div class="book-pic"></div>
-    <div class="book-title"><div class="book-title-1"></div></div>
+    <div class="book-pic"><img alt="" src=<%=allbook.get(0).getPicture() %>></div>
+    <div class="book-title"><%=allbook.get(0).getBookname() %><div class="book-title-1"></div></div>
     <div class="book-pr">
-    	<div class="writer">作者:</div>
+    	<div class="writer">作者:<%=allbook.get(0).getAuthor() %></div>
     	<div class="writername"></div>
     	
-    	<div class="sale">促销信息:</div>
+    	<div class="sale">促销信息:<%=allbook.get(0).getPublisher() %></div>
     	<div class="sale-1"></div>
     </div>
     <div class="book-shop">
@@ -110,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     	<div class="book-shop-box">
     		<div class="book-shop-box-price">售价:</div>
-    		<div class="book-shop-box-price1"></div>
+    		<div class="book-shop-box-price1"><%=allbook.get(0).getNowprice() %></div>
     		<div class="book-shop-box-mount">数量:</div>
     		<div class="book-shop-box-mount1">
     			<input id="min" name="" type="button" value="-" style="width:40px;"/>  
@@ -121,7 +124,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<a href="shop.jsp"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
    		</div>
     <div class="book-detail">书目简介
-    	<div class="book-detail-write"></div>
+    	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
     </div>
     
     <div class="book-pinglun">
