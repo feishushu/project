@@ -150,7 +150,7 @@ ul,li,dl,dt,dd{
   
 </table>
 
-<a href="#"><div class="fourth-title-2"><br>更多推荐</div></a>
+
 <div class="fourth">
 	<div class="fourth-title"><li class="fa fa-fw fa-edit"></li>HOT!</div>
 	<div class="fourth-title-1">_________________</div>
@@ -192,7 +192,7 @@ ul,li,dl,dt,dd{
 </div>
 
 <div class="fifth">
- <a href="#"><div class="fifth-title-2"><br>更多经典</div></a>
+ 
 	<div class="fifth-title"><li class="fa fa-fw fa-tree"></li>经典书目</div>
 		<a href="book.jsp"><div class="fifth-img1"><img src="picture/caicai.jpg" width="170" height="170"></div></a>
 		<a href="book.jsp"><div class="fifth-img2"><img src="picture/dashengwu.jpg" width="170" height="170"></div></a>
