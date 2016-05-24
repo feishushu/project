@@ -1,7 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*,star.mvc.modle.*" pageEncoding="gb2312"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+ArrayList<book> HotsBookList =(ArrayList<book>) session.getAttribute("HotsBookList");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -154,41 +156,29 @@ ul,li,dl,dt,dd{
 <div class="fourth">
 	<div class="fourth-title"><li class="fa fa-fw fa-edit"></li>HOT!</div>
 	<div class="fourth-title-1">_________________</div>
-		<a href="book.jsp"><figure class="test1">
-		<img src="picture/feizhou.jpg" width="170" height="170"> 
-		<figcaption>
-		<p>售价：￥20</p>
-		<p>作者</p>
-		<p>简介:非洲之旅</p>
-		</figcaption>
-		</figure></a>
-		
+	<%if(HotsBookList != null){ 
+		String test = null;
+		int i =1;
+		for(book hots:HotsBookList){
+			test = "test"+String.valueOf(i);
+	%>	
+			<a href="book.jsp"><figure class=<%=test %>>
+			<img src=<%=hots.getPicture() %> width="170" height="170"> 
+			<figcaption>
+			<p>售价：<%=hots.getNowprice() %></p>
+			<p>作者：<%=hots.getAuthor() %></p>
+			<p>简介：<%=hots.getIntroduce() %></p>
+			</figcaption>
+			</figure></a>
+	<% i++;}}else{ %>
 		<a href="book.jsp"><figure class="test2">
 		<img src="picture/tongji.jpg" width="170" height="170"> 
 		<figcaption>
-		<p>售价：￥30</p>
-		<p>作者:李航</p>
-		<p>简介:统计学</p>
+		<p>售价：暂无</p>
 		</figcaption>
 		</figure></a>
+	<%} %>
 		
-		<a href="book.jsp"><figure class="test3">
-		<img src="picture/ziyouai.jpg" width="170" height="170"> 
-		<figcaption>
-		<p>售价：￥20</p>
-		<p>作者:水木丁</p>
-		<p>简介:自由爱</p>
-		</figcaption>
-		</figure></a>
-		
-		<a href="book.jsp"><figure class="test4">
-		<img src="picture/anni.jpg" width="170" height="170"> 
-		<figcaption>
-		<p>售价：￥20</p>
-		<p>作者</p>
-		<p>简介:绿山墙的安妮</p>
-		</figcaption>
-		</figure></a>
 </div>
 
 <div class="fifth">

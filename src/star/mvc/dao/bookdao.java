@@ -30,9 +30,9 @@ public class bookdao {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));
 				b.setNowprice(rs.getString("nowprice"));
-				b.setNowprice(rs.getString("author"));
-				b.setAuthor(rs.getString("introduce"));
-				b.setIntroduce(rs.getString("picture"));
+				b.setAuthor(rs.getString("author"));
+				b.setIntroduce(rs.getString("introduce"));
+				b.setPicture(rs.getString("picture"));
 				bookList.add(b);
 				i++;
 				if (i == 4) {

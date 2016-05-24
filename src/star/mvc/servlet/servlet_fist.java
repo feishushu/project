@@ -2,12 +2,15 @@ package star.mvc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import star.mvc.service.bookservice;
 
 public class servlet_fist extends HttpServlet {
 
@@ -42,14 +45,16 @@ public class servlet_fist extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("login", null);
-		/*
-		 * 
-		 * 
-
-			Acquisition of recommended bibliography
-
-		 * 
-		 */
+		
+		ArrayList HotsBookList = bookservice.getHotsBook("hotsbook");
+		
+		
+		if(HotsBookList != null){
+			session.setAttribute("HotsBookList", HotsBookList);
+		}else{
+			session.setAttribute("HotsBookList", null);
+		}
+		
 		response.sendRedirect("index.jsp");
 		
 		PrintWriter out = response.getWriter();

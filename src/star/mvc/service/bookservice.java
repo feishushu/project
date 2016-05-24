@@ -12,4 +12,8 @@ public class bookservice {
 	public static ArrayList getpic(String BOOKID){
 		return bookdao.getPicByID(BOOKID);
 	}
+	
+	public static ArrayList getHotsBook(String book_star){
+		return bookdao.getFlagBookMsgByname(book_star);
+	}
 }
