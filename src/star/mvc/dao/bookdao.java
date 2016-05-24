@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Tuple;
 
+import oracle.net.aso.b;
 import star.mvc.common.oracle_link;
 import star.mvc.modle.book;
 
@@ -139,11 +140,11 @@ public class bookdao {
 		}
 		return detailList;
 	}
-	
+
 	/**
 	 * this is a test function that insert a pic in table "book"
 	 */
-	public static boolean addMsgBylocal(String BOOKID, String PICTURE){
+	public static boolean addMsgBylocal(String BOOKID, String PICTURE) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -151,19 +152,21 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			int i  =  stmt.executeUpdate("insert into book(bookid,picture) values('"+BOOKID+"','"+PICTURE+"')");
-			if(i > 0){
+			int i = stmt
+					.executeUpdate("insert into book(bookid,picture) values('"
+							+ BOOKID + "','" + PICTURE + "')");
+			if (i > 0) {
 				flag = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return flag;
-		}finally{
+		} finally {
 			oracle_link.close(con, stmt, rs);
 		}
 		return flag;
 	}
-	
+
 	public static ArrayList getPicByID(String BOOKID) {
 		Connection con = null;
 		Statement stmt = null;
@@ -188,5 +191,40 @@ public class bookdao {
 			oracle_link.close(con, stmt, rs);
 		}
 		return detailList;
+	}
+
+	public static ArrayList searchMsgBystring(String key) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList dataList = new ArrayList();
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			rs = stmt
+					.executeQuery("select bookid, bookname, isbn, introduce, publisher, author from book where "
+							+ "bookname like '%"+key+"%' or "
+							+ "isbn like '%"+key+"%' or "
+							+ "introduce like '%"+key+"%' or "
+							+ "publisher like '%"+key+"%' or "
+							+ "author like '%"+key+"%'");
+			while (rs.next()) {
+				book b = new book();
+				b.setBookid(rs.getString("bookid"));
+				b.setBookname(rs.getString("bookname"));
+				b.setIsbn(rs.getString("isbn"));
+				b.setIntroduce(rs.getString("introduce"));
+				b.setPublisher(rs.getString("publisher"));
+				b.setAuthor(rs.getString("author"));
+				dataList.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return dataList;
+
 	}
 }
