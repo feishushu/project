@@ -62,9 +62,9 @@ public class bookdao {
 							+ supertypeid + "'");
 			while (rs.next()) {
 				book b = new book();
-				b.setPicture(rs.getString(1));
-				b.setNowprice(rs.getString(2));
-				b.setBookname(rs.getString(3));
+				b.setPicture(rs.getString("picture"));
+				b.setNowprice(rs.getString("nowprice"));
+				b.setBookname(rs.getString("bookname"));
 				supertypeList.add(b);
 			}
 		} catch (Exception e) {
@@ -90,9 +90,9 @@ public class bookdao {
 							+ subtypeid + "'");
 			while (rs.next()) {
 				book b = new book();
-				b.setPicture(rs.getString(1));
-				b.setNowprice(rs.getString(2));
-				b.setBookname(rs.getString(3));
+				b.setPicture(rs.getString("picture"));
+				b.setNowprice(rs.getString("nowprice"));
+				b.setBookname(rs.getString("bookname"));
 				subtypeList.add(b);
 			}
 		} catch (Exception e) {
@@ -117,18 +117,18 @@ public class bookdao {
 							+ BOOKID + "'");
 			while (rs.next()) {
 				book b = new book();
-				b.setBookid(rs.getString(1));
-				b.setBookname(rs.getString(2));
-				b.setIsbn(rs.getString(3));
-				b.setIntroduce(rs.getString(4));
-				b.setPrice(rs.getString(5));
-				b.setNowprice(rs.getString(6));
-				b.setPicture(rs.getString(7));
-				b.setPages(rs.getString(8));
-				b.setPublisher(rs.getString(9));
-				b.setAuthor(rs.getString(10));
-				b.setIntime(rs.getString(11));
-				b.setBooknum(rs.getString(12));
+				b.setBookid(rs.getString("bookid"));
+				b.setBookname(rs.getString("bookname"));
+				b.setIsbn(rs.getString("isbn"));
+				b.setIntroduce(rs.getString("introduce"));
+				b.setPrice(rs.getString("price"));
+				b.setNowprice(rs.getString("nowprice"));
+				b.setPicture(rs.getString("picture"));
+				b.setPages(rs.getString("pages"));
+				b.setPublisher(rs.getString("publisher"));
+				b.setAuthor(rs.getString("author"));
+				b.setIntime(rs.getString("intime"));
+				b.setBooknum(rs.getString("booknum"));
 				detailList.add(b);
 			}
 		} catch (Exception e) {
