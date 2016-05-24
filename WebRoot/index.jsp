@@ -316,7 +316,14 @@ ul,li,dl,dt,dd{
 <script type="text/javascript" src="javascript.fullPage.js"></script>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
-		anchors: ['page1', 'page2','page3','page4']
+		'css3': true,
+		//keyboardScrolling:true,
+		
+		anchors: ['page1', 'page2','page3','page4'],
+		'loopBottom':true,
+		navigation:true,
+		menu:true,
+		loopTop:true
 	});
 
 </script>

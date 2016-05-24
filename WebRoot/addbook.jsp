@@ -75,18 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <th scope="col" width="30%" height="50px">时间</th>
     <th scope="col"><input type="text" name="intime"></th>
   </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px">新书</th>
-    <th scope="col"><input type="text" name="newbook"></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px">打折书</th>
-    <th scope="col"><input type="text" name="salesbook"></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px">热卖书</th>
-    <th scope="col"><input type="text" name="hotsbook"></th>
-  </tr>
+  
   <tr>
     <th scope="col" width="30%" height="50px">特别推荐</th>
     <th scope="col"><input type="text" name="speciabook"></th>
@@ -97,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
 </table>
 <br>
-	<input name="submit" type="submit" style="width:150px;height:150px;"/>
+	<input type="submit" value="提交" class="button" />
 </form>
 		
   </body>

@@ -98,23 +98,34 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
 </div>
   
   <div class="book">
-    <div class="book-pic"><img alt="" src=<%=allbook.get(0).getPicture() %>></div>
-    <div class="book-title"><%=allbook.get(0).getBookname() %><div class="book-title-1"></div></div>
+    <div class="book-pic"><img alt="" src=<%=allbook.get(0).getPicture() %> width="250px" height="300px"></div>
+    <div class="book-title"><div class="book-title-1"><%=allbook.get(0).getBookname() %></div></div>
     <div class="book-pr">
-    	<div class="writer">作者:<%=allbook.get(0).getAuthor() %></div>
-    	<div class="writername"></div>
+    	<div class="writer">作者:</div>
+    	<div class="writername"><%=allbook.get(0).getAuthor() %></div>
     	
-    	<div class="sale">促销信息:<%=allbook.get(0).getPublisher() %></div>
-    	<div class="sale-1"></div>
+    	<div class="sale">出版社:</div>
+    	<div class="sale-1"><%=allbook.get(0).getPublisher() %></div>
+    	
+    	<div class="ISBN">ISBN:</div>
+    	<div class="ISBN-1"><%=allbook.get(0).getIsbn() %></div>
+    	
+    	<div class="page">图书页数: </div>
+    	<div class="page-1"><%=allbook.get(0).getPages() %></div>
+    	
+    	<div class="time">上架时间:</div>
+    	<div class="time-1"><%=allbook.get(0).getIntime() %></div>
     </div>
     <div class="book-shop">
     	<div class="book-shop-title">
     		购买详情
     	</div>
     	<div class="book-shop-box">
-    		<div class="book-shop-box-price">售价:</div>
-    		<div class="book-shop-box-price1"><%=allbook.get(0).getNowprice() %></div>
-    		<div class="book-shop-box-mount">数量:</div>
+    		<div class="book-shop-box-price">原价:</div>
+    		<div class="book-shop-box-price1">￥<%=allbook.get(0).getPrice() %></div>
+    		<div class="book-shop-box-price2">售价:(sale)</div>
+    		<div class="book-shop-box-price3">￥<%=allbook.get(0).getNowprice() %></div>
+    		<div class="book-shop-box-mount">数量:(库存<%=allbook.get(0).getBooknum() %>本)</div>
     		<div class="book-shop-box-mount1">
     			<input id="min" name="" type="button" value="-" style="width:40px;"/>  
 				<input id="text_box" name="" type="text" value="1" style="width:60px ;"/>  
