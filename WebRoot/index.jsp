@@ -4,6 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
 ArrayList<book> HotsBookList =(ArrayList<book>) session.getAttribute("HotsBookList");
+ArrayList<book> SpeciaBookList = (ArrayList<book>) session.getAttribute("SpeciaBookList");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -184,10 +185,17 @@ ul,li,dl,dt,dd{
 <div class="fifth">
  
 	<div class="fifth-title"><li class="fa fa-fw fa-tree"></li>æ≠µ‰ Èƒø</div>
-		<a href="book.jsp"><div class="fifth-img1"><img src="picture/caicai.jpg" width="170" height="170"></div></a>
+	<%if(SpeciaBookList != null){ 
+		String fifth = null;
+		int i = 1;
+		for(book Specia:SpeciaBookList){
+			fifth = "fifth-img"+String.valueOf(i);
+	%>
+		<a href="book.jsp"><div class=<%=fifth %>><img src=<%=Specia.getPicture() %> width="170" height="170"></div></a>
+	<%i++;}}else{%>
 		<a href="book.jsp"><div class="fifth-img2"><img src="picture/dashengwu.jpg" width="170" height="170"></div></a>
-		<a href="book.jsp"><div class="fifth-img3"><img src="picture/jiqi.jpg" width="170" height="170"></div></a>
-		<a href="book.jsp"><div class="fifth-img4"><img src="picture/nba.jpg" width="170" height="170"></div></a>
+	<%} %>
+		
 </div>
 
 </div>
