@@ -50,4 +50,7 @@
     <servlet-name>servlet_adminreg</servlet-name>
     <url-pattern>/servlet_adminreg</url-pattern>
   </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>first.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
