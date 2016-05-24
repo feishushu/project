@@ -24,15 +24,15 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select nowprice,author,introduce,picture from book where "
+					.executeQuery("select bookid,nowprice,author,introduce,picture from book where "
 							+ name + "='1'");
 			while (rs.next()) {
 				book b = new book();
-				b.setNowprice(rs.getString(1));
-				b.setNowprice(rs.getString(2));
-				b.setAuthor(rs.getString(3));
-				b.setIntroduce(rs.getString(4));
-				b.setPicture(rs.getString(5));
+				b.setBookid(rs.getString("bookid"));
+				b.setNowprice(rs.getString("nowprice"));
+				b.setNowprice(rs.getString("author"));
+				b.setAuthor(rs.getString("introduce"));
+				b.setIntroduce(rs.getString("picture"));
 				bookList.add(b);
 				i++;
 				if (i == 4) {
