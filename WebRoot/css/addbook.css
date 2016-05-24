@@ -1,0 +1,19 @@
+@CHARSET "US-ASCII";
+.manage input{
+	width:250px;
+	height:30px;
+}
+.manage{
+	z-index:999;
+}
+ body {
+ 	background:#c3f0f0;
+ }
+ .title{
+ 	font-size:38px;
+ 	color:#ef3023;
+ 	text-align:center;
+ }
+ .submit{
+ 	
+ }
