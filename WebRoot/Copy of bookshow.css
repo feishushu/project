@@ -1,0 +1,38 @@
+@CHARSET "US-ASCII";
+.nav{
+	z-index:999;
+	width:1260px;
+	height:40px;
+	background:#d7f4db;
+	top:0px;
+}
+.nav ul{
+	width:980px;
+	margin:0px auto;
+	height:38px;
+	padding:0;
+	list-style:none;
+}
+.nav ul li{
+	float:left;
+}
+.nav ul li a{
+	width:80px;
+	height:28px;
+	line-height:28px;
+	background:red;
+	color:#FFF;
+	margin:5px 10px;
+	font-size:12px;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+}
+.nav ul li a:hover{
+	width:78px;
+	height:26px;
+	line-height:28px;
+	border:1px solid red;
+	color:red;
+	background:#FFF;
+}

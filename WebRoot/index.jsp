@@ -64,6 +64,7 @@ ul,li,dl,dt,dd{
 }
 .demo ul li a span{
     position:absolute;
+
 	z-index:50;
 	bottom:2px;
 	left:2px;

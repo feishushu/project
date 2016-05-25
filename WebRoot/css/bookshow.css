@@ -1,0 +1,263 @@
+@CHARSET "US-ASCII";
+.nav{
+	z-index:999;
+	width:1260;
+	height:40px;
+	background:#d7f4db;
+	top:0px;
+}
+.nav ul{
+	width:980px;
+	margin:0px auto;
+	height:38px;
+	padding:0;
+	list-style:none;
+}
+.nav ul li{
+	float:left;
+}
+.nav ul li a{
+	width:80px;
+	height:28px;
+	line-height:28px;
+	background:red;
+	color:#FFF;
+	margin:5px 10px;
+	font-size:12px;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+}
+.nav ul li a:hover{
+	width:78px;
+	height:26px;
+	line-height:28px;
+	border:1px solid red;
+	color:red;
+	background:#FFF;
+}
+.caidan-shop{
+	position:relative;
+	top:-35px;
+	left:950px;
+	width:200px;
+	height:40px;
+	color:#000;
+	font: 25px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+
+.bookshow{
+	background:#f9f8ec;
+	width:970px;
+	height:1000px;
+	
+}
+.third{
+	background-color:#fff;
+	position:absolute;
+	top:150px;
+	left:990px;
+}
+
+.third-img1-title{
+	position:absolute;
+	top:10px;
+	color:white;
+	left:200px;
+	
+}
+.third-img2-title{
+	position:absolute;
+	top:300px;
+	color:white;
+	left:200px;
+}
+.third-img3-title{
+	position:absolute;
+	top:530px;
+	color:white;
+	left:200px;
+}
+.hello{
+	width:970px;
+	height:45px;
+	background:#ca6f4c;
+	font:25px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.hello-title{
+	text-align:left;
+	width:300px;
+}
+.hello-word{
+	
+	width:400px;
+	position:relative;
+	left:320px;
+	top:-30px;
+}
+.book-pic{
+	position:relative;
+	top:5px;
+	width:200px;
+	height:280px;
+	float:left;
+	left:40px;
+	margin:0 20px 20px 0;
+	
+}
+.book-pic2{
+	position:relative;
+	top:5px;
+	width:200px;
+	height:280px;
+	float:left;
+	left:40px;
+	margin:0 20px 20px 0;
+	
+}
+.book-pic3{
+	position:relative;
+	top:5px;
+	width:200px;
+	height:280px;
+	float:left;
+	left:40px;
+	margin:0 20px 20px 0;
+	
+}
+.page{
+	position:relative;
+	width:40%;
+	height:50px;
+	left:30%;
+	top:90%;
+	
+}
+.title{
+	height:100px;
+}
+.title-price{
+	text-align:center;
+	width:197px;
+	height:40px;
+	color:red;
+	font:20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.title-detail{
+	text-align:center;
+	width:197px;
+	height:55px;
+	color:black;
+	font:18px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.book-pic a{
+	width:197px;
+	height:180px;
+    display:block;
+	border:1px solid #ccc;
+}
+.book-pic a:hover{
+	border:2px solid #C03;
+}
+.book-pic a span{
+    position:relative;
+    top:-180px;
+	z-index:50;
+	bottom:2px;
+	left:0px;
+	width:200px;
+	height:180px;
+	filter:alpha(Opacity=50);-moz-opacity:0.7;opacity: 0.7;
+	background:#000;
+	color:#fff;
+	font:20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	line-height:40px;
+	text-align:center;
+	display:none;
+}
+.book-pic a:hover span{
+	display:block;
+}
+
+
+.book-pic2 a{
+	width:197px;
+	height:180px;
+    display:block;
+	border:1px solid #ccc;
+}
+.book-pic2 a:hover{
+	border:2px solid #C03;
+}
+.book-pic2 a span{
+    position:relative;
+    top:-180px;
+	z-index:50;
+	bottom:2px;
+	left:0px;
+	width:200px;
+	height:180px;
+	filter:alpha(Opacity=50);-moz-opacity:0.7;opacity: 0.7;
+	font:20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	background:#000;
+	color:#fff;
+	line-height:40px;
+	text-align:center;
+	display:none;
+}
+.book-pic2 a:hover span{
+	display:block;
+}
+
+.book-pic3 a{
+	width:197px;
+	height:180px;
+    display:block;
+	border:1px solid #ccc;
+}
+.book-pic3 a:hover{
+	border:2px solid #C03;
+}
+.book-pic3 a span{
+    position:relative;
+    top:-180px;
+	z-index:50;
+	bottom:2px;
+	left:0px;
+	width:200px;
+	height:180px;
+	filter:alpha(Opacity=50);-moz-opacity:0.7;opacity: 0.7;
+	font:20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	background:#000;
+	color:#fff;
+	line-height:40px;
+	text-align:center;
+	display:none;
+}
+.book-pic3 a:hover span{
+	display:block;
+}
+.book-sale{
+	position:absolute;
+	top:50px;
+	left:990px;
+	width:280px;
+	height:100px;
+	background:#58e8e6;
+	text-align:center;
+}
+.sale-title{
+	position:relative;
+	top:20%;
+	color:#e88f75;
+	font:40px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.back{
+	position:relative;
+	top:-903px;
+}
+.forword{
+	position:relative;
+	top:-953px;
+	left:320px;
+}
