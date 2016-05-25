@@ -29,11 +29,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
-    <th scope="col"><input type="text" name="sufertyfeid"></th>
+    <th scope="col"><input type="text" name="supertypeid"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">专题</th>
-    <th scope="col"><input type="text" name="subtyferid"></th>
+    <th scope="col"><input type="text" name="subtypeid"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">书名</th>
@@ -74,11 +74,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <th scope="col" width="30%" height="50px">时间</th>
     <th scope="col"><input type="text" name="intime"></th>
-  </tr>
-  
-  <tr>
-    <th scope="col" width="30%" height="50px">特别推荐</th>
-    <th scope="col"><input type="text" name="speciabook"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图书数量</th>

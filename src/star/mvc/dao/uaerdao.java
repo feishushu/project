@@ -55,23 +55,6 @@ public class uaerdao {
 		boolean bean = false;
 
 		con = oracle_link.oraclesql();
-			
-		/*Date date = null;
-=======
-
-		Date date = null;
->>>>>>> Stashed changes
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			date = format.parse(birthday);
-		} catch (ParseException e) {
-<<<<<<< Updated upstream
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-		}*/
-			
-	
-
 		String sql = "insert into book_user(uname,password,truename,mphone,sex,birthday,email) values(?,?,?,?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);

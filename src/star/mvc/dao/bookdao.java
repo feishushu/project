@@ -141,10 +141,10 @@ public class bookdao {
 		return detailList;
 	}
 
-	/**
-	 * this is a test function that insert a pic in table "book"
-	 */
-	public static boolean addMsgBylocal(String BOOKID, String PICTURE) {
+	public static boolean addMsg(String bookid, String superid,
+			String subid, String bookname, String isbn, String introduce,
+			String price, String nowprice, String pages, String publisher,
+			String author, String intime, String booknum, String location) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -153,8 +153,32 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			int i = stmt
-					.executeUpdate("insert into book(bookid,picture) values('"
-							+ BOOKID + "','" + PICTURE + "')");
+					.executeUpdate("insert into book(bookid,supertypeid,subtypeid,bookname,isbn,introduce,price,nowprice,picture,pages,publisher,author,intime,booknum) values('"
+							+ bookid
+							+ "','"
+							+ superid
+							+ "','"
+							+ subid
+							+ "','"
+							+ bookname
+							+ "','"
+							+ isbn
+							+ "','"
+							+ introduce
+							+ "','"
+							+ price
+							+ "','"
+							+ nowprice
+							+ "','"
+							+ location
+							+ "','"
+							+ pages
+							+ "','"
+							+ publisher
+							+ "','"
+							+ author
+							+ "','"
+							+ intime + "','" + booknum + "')");
 			if (i > 0) {
 				flag = true;
 			}
@@ -167,31 +191,31 @@ public class bookdao {
 		return flag;
 	}
 
-	public static ArrayList getPicByID(String BOOKID) {
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		ArrayList detailList = new ArrayList();
-		try {
-			con = oracle_link.oraclesql();
-			stmt = con.createStatement();
-			rs = stmt
-					.executeQuery("select bookid,picture from book where bookid='"
-							+ BOOKID + "'");
-			while (rs.next()) {
-				book b = new book();
-				b.setBookid(rs.getString(1));
-				b.setPicture(rs.getString(2));
-				detailList.add(b);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		} finally {
-			oracle_link.close(con, stmt, rs);
-		}
-		return detailList;
-	}
+//	public static ArrayList getPicByID(String BOOKID) {
+//		Connection con = null;
+//		Statement stmt = null;
+//		ResultSet rs = null;
+//		ArrayList detailList = new ArrayList();
+//		try {
+//			con = oracle_link.oraclesql();
+//			stmt = con.createStatement();
+//			rs = stmt
+//					.executeQuery("select bookid,picture from book where bookid='"
+//							+ BOOKID + "'");
+//			while (rs.next()) {
+//				book b = new book();
+//				b.setBookid(rs.getString(1));
+//				b.setPicture(rs.getString(2));
+//				detailList.add(b);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return null;
+//		} finally {
+//			oracle_link.close(con, stmt, rs);
+//		}
+//		return detailList;
+//	}
 
 	public static ArrayList searchMsgBystring(String key) {
 		Connection con = null;
@@ -203,11 +227,19 @@ public class bookdao {
 			stmt = con.createStatement();
 			rs = stmt
 					.executeQuery("select bookid, bookname, isbn, introduce, publisher, author from book where "
-							+ "bookname like '%"+key+"%' or "
-							+ "isbn like '%"+key+"%' or "
-							+ "introduce like '%"+key+"%' or "
-							+ "publisher like '%"+key+"%' or "
-							+ "author like '%"+key+"%'");
+							+ "bookname like '%"
+							+ key
+							+ "%' or "
+							+ "isbn like '%"
+							+ key
+							+ "%' or "
+							+ "introduce like '%"
+							+ key
+							+ "%' or "
+							+ "publisher like '%"
+							+ key
+							+ "%' or "
+							+ "author like '%" + key + "%'");
 			while (rs.next()) {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));

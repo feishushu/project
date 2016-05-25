@@ -18,22 +18,36 @@ import com.jspsmart.upload.SmartUpload;
 @WebServlet("/addbook")
 public class servlet_addbook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public servlet_addbook() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public servlet_addbook() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
-		String ID = null;
+
+		String bookid = null;
+		String superid = null;
+		String subid = null;
+		String bookname = null;
+		String isbn = null;
+		String introduce = null;
+		String price = null;
+		String nowprice = null;
+		String pages = null;
+		String publisher = null;
+		String author = null;
+		String intime = null;
+		String booknum = null;
 		String location = null;
 		boolean a = false;
 		SmartUpload su = new SmartUpload();
@@ -44,23 +58,38 @@ public class servlet_addbook extends HttpServlet {
 			su.upload();
 			su.save("/uploadpic");
 			com.jspsmart.upload.File file = su.getFiles().getFile(0);
-			location = "uploadpic/"
-					+ file.getFilePathName().toString();
-			ID = "1";
-			System.out.println(ID);
-			a = bookservice.addpic(ID, location);
+			location = "uploadpic/" + file.getFilePathName().toString();
+			bookid = su.getRequest().getParameter("bookid");
+			superid = su.getRequest().getParameter("supertypeid");
+			subid = su.getRequest().getParameter("subtypeid");
+			bookname = su.getRequest().getParameter("bookname");
+			isbn = su.getRequest().getParameter("isbn");
+			introduce = su.getRequest().getParameter("introduce");
+			price = su.getRequest().getParameter("price");
+			nowprice = su.getRequest().getParameter("nowprice");
+			pages = su.getRequest().getParameter("pages");
+			publisher = su.getRequest().getParameter("publisher");
+			author = su.getRequest().getParameter("author");
+			intime = su.getRequest().getParameter("intime");
+			booknum = su.getRequest().getParameter("booknum");
+			// System.out.println(bookid+superid+subid+bookname+isbn+introduce+price+nowprice+pages+publisher+author+intime+booknum);
+			a = bookservice.addMsg(bookid, superid, subid, bookname, isbn,
+					introduce, price, nowprice, pages, publisher, author,
+					intime, booknum, location);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if( a ){
-			response.sendRedirect("showpic");
+		if (a) {
+			response.sendRedirect("first.jsp");
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
