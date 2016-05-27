@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="shop.jsp"><div class="caidan-shop">我的购物</div></a>
+   <div class="caidan-shop"><a href="shop.jsp">我的购物</a></div></a>
  </ul>
 </div>
 	

@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <html>
   <body>
-  <h3 class="title">s t a r b o o k s管理员</h3>
+  <h3 class="title">s t a r b o o k s增加书籍</h3>
   <form action="addbook" method="post" name=form ENCTYPE="multipart/form-data">
   
   <table width="50%" height="50%" border="1" class="manage" align="center">

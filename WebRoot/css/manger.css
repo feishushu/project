@@ -1,0 +1,120 @@
+@CHARSET "US-ASCII";
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.top{
+    background:#353636;
+    width: 100%;
+    height: 50px;
+}
+.people{
+    cursor:pointer;
+    border-left:1px solid #424242;
+    width: 130px;
+    height: 100%;
+    float: right;
+    line-height:50px;
+    color:white;
+}
+.people:hover{
+    text-decoration: none;
+    background: #3E3E3E;
+}
+
+.manger_menu{
+    position:absolute;
+    float: left;
+    min-height: 90%;
+    box-shadow: 0 0 10px #BDBDBD;
+    width: 200px;
+    background: #f7f5fa;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-left:5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+#menu{
+    padding: 10px;
+    list-style: none;
+    line-height: 35px;
+    border-radius: 5px;
+    color: #888 !important;
+}
+#menu ul{
+    list-style: none;
+    background: rgba(255,255,255,.5);
+}
+#menu li{
+    color: #888;
+}
+.selected{
+     background: #eee;
+     border-color: #d5d5d5;
+     color: #000;
+     border-bottom-right-radius: 0;
+     border-bottom-left-radius: 0;
+ }
+.selected>a{
+    border: transparent solid 1px;
+    border-radius: 3px;
+    background: #eee;
+    border-color: #d5d5d5;
+    color: #000!important;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#menu a{
+    text-decoration: none;
+}
+#menu a:hover{
+    text-decoration: none;
+}
+#menu>li>a {
+    font-weight: 700;
+
+    display: block;
+    color:#888;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+
+}
+#menu li ul{
+    background: #fff;
+    border: #eee solid 1px;
+    font-size: 12px;
+    color:#8d8d8d;
+}
+.tab ul{
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+.tab a{
+    border-radius: 3px;
+}
+.tab a:hover{
+    background: #0da7e6;
+    color: #000 !important;
+}
+.tab a i{
+    opacity: .5;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.tab ul a{
+    color: #888;
+    display: block;
+}
+.tab ul a:hover{
+    background: #0da7e6;
+    color: #000;
+}
+.web{
+    margin-left: 210px;
+    padding-left: 10px;
+    padding-top: 5px;
+    height: 90%;
+    min-height: 90%;
+    overflow:auto;
+}
