@@ -43,14 +43,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a> <i></i>书籍管理</a>
                 <ul>
                     <li><a href="addbook.jsp" target="menuFrame"><i></i>增加书籍</a></li>
-                    <li><a href="1" target="menuFrame"><i></i>修改书籍</a></li>
-                    <li><a href="1" target="menuFrame"><i></i>删除书籍</a></li>
+                    <li><a href="renewbook.jsp" target="menuFrame"><i></i>修改书籍</a></li>
+                    <li><a href="del.jsp" target="menuFrame"><i></i>删除书籍</a></li>
+                   
                 </ul>
             </li><br>
             <li class="tab">
                 <a> <i></i>折扣管理</a>
                 <ul>
-                    <li><a href="1" target="menuFrame"><i></i>修改折扣</a></li>
+                    <li><a href="sale.jsp" target="menuFrame"><i></i>修改折扣</a></li>
                 </ul>
             </li>
             
