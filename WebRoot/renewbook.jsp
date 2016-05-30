@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <th scope="col" width="200" height="30">123</th>
     <th scope="col" width="200" height="30">123</th>
     <th scope="col" width="200" height="30">123</th>
-    <th scope="col" width="200" height="30"><input type="submit" name="submit" value="修改"></th>
+    <th scope="col" width="200" height="30"><INPUT name="renewbook" type="button" value="修改书籍" onClick="location.href='renewbook2.jsp'"></th>
   </tr>
   </table>
   <div class="notfound" width="100" height="30">---------------未找到相关书籍!---------------</div>

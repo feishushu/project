@@ -33,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <th scope="col" bgcolor="FFDAB9" width="200">书名</th>
     <th scope="col" bgcolor="f12339" width="200">数量</th>
     <th scope="col" bgcolor="FFEBCD" width="200">价格</th>
+    <th scope="col" bgcolor="e91e6f" width="200">折扣价格</th>
     <th scope="col" bgcolor="FAFAFA" width="200">相关操作</th>
   </tr>
    <tr>
@@ -40,7 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <th scope="col" width="200" height="30">123</th>
     <th scope="col" width="200" height="30">123</th>
     <th scope="col" width="200" height="30">123</th>
-    <th scope="col" width="200" height="30"><input type="submit" name="submit" value="修改折扣"></th>
+     <th scope="col" width="200" height="30">123</th>
+    <th scope="col" width="200" height="30"><INPUT name="sale" type="button" value="修改折扣" onClick="location.href='sale2.jsp'"></th>
   </tr>
   </table>
   <div class="notfound" width="100" height="30">---------------未找到相关书籍!---------------</div>
