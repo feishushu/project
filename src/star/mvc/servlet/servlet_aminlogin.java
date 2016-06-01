@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import star.mvc.service.adminservice;
 
@@ -47,7 +48,7 @@ public class servlet_aminlogin extends HttpServlet {
 		String aname 	= request.getParameter("aname");
 		String password = request.getParameter("password");
 		
-		System.out.println(aname+" "+ password);
+		HttpSession session = request.getSession();
 		
 		String data = adminservice.getSingleMsg(aname, "password");
 		
@@ -57,8 +58,10 @@ public class servlet_aminlogin extends HttpServlet {
 			out.println("</script>");
 		}
 		if(data.equals(password)){
+			session.setAttribute("aminlogin", aname);
+			
 			out.println("<script language = javascript>alert('Login Successful!');");
-			out.print("window.location.href='index.jsp'");
+			out.print("window.location.href='manger.jsp'");
 			out.println("</script>");
 		}else{
 			out.println("<script language = javascript>alert('password error!');");

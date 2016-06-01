@@ -21,7 +21,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 
   </head>
-  
+  <%if(session.getAttribute("aminlogin") == null){%>
+  	<script type="text/javascript">
+  		alert('Login administrator account');
+  		window.location.href='admin_login.jsp';
+  	</script>
+  <%} %>
   <body><!-- 顶部内容 -->
     <div class="top">
     	<div style="float: left">
@@ -30,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     	
     	<div id="people" class="people">
-    		<span>管理员:XXX</span>
+    		<span>管理员:<%=session.getAttribute("aminlogin") %></span>
     	</div>
     </div>
     
