@@ -59,13 +59,15 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select picture,nowprice,bookname from book where supertypeid='"
+					.executeQuery("select picture,nowprice,introduce,bookname,bookid from book where supertypeid='"
 							+ supertypeid + "'");
 			while (rs.next()) {
 				book b = new book();
 				b.setPicture(rs.getString("picture"));
 				b.setNowprice(rs.getString("nowprice"));
+				b.setIntroduce(rs.getString("introduce"));
 				b.setBookname(rs.getString("bookname"));
+				b.setBookid(rs.getString("bookid"));
 				supertypeList.add(b);
 			}
 		} catch (Exception e) {
@@ -87,13 +89,15 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select picture,nowprice,bookname from book where subtypeid='"
+					.executeQuery("select picture,nowprice,introduce,bookname,bookid from book where subtypeid='"
 							+ subtypeid + "'");
 			while (rs.next()) {
 				book b = new book();
 				b.setPicture(rs.getString("picture"));
 				b.setNowprice(rs.getString("nowprice"));
+				b.setIntroduce(rs.getString("introduce"));
 				b.setBookname(rs.getString("bookname"));
+				b.setBookid(rs.getString("bookid"));
 				subtypeList.add(b);
 			}
 		} catch (Exception e) {

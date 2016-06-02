@@ -25,4 +25,12 @@ public class bookservice {
 	public static ArrayList getAllMsgByBook(String bookid) {
 		return bookdao.getAllMsgByBookID(bookid);
 	}
+	
+	public static ArrayList getMsgBySuperID(String supertypeid){
+		return bookdao.getMsgBySuperID(supertypeid);
+	}
+	
+	public static ArrayList getMsgBySubID(String subtypeid){
+		return bookdao.getMsgBySubID(subtypeid);
+	}
 }

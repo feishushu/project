@@ -1,7 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,star.mvc.modle.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -63,32 +65,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 	
     <div class="bookshow" style="border:1px solid #000">
-    	<div class="hello"><div class="hello-title">首页 -- >XXX</div><div class="hello-word">您好！123 这里是您要的分类</div></div>
+    	<div class="hello"><div class="hello-title">首页 -- ><%=session.getAttribute("-->") %></div><div class="hello-word">您好！123 这里是您要的分类</div></div>
     	<!-- 第一排 -->
-    	<div class="book-pic" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>简介：实打实的是打算打算打打打实打实的</span></a>
+    	<%if(booktype != null){ 
+    		String pic = null;
+    		int i = 1, j = 1;
+    		for(book type:booktype){
+    			pic = "book-pic"+String.valueOf(i);
+    			
+    			if(j % 4 == 0)
+    				i ++;
+    	%>
+    	<div class=<%=pic %> style="border:1px solid #000"><a href="getAllMsgByBook?bookid=<%=type.getBookid() %>"><img src=<%=type.getPicture() %> width="200" height="180"><span>简介：<%=type.getIntroduce() %></span></a>
     		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
+    		<div class="title-price" style="border:1px solid #000">价格：<%=type.getNowprice() %></div>
+    		<div class="title-detail" style="border:1px solid #000">作者：<%=type.getBookname() %></div>
     		</div>
     	</div>
-    	<div class="book-pic" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>erer</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>erer</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>rtrt</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
+    	<%j++;} }%>
     	<!-- 第二排 -->
     	<div class="book-pic2" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>fddf</span></a>
     		<div class="title" style="border:1px solid #000">

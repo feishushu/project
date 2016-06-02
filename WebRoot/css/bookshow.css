@@ -95,7 +95,7 @@
 	left:320px;
 	top:-30px;
 }
-.book-pic{
+.book-pic1{
 	position:relative;
 	top:5px;
 	width:200px;
@@ -150,16 +150,16 @@
 	color:black;
 	font:18px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
 }
-.book-pic a{
+.book-pic1 a{
 	width:197px;
 	height:180px;
     display:block;
 	border:1px solid #ccc;
 }
-.book-pic a:hover{
+.book-pic1 a:hover{
 	border:2px solid #C03;
 }
-.book-pic a span{
+.book-pic1 a span{
     position:relative;
     top:-180px;
 	z-index:50;
@@ -175,7 +175,7 @@
 	text-align:center;
 	display:none;
 }
-.book-pic a:hover span{
+.book-pic1 a:hover span{
 	display:block;
 }
 

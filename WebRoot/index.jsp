@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,star.mvc.modle.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*,star.mvc.modle.*" contentType="text/html; charset=utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -89,15 +89,15 @@ ul,li,dl,dt,dd{
 	<img src="picture/home-bg1.png" width="1280" height="702">
 	<div class="nav">
 		<ul>
-			<li><a class="tooltip tooltip-effect-1" href="index.jsp#page1">��ҳ<span class="tooltip-content"><i class="fa fa-fw fa-home"></i></span></a></li>
-			<li><a class="tooltip tooltip-effect-4" href="index.jsp#page2">ͼ�����<span class="tooltip-content"><i class="fa fa-fw fa-folder-open"></i></span></a></li>
-			<li><a class="tooltip tooltip-effect-5" href="index.jsp#page3">ͼ������<span class="tooltip-content"><i class="fa fa-fw fa-binoculars"></i></span></a></li>
-			<li><a class="tooltip tooltip-effect-2" href="index.jsp#page4">��������<span class="tooltip-content"><i class="fa fa-fw fa-user"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-1" href="index.jsp#page1">主页<span class="tooltip-content"><i class="fa fa-fw fa-home"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-4" href="index.jsp#page2">图书分类<span class="tooltip-content"><i class="fa fa-fw fa-folder-open"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-5" href="index.jsp#page3">图书搜索<span class="tooltip-content"><i class="fa fa-fw fa-binoculars"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-2" href="index.jsp#page4">关于我们<span class="tooltip-content"><i class="fa fa-fw fa-user"></i></span></a></li>
 		</ul>
 		
 	</div>
 	<%if(session.getAttribute("login")==null){ %>
-		<a href="login.jsp"><div class="denglu">��¼/ע��<li class="fa fa-fw fa-bank"></li></div></a>
+		<a href="login.jsp"><div class="denglu">登录/注册<li class="fa fa-fw fa-bank"></li></div></a>
 	<%}else{ %>
 		<a href="#"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
 	<%} %>
@@ -110,7 +110,7 @@ ul,li,dl,dt,dd{
 
 <table class="second" width="570" height="241" border="0" style="background-image:url()">
   <tr>
-    <th scope="col" height="30"><div class="second-class"><br>ͼ�����<li class="fa fa-fw fa-desktop"></li></div></th>
+    <th scope="col" height="30"><div class="second-class"><br>图书分类<li class="fa fa-fw fa-desktop"></li></div></th>
   
   </tr>
   
@@ -118,23 +118,23 @@ ul,li,dl,dt,dd{
   	<td>
   		<ul class="second-ul-1">
   		<br><br><br>
-  			<a href="#"><li class="1">��ʷ<li class="fa fa-fw fa-eye"></li></li></a>
-  			<a href="#"><li class="1">�ִ��Ƽ�<li class="fa fa-fw fa-rocket"></li></li></a>
-  			<a href="#"><li class="1">��������<li class="fa fa-fw fa-bus"></li></li></a>
-  			<a href="#"><li class="1">���ù���<li class="fa fa-fw fa-money"></li></li></a>
-  			<a href="#"><li class="1">ʱ�г���<li class="fa fa-fw fa-photo"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=历史&xz=1"><li class="1">历史<li class="fa fa-fw fa-eye"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=现代科技&xz=1"><li class="1">现代科技<li class="fa fa-fw fa-rocket"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=名车鉴赏&xz=1"><li class="1">名车鉴赏<li class="fa fa-fw fa-bus"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=经济管理&xz=1"><li class="1">经济管理<li class="fa fa-fw fa-money"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=时尚潮流&xz=1"><li class="1">时尚潮流<li class="fa fa-fw fa-photo"></li></li></a>
   			<br><br><br>
-  			<a href="#"><li class="1">����<li class="fa fa-fw fa-graduation-cap"></li></li></a>
-  			<a href="#"><li class="1">����ѧ<li class="fa fa-fw fa-coffee"></li></li></a>
-  			<a href="#"><li class="1">��Ϸ����<li class="fa fa-fw fa-gamepad"></li></li></a>
-  			<a href="#"><li class="1">��ѧ��Ȼ<li class="fa fa-fw fa-leaf"></li></li></a>
-  			<a href="#"><li class="1">����ר��<li class="fa fa-fw  fa-github"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=教育&xz=1"><li class="1">教育<li class="fa fa-fw fa-graduation-cap"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=社会科学&xz=1"><li class="1">社会科学<li class="fa fa-fw fa-coffee"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=游戏风云&xz=1"><li class="1">游戏风云<li class="fa fa-fw fa-gamepad"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=科学自然&xz=1"><li class="1">科学自然<li class="fa fa-fw fa-leaf"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=程序专题&xz=1"><li class="1">程序专题<li class="fa fa-fw  fa-github"></li></li></a>
   			<br><br><br>
-  			<a href="#"><li class="1">����<li class="fa fa-fw fa-heart"></li></li></a>
-  			<a href="#"><li class="1">�˶�����<li class="fa fa-fw fa-futbol-o"></li></li></a>
-  			<a href="#"><li class="1">��������<li class="fa fa-fw fa-paw"></li></li></a>
-  			<a href="#"><li class="1">���ε�ͼ<li class="fa fa-fw fa-camera"></li></li></a>
-  			<a href="#"><li class="1">�����ͥ<li class="fa fa-fw fa-group"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=心理&xz=1"><li class="1">心理<li class="fa fa-fw fa-heart"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=运动保健&xz=1"><li class="1">运动保健<li class="fa fa-fw fa-futbol-o"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=宠物世界&xz=1"><li class="1">宠物世界<li class="fa fa-fw fa-paw"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=旅游地图&xz=1"><li class="1">旅游地图<li class="fa fa-fw fa-camera"></li></li></a>
+  			<a href="servlet_bshow?subtypeid=爱情家庭&xz=1"><li class="1">爱情家庭<li class="fa fa-fw fa-group"></li></li></a>
   			
   		</ul>
   	</td>
@@ -143,13 +143,16 @@ ul,li,dl,dt,dd{
 
 <table class="third" width="280" height="700" border="0">
   <tr>
-    <th scope="col" height="233"><a href="#"><img src="picture/fasion2.jpg" width="280" height="233" class="third-img1"></a><div class="third-img1-title">ʱ��ר��</div></th>
+    <th scope="col" height="233"><a href="servlet_bshow?subtypeid=时尚&xz=2"><img src="picture/fasion2.jpg" width="280" height="233" class="third-img1"></a>
+    <div class="third-img1-title">时尚专题</div></th>
   </tr>
   <tr>
-    <td height="233"><a href="#"><img src="picture/photo2.jpg" width="280" height="233" class="third-img2"></a><div class="third-img2-title">��Ӱר��</div></td>
+    <td height="233"><a href="servlet_bshow?subtypeid=摄影&xz=2"><img src="picture/photo2.jpg" width="280" height="233" class="third-img2"></a>
+    <div class="third-img2-title">摄影专题</div></td>
   </tr>
   <tr>
-    <td height="220"><a href="#"><img src="picture/car.jpg" width="280" height="220" class="third-img3"></a><div class="third-img3-title">������־</div></td>
+    <td height="220"><a href="servlet_bshow?subtypeid=名车杂志&xz=2"><img src="picture/car.jpg" width="280" height="220" class="third-img3"></a>
+    <div class="third-img3-title">名车杂志</div></td>
   </tr>
   
 </table>
@@ -167,15 +170,15 @@ ul,li,dl,dt,dd{
 			<a href="getAllMsgByBook?bookid=<%=hots.getBookid() %>"><figure class=<%=test %>>
 			<img src=<%=hots.getPicture() %> width="170" height="170"> 
 			<figcaption>
-			<p>�ۼۣ�<%=hots.getNowprice() %></p>
-			<p>���ߣ�<%=hots.getAuthor() %></p>
-			<p>��飺<%=hots.getIntroduce() %></p>
+			<p>售价：<%=hots.getNowprice() %></p>
+			<p>作者：<%=hots.getAuthor() %></p>
+			<p>简介：<%=hots.getIntroduce() %></p>
 			</figcaption>
 			</figure></a>
 	<% i++;}}else{ %>
 		<img src="picture/tongji.jpg" width="170" height="170"> 
 		<figcaption>
-		<p>�ۼۣ�����</p>
+		<p>售价：暂无</p>
 		</figcaption>
 		</figure></a>
 	<%} %>
@@ -184,7 +187,7 @@ ul,li,dl,dt,dd{
 
 <div class="fifth">
  
-	<div class="fifth-title"><li class="fa fa-fw fa-tree"></li>������Ŀ</div>
+	<div class="fifth-title"><li class="fa fa-fw fa-tree"></li>经典书目</div>
 	<%if(SpeciaBookList != null){ 
 		String fifth = null;
 		int i = 1;
@@ -202,19 +205,19 @@ ul,li,dl,dt,dd{
 
 <div class="section section3" id="section3">
 		<form class="sc form">
-			<input type="text" placeholder="��������Ҫ���鼮" class="input">
-			<input name="search" type="submit" value="��ʼ����" class="submit">
+			<input type="text" placeholder="搜索您想要的书籍" class="input">
+			<input name="search" type="submit" value="开始搜索" class="submit">
 		</form>
  <div id="side">
 	 <ul id="side-menu">
 		 <li class="active">
-			 <a>��������</a>
+			 <a>优秀作者</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -20px;">
 				 <ul class="banner_menu_content_ul">
-					<li>��Ե</li>
-					<li>���˶�</li>
-					<li>ë��</li>
+					<li>刘缘</li>
+					<li>文潘东</li>
+					<li>毛灵</li>
 				 </ul>
 				 <ul class="banner_menu_content_ul">
 				
@@ -222,7 +225,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>����ͼ��</a>
+			 <a>火热图书</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -62px;">
 				 <ul class="banner_menu_content_ul">
@@ -238,7 +241,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>��ͼ۸�</a>
+			 <a>最低价格</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -104px;">
 				 <ul class="banner_menu_content_ul">
@@ -250,7 +253,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>������Ŀ</a>
+			 <a>经典书目</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -146px;">
 				 <ul class="banner_menu_content_ul">
@@ -258,7 +261,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>��Ҷ��ڿ�</a>
+			 <a>大家都在看</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -188px;">
 				 <ul class="banner_menu_content_ul">
@@ -266,7 +269,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>Ϊ���Ƽ�</a>
+			 <a>为您推荐</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -230px;">
 				 <ul class="banner_menu_content_ul">
@@ -274,7 +277,7 @@ ul,li,dl,dt,dd{
 			 </div>
 		 </li>
 		 <li>
-			 <a>����ר��</a>
+			 <a>旅游专题</a>
 			 <a class="banner_menu_i">&gt;</a>
 			 <div class="banner_menu_content" style="width: 600px; top: -272px;">
 				 <ul class="banner_menu_content_ul">
@@ -289,25 +292,25 @@ ul,li,dl,dt,dd{
 
 
 <div class="section section4" id="section4">
-<div class="demo-title">starbooks ������Ա</div>
+<div class="demo-title">starbooks 开发成员</div>
 <div class="demo">
     <ul>
        <li>
          <a href="#">
            <img src="picture/people.jpg" width="400" height="350">
-           <span>��Ե<br>ǰ����� ���г���Գ��ô˧����<br>��Ե̫˧��<br>��Ե̫˧��<br>��Ե̫˧��<br>��Ե̫˧��</span>
+           <span>刘缘<br>前端设计 哪有程序猿这么帅！！<br>刘缘太帅了<br>刘缘太帅了<br>刘缘太帅了<br>刘缘太帅了</span>
          </a>
        </li>
        <li>
          <a href="#">
            <img src="picture/people2.jpg" width="400" height="350">
-           <span>ë��<br>��̨����</span>
+           <span>毛灵<br>后台开发</span>
          </a>
        </li>
        <li>
          <a href="#">
            <img src="picture/people3.jpg" width="400" height="350">
-           <span>���̶�<br>null</span>
+           <span>文盘东<br>null</span>
          </a>
        </li>
     </ul>
