@@ -204,9 +204,9 @@ ul,li,dl,dt,dd{
 </div>
 
 <div class="section section3" id="section3">
-		<form class="sc form">
-			<input type="text" placeholder="搜索您想要的书籍" class="input">
-			<input name="search" type="submit" value="开始搜索" class="submit">
+		<form action="servlet_search" name="search2" method="post" class="sc form">
+			<input name= search type="text" placeholder="搜索您想要的书籍" class="input">
+			<input name="search1" type="submit" value="开始搜索" class="submit">
 		</form>
  <div id="side">
 	 <ul id="side-menu">

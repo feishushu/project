@@ -33,4 +33,8 @@ public class bookservice {
 	public static ArrayList getMsgBySubID(String subtypeid){
 		return bookdao.getMsgBySubID(subtypeid);
 	}
+	
+	public static ArrayList getsearchMsgBystring(String key){
+		return bookdao.searchMsgBystring(key);
+	}
 }
