@@ -14,7 +14,6 @@ import star.mvc.modle.book;
 
 public class bookdao {
 
-	// need fix picture
 	public static ArrayList getFlagBookMsgByname(String name) {
 		Connection con = null;
 		Statement stmt = null;
@@ -49,7 +48,6 @@ public class bookdao {
 		return bookList;
 	}
 
-	// need fix picture and page
 	public static ArrayList getMsgBySuperID(String supertypeid) {
 		Connection con = null;
 		Statement stmt = null;
@@ -79,7 +77,6 @@ public class bookdao {
 		return supertypeList;
 	}
 
-	// need fix picture and page
 	public static ArrayList getMsgBySubID(String subtypeid) {
 		Connection con = null;
 		Statement stmt = null;
@@ -231,7 +228,7 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select bookid, bookname, isbn, introduce, publisher, author from book where "
+					.executeQuery("select bookid, bookname, isbn, picture, introduce, publisher, author from book where "
 							+ "bookname like '%"
 							+ key
 							+ "%' or "
@@ -250,6 +247,7 @@ public class bookdao {
 				b.setBookid(rs.getString("bookid"));
 				b.setBookname(rs.getString("bookname"));
 				b.setIsbn(rs.getString("isbn"));
+				b.setPicture(rs.getString("picture"));
 				b.setIntroduce(rs.getString("introduce"));
 				b.setPublisher(rs.getString("publisher"));
 				b.setAuthor(rs.getString("author"));
