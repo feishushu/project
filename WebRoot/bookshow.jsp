@@ -127,12 +127,6 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
     		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
     		</div>
     	</div>
-    	<div class="book-pic3" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>rtrtd</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
     	<!-- 翻页 -->
     	<div class="page">
     	<div class="back"><a href="#"><img src="picture/back.png" width=70px height=50px></a></div>

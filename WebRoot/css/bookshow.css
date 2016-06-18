@@ -23,7 +23,7 @@
 	background:red;
 	color:#FFF;
 	margin:5px 10px;
-	font-size:12px;
+	font-size:18px;
 	display:block;
 	text-align:center;
 	text-decoration:none;
@@ -43,7 +43,7 @@
 	width:200px;
 	height:40px;
 	color:#000;
-	font: 25px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	font: 23px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
 }
 
 .bookshow{
@@ -130,7 +130,7 @@
 	width:40%;
 	height:50px;
 	left:30%;
-	top:90%;
+	top:100%;
 	
 }
 .title{

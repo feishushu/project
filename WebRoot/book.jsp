@@ -12,7 +12,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
   <head>
     <base href="<%=basePath%>">
     
-    <title>book</title>
+    <title> ÈºÆœÍ«È</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

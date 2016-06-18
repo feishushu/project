@@ -73,7 +73,7 @@ a:link,a:visited{text-decoration:none;
 
 .nav a:hover,.nav a:focus{color:#eeb7b1;}
 
-/* Tooltip */
+
 
 .tooltip {
 	display: inline;
@@ -228,7 +228,7 @@ a:link,a:visited{text-decoration:none;
 	top:5px;
 	left:240px;
 	font-size:20px;
-	
+	color:#fff;
 }
 .second-ul-1{
 	position:absolute;
@@ -239,7 +239,7 @@ a:link,a:visited{text-decoration:none;
 	position: relative;
 	margin: 0 0.5em;
 	font-size: 0.97em;
-	color:#1cb6cd;
+	color:#fff;
 }
 .second ul li:hover,.second ul li focus{
 	-webkit-transform:scale(1.5,1.5);}

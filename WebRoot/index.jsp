@@ -19,7 +19,7 @@ ArrayList<book> SpeciaBookList = (ArrayList<book>) session.getAttribute("SpeciaB
 	<link rel="stylesheet" type="text/css" href="css/search.css" />
 	<script type="text/javascript" src="js/jquery-1.4.2.main.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
-    <link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
   <style type="text/css">
   .section2{
   	background-image:url(picture/444.png);
@@ -159,8 +159,7 @@ ul,li,dl,dt,dd{
 
 
 <div class="fourth">
-	<div class="fourth-title"><li class="fa fa-fw fa-edit"></li>HOT!</div>
-	<div class="fourth-title-1">_________________</div>
+	<br>
 	<%if(HotsBookList != null){ 
 		String test = null;
 		int i =1;
@@ -187,7 +186,7 @@ ul,li,dl,dt,dd{
 
 <div class="fifth">
  
-	<div class="fifth-title"><li class="fa fa-fw fa-tree"></li>经典书目</div>
+	
 	<%if(SpeciaBookList != null){ 
 		String fifth = null;
 		int i = 1;
@@ -208,85 +207,6 @@ ul,li,dl,dt,dd{
 			<input name= search type="text" placeholder="搜索您想要的书籍" class="input">
 			<input name="search1" type="submit" value="开始搜索" class="submit">
 		</form>
- <div id="side">
-	 <ul id="side-menu">
-		 <li class="active">
-			 <a>优秀作者</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -20px;">
-				 <ul class="banner_menu_content_ul">
-					<li>刘缘</li>
-					<li>文潘东</li>
-					<li>毛灵</li>
-				 </ul>
-				 <ul class="banner_menu_content_ul">
-				
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>火热图书</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -62px;">
-				 <ul class="banner_menu_content_ul">
-				 	 <a><img src="picture/anni.jpg"></a></li>
-				 	 <a><img src="picture/caicai.jpg"></a></li>
-				 	 <a><img src="picture/guoji.jpg"></a></li>
-				 </ul>
-				 <ul class="banner_menu_content_ul">
-				 	<a><img src="picture/anni.jpg"></a></li>
-				 	<a><img src="picture/caicai.jpg"></a></li>
-				 	<a><img src="picture/caicai.jpg"></a></li>
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>最低价格</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -104px;">
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>经典书目</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -146px;">
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>大家都在看</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -188px;">
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>为您推荐</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -230px;">
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-			 </div>
-		 </li>
-		 <li>
-			 <a>旅游专题</a>
-			 <a class="banner_menu_i">&gt;</a>
-			 <div class="banner_menu_content" style="width: 600px; top: -272px;">
-				 <ul class="banner_menu_content_ul">
-				 </ul>
-			 </div>
-		 </li>
-	</lu>
- </div>
- <div class="search-pic"></div>
  <script type="text/javascript" src="js/search.js"></script>
 </div>
 
@@ -317,7 +237,7 @@ ul,li,dl,dt,dd{
  </div>
  </div>
 
-<script type="text/javascript" src="javascript.fullPage.js"></script>
+<script type="text/javascript" src="js/javascript.fullPage.js"></script>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 		'css3': true,

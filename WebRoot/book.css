@@ -1,12 +1,9 @@
-@CHARSET "US-ASCII";
-
 .book-pic{
 	position:absolute;
 	top:20px;
 	left:30px;
 	width:250px;
 	height:300px;
-	background:#000;
 }
 .book{
 	position:absolute;
@@ -215,7 +212,7 @@
 	background:red;
 	color:#FFF;
 	margin:5px 10px;
-	font-size:12px;
+	font-size:18px;
 	display:block;
 	text-align:center;
 	text-decoration:none;
@@ -236,5 +233,5 @@
 	width:200px;
 	height:40px;
 	color:#000;
-	font: 25px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	font: 23px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
 }
