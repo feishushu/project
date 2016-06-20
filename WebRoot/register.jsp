@@ -34,7 +34,7 @@ request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+pa
   </head>
   
   <body>
-    <script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 
 <div class="register_box">
 	<h3>s t a r b o o k s</h3>

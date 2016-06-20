@@ -56,7 +56,7 @@ if(cookies != null){
   </head>
   
   <body onload="createCode()">
-    <script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 
 <div class="logo_box">
 	<h3>s t a r b o o k s</h3>
@@ -68,7 +68,7 @@ if(cookies != null){
 		<div class="input">
 			<span class="us_uer"></span>
 			<label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">输入密码</label>
-			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="${password}" type="password">
+			<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="" type="password">
 		</div>
 		<div class="button""><input class="act-but submit" type="submit" value="登录" name=submit style="color: #FFFFFF">
 </div>

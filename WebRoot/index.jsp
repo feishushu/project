@@ -11,7 +11,7 @@ ArrayList<book> SpeciaBookList = (ArrayList<book>) session.getAttribute("SpeciaB
 <html>
   <head>
 	<meta charset="UTF-8">
-	<title>index</title>
+	<title>starbooks</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -45,8 +45,8 @@ ul,li,dl,dt,dd{
 }
 .demo ul li{
 	float:left;
-	width:400px;
-	margin-right:10px;
+	width:300px;
+	margin-right:120px;
 	position:relative;
 }
 .demo ul li img{
@@ -55,7 +55,7 @@ ul,li,dl,dt,dd{
 	z-index:22;
 }
 .demo ul li a{
-	width:400px;
+	width:300px;
     display:block;
 	border:2px solid #ccc;
 }
@@ -68,8 +68,8 @@ ul,li,dl,dt,dd{
 	z-index:50;
 	bottom:2px;
 	left:2px;
-	width:400px;
-	height:350px;
+	width:300px;
+	height:250px;
 	filter:alpha(Opacity=50);-moz-opacity:0.7;opacity: 0.7;
 	background:#000;
 	color:#fff;
@@ -101,7 +101,9 @@ ul,li,dl,dt,dd{
 	<%}else{ %>
 		<a href="#"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
 	<%} %>
+	<a href="#"><div class="zhuxiao">注销</div></a>
 	</div>
+	
 	
 	<div class="section section2" id="section2">
 	<div>
@@ -217,24 +219,28 @@ ul,li,dl,dt,dd{
     <ul>
        <li>
          <a href="#">
-           <img src="picture/people.jpg" width="400" height="350">
-           <span>刘缘<br>前端设计 哪有程序猿这么帅！！<br>刘缘太帅了<br>刘缘太帅了<br>刘缘太帅了<br>刘缘太帅了</span>
+           <img src="picture/people.jpg" width="300" height="250">
+           <span>刘缘</span>
          </a>
        </li>
        <li>
          <a href="#">
-           <img src="picture/people2.jpg" width="400" height="350">
-           <span>毛灵<br>后台开发</span>
+           <img src="picture/people2.jpg" width="300" height="250">
+           <span>毛灵</span>
          </a>
        </li>
        <li>
          <a href="#">
-           <img src="picture/people3.jpg" width="400" height="350">
-           <span>文盘东<br>null</span>
+           <img src="picture/people3.jpg" width="300" height="250">
+           <span>文盘东</span>
          </a>
        </li>
     </ul>
  </div>
+ <!-- 管理员登录按钮 -->
+ <a href="manger.jsp"><div class="mangerbtn">->管理员登录入口<-</div></a>
+ <!-- 简介 -->
+ <div class="jianjie">starbooks网上书城由三位成员开发。其主要功能有图书展示，图书购买和管理员系统组成。致力于为用户提供安全，快捷，方便的购书平台。</div>
  </div>
 
 <script type="text/javascript" src="js/javascript.fullPage.js"></script>

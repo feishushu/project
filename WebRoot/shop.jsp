@@ -17,13 +17,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" href="shop.css"/>
-    <script type="text/javascript" src="shop.js"></script>
+	<link rel="stylesheet" href="css/shop.css"/>
+    <script type="text/javascript" src="js/shop.js"></script>
  
     
   </head>
   
-  <body bgcolor="#91eae2">
+  <body>
   <div class="nav" id="divId">
  <ul>
    <li><a href="index.jsp#page1">首页</a></li>

@@ -1,4 +1,6 @@
-
+body{
+	background:#f9eeec;
+}
 .sc:before,.sc:after{
 	content:"";
 	display:table;

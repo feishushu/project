@@ -52,6 +52,17 @@ a:link,a:visited{text-decoration:none;
 }
 .denglu:hover,.denglu:focus{color:#eeb7b1;}
 
+.zhuxiao{
+	font-size:20;
+	color:white;
+	position:absolute;
+	top:105px;
+	left:1220px;
+}
+.zhuxiao:hover,.zhuxiao:focus{color:#eeb7b1;}
+
+
+
 .nav ul li {
 	display: inline-block;
 	position: relative;
@@ -411,7 +422,21 @@ text-align:center;
 .demo-title{
 	position:absolute;
 	top:20px;
-	left:510px;
-	font-size:33px;
+	left:500px;
+	font-size:35px;
 	color:#f2e6ca;
+}
+.mangerbtn{
+	color:#fff;
+	position:absolute;
+	left:540px;
+	font: 22px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+	top:415px;
+}
+.mangerbtn:hover,.mangerbtn:focus{color:#f2e6ca;}
+.jianjie{
+	position:absolute;
+	top:550px;
+	color:#fff;
+	left:100px;
 }

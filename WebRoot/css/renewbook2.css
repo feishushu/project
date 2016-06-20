@@ -1,7 +1,7 @@
 @CHARSET "US-ASCII";
 
  body {
- 	background:#c3f0f0;
+ 	background:#f9eeec;
  }
  .title{
  	font-size:38px;
@@ -19,3 +19,7 @@
  margin:4px 0 0 10px;
  font-size:30px;
  } 
+  tr{
+ 	background-color:#f1c7c2;
+ }
+tr:hover{ background-color:#e5f7f8}

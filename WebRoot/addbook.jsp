@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h3 class="title">s t a r b o o k s增加书籍</h3>
   <form action="addbook" method="post" name=form ENCTYPE="multipart/form-data">
   
-  <table width="50%" height="50%" border="1" class="manage" align="center">
+  <table width="50%" height="50%" border="0.8" class="manage" align="center">
   <tr>
     <th scope="col" width="30%" height="50px">图书编号</th>
     <th scope="col"><input type="text" name="bookid"></th>
