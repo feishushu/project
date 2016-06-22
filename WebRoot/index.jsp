@@ -25,7 +25,7 @@ ArrayList<book> SpeciaBookList = (ArrayList<book>) session.getAttribute("SpeciaB
   	background-image:url(picture/444.png);
   }
   .section3{
-  	background-image:url(picture/123.png);
+  	background-image:url(picture/bookbg.jpg);
   }
  .section4{
   	background-image:url(picture/444.png);
@@ -209,6 +209,39 @@ ul,li,dl,dt,dd{
 			<input name= search type="text" placeholder="搜索您想要的书籍" class="input">
 			<input name="search1" type="submit" value="开始搜索" class="submit">
 		</form>
+		
+		<!-- 字体效果 -->
+		<section class="rw-wrapper">
+		<span class="span-title"> s t a r b o o k s 网上书城</span><br><br>
+	<h2 class="rw-sentence">
+		
+		<div class="rw-words rw-words-1">
+			<br><span>网上书城</span>
+			<span>放心购买</span>
+			<span>极致体验</span>
+			<span>真诚服务</span>
+			<span>用户至上</span>
+			<span>别致阅读</span>
+		</div>
+		<div class="rw-words rw-words-2">
+			<br><span>读书是和高尚的人谈话</span>
+			<span>好的书籍，打动人心</span>
+			<span>敞开心扉，用心阅读</span>
+			<span>找到您的“黄金屋”</span>
+			<span>明镜如水，开阔视野</span>
+			<span>丰富阅历，易于人生</span>
+		</div>
+		<div class="rw-words rw-words-3">
+			<br><span><img src="picture/bookbg1.jpg" width="500px" height="280px"></span>
+			<span><img src="picture/bookbg2.jpg" width="500px" height="280px"></span>
+			<span><img src="picture/bookbg3.jpg" width="500px" height="280px"></span>
+			<span><img src="picture/bookbg4.jpeg" width="500px" height="280px"></span>
+			<span><img src="picture/bookbg5.jpg" width="500px" height="280px"></span>
+			<span><img src="picture/bookbg6.jpg" width="500px" height="280px"></span>
+		</div>
+		
+	</h2>
+</section>
  <script type="text/javascript" src="js/search.js"></script>
 </div>
 
