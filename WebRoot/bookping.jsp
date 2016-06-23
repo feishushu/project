@@ -12,7 +12,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
   <head>
     <base href="<%=basePath%>">
     
-    <title>书籍详情</title>
+    <title>书籍评价</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -20,7 +20,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="book.css">
+	<link rel="stylesheet" type="text/css" href="bookping.css">
 	<link media="screen" href="statics/grade.css" type="text/css" rel="stylesheet" /> 
 
 <script src="statics/jquery-latest.pack.js" type="text/javascript"></script> 
@@ -137,6 +137,52 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
     <div class="book-detail">书目简介
     	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
     </div>
-</div>
+    
+    <div class="book-pinglun">
+    	<div id="box"> 
+	<h4>请您评分</h4> 
+	<div class="content"> 
+		<div id="myPoint">
+			<span><big>5</big><small>.0</small></span> 
+			<div>
+				<img src="statics/star5.gif" />
+				<em>(一般)</em>
+			</div>
+		</div> 
+		<div id="doPoint"> 
+			
+			<table cellspacing="0" cellpadding="0" border="0"> 
+					<tbody> 
+						<tr> 
+							<th>故事：</th> 
+							<td><span class="star5" id="item1" v="5"><small>1</small><small>2</small><small>3</small><small>4</small><small>5</small><small>6</small><small>7</small><small>8</small><small>9</small><small>10</small></span></td> 
+							<td><strong>5</strong> <em>(一般)</em></td>
+						</tr> 
+						<tr> 
+							<th>新颖：</th> 
+							<td><span class="star5" id="item2" v="5"><small>1</small><small>2</small><small>3</small><small>4</small><small>5</small><small>6</small><small>7</small><small>8</small><small>9</small><small>10</small></span></td> 
+							<td><strong>5</strong> <em>(一般)</em></td>
+						</tr> 
+						<tr> 
+							<th>文笔：</th> 
+							<td><span class="star5" id="item3" v="5"><small>1</small><small>2</small><small>3</small><small>4</small><small>5</small><small>6</small><small>7</small><small>8</small><small>9</small><small>10</small></span></td> 
+							<td><strong>5</strong> <em>(一般)</em></td>
+						</tr>
+					</tbody>
+			</table>
+		</div> 
+		<form id="form1" name="form1" action="" method="get">
+			<input id="pointV1" type="hidden" value="5" name="pointV1" /> 
+			<input id="pointV2" type="hidden" value="5" name="pointV2" /> 
+			<input id="pointV3" type="hidden" value="5" name="pointV3" /> 
+			<label>你的评论：<textarea id="content" name="content" rows="5" cols="50"></textarea></label>
+			<button type="submit">提交</button> 
+		</form>
+	</div>
+</div>  
+    	
+    </div>
+  </div>
+  
   </body>
 </html>

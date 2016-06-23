@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table width="50%" height="50%" border="0.8" class="manage" align="center">
   <tr>
     <th scope="col" width="30%" height="50px">图书编号</th>
-    <th scope="col"><input type="text" name="bookid"></th>
+    <th scope="col"><p>123</p></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
-    <th scope="col"><input type="FILE" name="FILE1"></th>
+    <th scope="col"><img src="picture/b1.jpg" width="60px" height="58px"><input type="FILE" name="FILE1"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">页数</th>

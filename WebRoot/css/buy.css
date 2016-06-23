@@ -1,0 +1,56 @@
+
+.nav{
+	z-index:999;
+	width:1260px;
+	height:40px;
+	background:#d7f4db;
+	top:0px;
+}
+.nav ul{
+	width:980px;
+	margin:0px auto;
+	height:38px;
+	padding:0;
+	list-style:none;
+}
+.nav ul li{
+	float:left;
+}
+.nav ul li a{
+	width:80px;
+	height:28px;
+	line-height:28px;
+	background:red;
+	color:#FFF;
+	margin:5px 10px;
+	font-size:18px;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+}
+.nav ul li a:hover{
+	width:78px;
+	height:26px;
+	line-height:28px;
+	border:1px solid red;
+	color:red;
+	background:#FFF;
+}
+
+.caidan-shop{
+	position:relative;
+	top:-35px;
+	left:950px;
+	width:200px;
+	height:40px;
+	color:#000;
+	font: 23px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.buy-title{
+	text-align:center;
+	font-size:30px;
+}
+.pic:hover,.pic focus{
+	-webkit-transform:scale(2,2);
+}
+tr:hover{ background-color:#e5f7f8}
