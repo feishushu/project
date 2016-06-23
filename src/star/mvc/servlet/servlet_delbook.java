@@ -47,11 +47,11 @@ public class servlet_delbook extends HttpServlet {
 		
 		if(bookservice.delBookbyID(bookid)){
 			out.println("<script language = javascript>alert('cheng gong delete');");
-			out.print("window.location.href='manger.jsp'");
+			out.print("window.location.href='manger-main.jsp'");
 			out.println("</script>");
 		}
 		out.println("<script language = javascript>alert('delete shi bai');");
-		out.print("window.location.href='manger.jsp'");
+		out.print("window.location.href='manger-main.jsp'");
 		out.println("</script>");
 		
 		out.flush();
