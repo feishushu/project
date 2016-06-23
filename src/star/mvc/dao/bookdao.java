@@ -228,7 +228,7 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select bookid, bookname, isbn, picture, introduce, publisher, author from book where "
+					.executeQuery("select bookid, bookname, isbn, picture, nowprice, introduce, publisher, author from book where "
 							+ "bookname like '%"
 							+ key
 							+ "%' or "
@@ -248,6 +248,7 @@ public class bookdao {
 				b.setBookname(rs.getString("bookname"));
 				b.setIsbn(rs.getString("isbn"));
 				b.setPicture(rs.getString("picture"));
+				b.setNowprice(rs.getString("nowprice"));
 				b.setIntroduce(rs.getString("introduce"));
 				b.setPublisher(rs.getString("publisher"));
 				b.setAuthor(rs.getString("author"));
