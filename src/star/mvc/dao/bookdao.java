@@ -223,7 +223,6 @@ public class bookdao {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
 		ArrayList dataList = new ArrayList();
 		try {
 			con = oracle_link.oraclesql();
@@ -253,6 +252,44 @@ public class bookdao {
 				b.setIntroduce(rs.getString("introduce"));
 				b.setPublisher(rs.getString("publisher"));
 				b.setAuthor(rs.getString("author"));
+				dataList.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return dataList;
+	}
+	
+	public static ArrayList admSearchMsgBystring(String key) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList dataList = new ArrayList();
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			rs = stmt
+					.executeQuery("select bookid, bookname, booknum, price, nowprice from book where "
+							+ "bookname like '%"
+							+ key
+							+ "%' or "
+							+ "bookid like '%"
+							+ key
+							+ "%' or "
+							+ "publisher like '%"
+							+ key
+							+ "%' or "
+							+ "author like '%" + key + "%'");
+			while (rs.next()) {
+				book b = new book();
+				b.setBookid(rs.getString("bookid"));
+				b.setBookname(rs.getString("bookname"));
+				b.setIsbn(rs.getString("booknum"));
+				b.setPicture(rs.getString("price"));
+				b.setNowprice(rs.getString("nowprice"));
 				dataList.add(b);
 			}
 		} catch (Exception e) {
