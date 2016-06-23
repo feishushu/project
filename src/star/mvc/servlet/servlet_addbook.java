@@ -83,7 +83,7 @@ public class servlet_addbook extends HttpServlet {
 				intime, booknum, location);
 		
 		if (a) {
-			response.sendRedirect("first.jsp");
+			response.sendRedirect("manger-main.jsp");
 		}
 	}
 
