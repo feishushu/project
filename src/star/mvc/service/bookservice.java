@@ -37,4 +37,20 @@ public class bookservice {
 	public static ArrayList getsearchMsgBystring(String key){
 		return bookdao.searchMsgBystring(key);
 	}
+	
+	public static ArrayList getadmsearchMsgBystring(String key){
+		return bookdao.searchMsgBystring(key);
+	}
+	
+	public static boolean UpdateNowbook(){
+		return true;
+	}
+	
+	public static boolean UpdateNowprice(String bookid,String nowprice){
+		return bookdao.UpdateNowprice(bookid,nowprice);
+	}
+	
+	public static boolean delBookbyID(String id){
+		return bookdao.delBookbyID(id);
+	}
 }

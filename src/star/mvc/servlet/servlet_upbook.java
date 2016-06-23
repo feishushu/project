@@ -2,24 +2,18 @@ package star.mvc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import star.mvc.modle.book;
-import star.mvc.service.bookservice;
-
-public class servlet_search extends HttpServlet {
+public class servlet_upbook extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_search() {
+	public servlet_upbook() {
 		super();
 	}
 
@@ -43,28 +37,16 @@ public class servlet_search extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
-		request.setCharacterEncoding("utf-8");
-		
-		HttpSession session = request.getSession();
-		String search = request.getParameter("search");
-		
-		ArrayList List = bookservice.getsearchMsgBystring(search);
-		
-		session.setAttribute("-->", "ËÑË÷");
-		
-		if(List.size() != 0){
-			session.setAttribute("booktype", List);
-			response.sendRedirect("bookshow.jsp");
-		}else{
-			session.setAttribute("booktype", null);
-			response.sendRedirect("bookshow.jsp");
-		}
-		
-		out.println("<script language = javascript>alert('search erry!');");
-		out.print("window.location.href='index.jsp#page3'");
+		/*
+		 * 
+		 * huo qu biao dan xin xi
+		 * 
+		 * */
+		out.println("<script language = javascript>alert('xiu gai shu ji cheng gong');");
+		out.print("window.location.href='manger.jsp'");
 		out.println("</script>");
 		
 		out.flush();

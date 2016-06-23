@@ -222,7 +222,7 @@ public class bookdao {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		System.out.println(key);
+		
 		ArrayList dataList = new ArrayList();
 		try {
 			con = oracle_link.oraclesql();

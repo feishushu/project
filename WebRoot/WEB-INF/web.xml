@@ -54,6 +54,41 @@
     <servlet-name>servlet_search</servlet-name>
     <servlet-class>star.mvc.servlet.servlet_search</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_upbook</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_upbook</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_delbook</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_delbook</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_sale</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_sale</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_admsearch</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_admsearch</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_getbook</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_getbook</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -93,6 +128,26 @@
   <servlet-mapping>
     <servlet-name>servlet_search</servlet-name>
     <url-pattern>/servlet_search</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_upbook</servlet-name>
+    <url-pattern>/servlet_upbook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_delbook</servlet-name>
+    <url-pattern>/servlet_delbook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_sale</servlet-name>
+    <url-pattern>/servlet_sale</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_admsearch</servlet-name>
+    <url-pattern>/servlet_admsearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_getbook</servlet-name>
+    <url-pattern>/servlet_getbook</url-pattern>
   </servlet-mapping>
     <welcome-file-list>
         <welcome-file>first.jsp</welcome-file>

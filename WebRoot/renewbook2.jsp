@@ -1,7 +1,8 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.util.*,star.mvc.modle.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -20,40 +21,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <body>
   <h3 class="title">s t a r b o o k s修改书籍</h3>
-  <form action="addbook" method="post" name=form ENCTYPE="multipart/form-data">
+  <form action="servlet_upbook" method="post" name=form ENCTYPE="multipart/form-data">
   
   <table width="50%" height="50%" border="0.8" class="manage" align="center">
   <tr>
     <th scope="col" width="30%" height="50px">图书编号</th>
-    <th scope="col"><input type="text" name="bookid"></th>
+    <th scope="col"><input type="text" name="bookid" value=<%=uplist.get(0).getBookid() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
-    <th scope="col"><input type="text" name="supertypeid"></th>
+    <th scope="col"><input type="text" name="supertypeid" value=<%=uplist.get(0).getSupertypeid() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">专题</th>
-    <th scope="col"><input type="text" name="subtypeid"></th>
+    <th scope="col"><input type="text" name="subtypeid" value=<%=uplist.get(0).getSubtypeid() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">书名</th>
-    <th scope="col"><input type="text" name="bookname"></th>
+    <th scope="col"><input type="text" name="bookname" value=<%=uplist.get(0).getBookname() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">ISBN</th>
-    <th scope="col"><input type="text" name="isbn"></th>
+    <th scope="col"><input type="text" name="isbn" value=<%=uplist.get(0).getIsbn() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">介绍</th>
-    <th scope="col"><input type="text" name="introduce"></th>
+    <th scope="col"><input type="text" name="introduce" value=<%=uplist.get(0).getIntroduce() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">价格</th>
-    <th scope="col"><input type="text" name="price"></th>
+    <th scope="col"><input type="text" name="price" value=<%=uplist.get(0).getPrice() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">现在价格</th>
-    <th scope="col"><input type="text" name="nowprice"></th>
+    <th scope="col"><input type="text" name="nowprice" value=<%=uplist.get(0).getNowprice() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
@@ -61,23 +62,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">页数</th>
-    <th scope="col"><input type="text" name="pages"></th>
+    <th scope="col"><input type="text" name="pages" value=<%=uplist.get(0).getPages() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">出版商</th>
-    <th scope="col"><input type="text" name="publisher"></th>
+    <th scope="col"><input type="text" name="publisher" value=<%=uplist.get(0).getPublisher() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">作者</th>
-    <th scope="col"><input type="text" name="author"></th>
+    <th scope="col"><input type="text" name="author" value=<%=uplist.get(0).getAuthor() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">时间</th>
-    <th scope="col"><input type="text" name="intime"></th>
+    <th scope="col"><input type="text" name="intime" value=<%=uplist.get(0).getIntime() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图书数量</th>
-    <th scope="col"><input type="text" name="booknum"></th>
+    <th scope="col"><input type="text" name="booknum" value=<%=uplist.get(0).getBooknum() %>></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">热门书籍</th>

@@ -79,59 +79,20 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
     	<div class=<%=pic %> style="border:1px solid #000"><a href="getAllMsgByBook?bookid=<%=type.getBookid() %>"><img src=<%=type.getPicture() %> width="200" height="180"><span>简介：<%=type.getIntroduce() %></span></a>
     		<div class="title" style="border:1px solid #000">
     		<div class="title-price" style="border:1px solid #000">价格：<%=type.getNowprice() %></div>
-    		<div class="title-detail" style="border:1px solid #000">作者：<%=type.getBookname() %></div>
+    		<div class="title-detail" style="border:1px solid #000">作者：<%=type.getAuthor() %></div>
     		</div>
     	</div>
-    	<%j++;} }%>
-    	<!-- 第二排 -->
-    	<div class="book-pic2" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>fddf</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic2" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>fdf</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic2" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>wer</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic2" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>yuyu</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<!-- 第三排 -->
-    	<div class="book-pic3" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>ff</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic3" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>vcv</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<div class="book-pic3" style="border:1px solid #000"><a href="#"><img src="picture/b1.jpg" width="200" height="180"><span>cvsd</span></a>
-    		<div class="title" style="border:1px solid #000">
-    		<div class="title-price" style="border:1px solid #000">价格：￥10.00</div>
-    		<div class="title-detail" style="border:1px solid #000">作者：刘缘</div>
-    		</div>
-    	</div>
-    	<!-- 翻页 -->
-    	<div class="page">
-    	<div class="back"><a href="#"><img src="picture/back.png" width=70px height=50px></a></div>
-    	<div class="forword"><a href="#"><img src="picture/forward.png" width=70px height=50px></a></div>
-    	</div>
+    	<%j++;} %>
+			<!-- 翻页 -->
+    		<div class="page">
+    		<div class="back"><a href="#"><img src="picture/back.png" width=70px height=50px></a></div>
+    		<div class="forword"><a href="#"><img src="picture/forward.png" width=70px height=50px></a></div>
+    		</div>    	
+    	<%}else{%>
+    		
+    	<%} %>
+    	
+    	
     </div>
     <div class="book-sale"><div class="sale-title">S A L E</div></div>
     <table class="third" width="280" height="700" border="0">

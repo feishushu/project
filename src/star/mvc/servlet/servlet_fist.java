@@ -44,21 +44,24 @@ public class servlet_fist extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session = request.getSession();
+		String zhuxiao = request.getParameter("zhuxiao");
+		
 		session.setAttribute("login", null);
-		
-		ArrayList HotsBookList = bookservice.getHotsBook("hotsbook");
-		ArrayList SpeciaBookList = bookservice.getHotsBook("speciabook");
-		
-		if(HotsBookList != null){
-			session.setAttribute("HotsBookList", HotsBookList);
-		}else{
-			session.setAttribute("HotsBookList", null);
-		}
-		
-		if(SpeciaBookList != null){
-			session.setAttribute("SpeciaBookList", SpeciaBookList);
-		}else{
-			session.setAttribute("SpeciaBookList", null);
+		if(zhuxiao == null){
+			ArrayList HotsBookList = bookservice.getHotsBook("hotsbook");
+			ArrayList SpeciaBookList = bookservice.getHotsBook("speciabook");
+			
+			if(HotsBookList != null){
+				session.setAttribute("HotsBookList", HotsBookList);
+			}else{
+				session.setAttribute("HotsBookList", null);
+			}
+			
+			if(SpeciaBookList != null){
+				session.setAttribute("SpeciaBookList", SpeciaBookList);
+			}else{
+				session.setAttribute("SpeciaBookList", null);
+			}
 		}
 		
 		response.sendRedirect("index.jsp");

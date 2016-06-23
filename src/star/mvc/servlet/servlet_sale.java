@@ -2,24 +2,21 @@ package star.mvc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import star.mvc.modle.book;
+import star.mvc.common.sale_price;
 import star.mvc.service.bookservice;
 
-public class servlet_search extends HttpServlet {
+public class servlet_sale extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_search() {
+	public servlet_sale() {
 		super();
 	}
 
@@ -46,25 +43,19 @@ public class servlet_search extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		request.setCharacterEncoding("utf-8");
+		String bookid = request.getParameter("bookid");
+		String price  = request.getParameter("price");
+		String sale   = request.getParameter("nowprice");
 		
-		HttpSession session = request.getSession();
-		String search = request.getParameter("search");
+		String nowprice = sale_price.subsale(price, sale);
 		
-		ArrayList List = bookservice.getsearchMsgBystring(search);
-		
-		session.setAttribute("-->", "ËÑË÷");
-		
-		if(List.size() != 0){
-			session.setAttribute("booktype", List);
-			response.sendRedirect("bookshow.jsp");
-		}else{
-			session.setAttribute("booktype", null);
-			response.sendRedirect("bookshow.jsp");
+		if(bookservice.UpdateNowprice(bookid, nowprice)){
+			out.println("<script language = javascript>alert('update cheng gong');");
+			out.print("window.location.href='manger.jsp'");
+			out.println("</script>");
 		}
-		
-		out.println("<script language = javascript>alert('search erry!');");
-		out.print("window.location.href='index.jsp#page3'");
+		out.println("<script language = javascript>alert('udate shi bai');");
+		out.print("window.location.href='manger.jsp'");
 		out.println("</script>");
 		
 		out.flush();
