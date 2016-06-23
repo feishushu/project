@@ -47,7 +47,7 @@ public class bookservice {
 	}
 	
 	public static boolean UpdateNowprice(String bookid,String nowprice){
-		return bookdao.UpdateNowprice(bookid,nowprice);
+		return bookdao.updateNowprice(bookid,nowprice);
 	}
 	
 	public static boolean delBookbyID(String id){

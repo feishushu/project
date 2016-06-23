@@ -2,6 +2,7 @@ package star.mvc.dao;
 
 import java.awt.image.Raster;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -261,6 +262,53 @@ public class bookdao {
 			oracle_link.close(con, stmt, rs);
 		}
 		return dataList;
-
+	}
+	
+	public static boolean updateNowprice(String bookid, String nowprice){
+		Connection con = null;
+		PreparedStatement ps = null;
+		boolean flag = false;
+		con = oracle_link.oraclesql();
+		String sql = "update book set nowprice = ? where bookid = '"+bookid+"'";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, nowprice);
+			int i = ps.executeUpdate();
+			if( i > 0){
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return flag;
+		} finally{
+			try {
+				con.close();
+				ps.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return flag;
+	}
+	
+	public static boolean delBookbyID(String id){
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		boolean flag = false;
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			int i = stmt.executeUpdate("delete book where bookid = '"+id+"'");
+			if ( i > 0){
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return flag;
+		} finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return flag;
 	}
 }
