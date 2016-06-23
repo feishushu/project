@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import star.mvc.service.bookservice;
 
@@ -42,10 +43,12 @@ public class servlet_delbook extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
 		
 		String bookid = request.getParameter("bookid");
 		
 		if(bookservice.delBookbyID(bookid)){
+			session.setAttribute("del.jsp", null);
 			out.println("<script language = javascript>alert('cheng gong delete');");
 			out.print("window.location.href='manger-main.jsp'");
 			out.println("</script>");

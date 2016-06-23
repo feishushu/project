@@ -287,9 +287,10 @@ public class bookdao {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));
 				b.setBookname(rs.getString("bookname"));
-				b.setIsbn(rs.getString("booknum"));
-				b.setPicture(rs.getString("price"));
+				b.setBooknum(rs.getString("booknum"));
+				b.setPrice(rs.getString("price"));
 				b.setNowprice(rs.getString("nowprice"));
+				
 				dataList.add(b);
 			}
 		} catch (Exception e) {

@@ -39,7 +39,7 @@ public class bookservice {
 	}
 	
 	public static ArrayList getadmsearchMsgBystring(String key){
-		return bookdao.searchMsgBystring(key);
+		return bookdao.admSearchMsgBystring(key);
 	}
 	
 	public static boolean UpdateNowbook(){

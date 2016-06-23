@@ -3,10 +3,12 @@ package star.mvc.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import star.mvc.common.sale_price;
 import star.mvc.service.bookservice;
@@ -42,20 +44,24 @@ public class servlet_sale extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
 		
 		String bookid = request.getParameter("bookid");
 		String price  = request.getParameter("price");
 		String sale   = request.getParameter("nowprice");
 		
-		String nowprice = sale_price.subsale(price, sale);
 		
+		
+		String nowprice = sale_price.subsale(price, sale);
+		System.out.println(nowprice);
 		if(bookservice.UpdateNowprice(bookid, nowprice)){
+			session.setAttribute("sale.jsp", null);
 			out.println("<script language = javascript>alert('update cheng gong');");
-			out.print("window.location.href='manger.jsp'");
+			out.print("window.location.href='manger-main.jsp'");
 			out.println("</script>");
 		}
 		out.println("<script language = javascript>alert('udate shi bai');");
-		out.print("window.location.href='manger.jsp'");
+		out.print("window.location.href='manger-main.jsp'");
 		out.println("</script>");
 		
 		out.flush();

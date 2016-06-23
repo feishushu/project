@@ -46,7 +46,7 @@ public class servlet_upbook extends HttpServlet {
 		 * 
 		 * */
 		out.println("<script language = javascript>alert('xiu gai shu ji cheng gong');");
-		out.print("window.location.href='manger.jsp'");
+		out.print("window.location.href='manger-main.jsp'");
 		out.println("</script>");
 		
 		out.flush();
