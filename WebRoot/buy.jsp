@@ -49,8 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             divOffsetTop = div.offsetTop;    
         };    
         </script>    
-
-  </head>
+ </head>
   
   <body>
      <div class="nav" id="divId">
@@ -62,56 +61,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <a href="servlet_shop"><div class="caidan-shop">我的购物</div></a>
  </ul>
 </div>
-<div class="buy-title"><p>已买到的书籍</p></div>
+<div class="buy-title"><p>订单详情</p></div>
 			
-<br><table width="80%"  border="1" class="manage" align="center">
-  <tr>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>123</p></th>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订书日期</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><img src="picture/b1.jpg" width="78px" height="88px"></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>简介</p></th>
-      <th scope="col"><p>￥12</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
-  </tr>
-  </table>
 <br>
-<table width="80%"  border="1" class="manage" align="center">
+<%int i=0;int j=0; %>
+ <% if(true){ %>
+  <% for( j =0 ;j<=1;j++){ %>
+<br><table width="80%"  border="1" class="tableid" align="center" name="tableid" id="tableid">
   <tr>
     <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>123</p></th>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订书日期</p></th>
+    <th scope="col" bgcolor="#33ff99" width="20%"><p>12345678</p></th>
+    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订购日期</p></th>
+    <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
+  </tr>
+  <% if(true){ %>
+  <% for( i =0 ;i<=3;i++){ %>
+  <tr>
+  
+    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
+    <th scope="col"><p>非洲</p></th>
+     <th scope="col"><p>￥10.0</p></th>
+      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
+ 
+  </tr> <% } %>
+  <% i=0; } %>
+  <!--  <tr>
+    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
+    <th scope="col"><p>非洲</p></th>
+     <th scope="col"><p>￥10.0</p></th>
+      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
+  </tr>-->
+  </table><% } %>
+  <% j=0; } %>
+  
+ <!--   <br><table width="80%"  border="1" class="tableid" align="center" name="tableid" id="tableid">
+  <tr>
+    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
+    <th scope="col" bgcolor="#33ff99" width="20%"><p>12345678</p></th>
+    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订购日期</p></th>
     <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
   </tr>
   <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><img src="picture/b1.jpg" width="78px" height="88px"></div></th>
+    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
     <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>简介</p></th>
-      <th scope="col"><p>￥12</p></th>
+     <th scope="col"><p>￥10.0</p></th>
+      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
+  </tr>
+  <tr>
+    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
+    <th scope="col"><p>非洲</p></th>
+     <th scope="col"><p>￥10.0</p></th>
       <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
   </tr>
   </table>
-
-<br>
-<table width="80%"  border="1" class="manage" align="center">
-  <tr>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>123</p></th>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订书日期</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><img src="picture/b1.jpg" width="78px" height="88px"></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>简介</p></th>
-      <th scope="col"><p>￥12</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
-  </tr>
-  </table>
+ -->
+ 
   </form>
   </body>
 </html>
