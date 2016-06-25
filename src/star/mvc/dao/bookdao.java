@@ -1,15 +1,11 @@
 package star.mvc.dao;
 
-import java.awt.image.Raster;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import javax.persistence.Tuple;
-
-import oracle.net.aso.b;
+import star.mvc.common.StringFormat;
 import star.mvc.common.oracle_link;
 import star.mvc.modle.book;
 
@@ -141,6 +137,36 @@ public class bookdao {
 			oracle_link.close(con, stmt, rs);
 		}
 		return detailList;
+	}
+	
+	public static ArrayList getMsgByBookIDStr(String str){
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList bookList = new ArrayList();
+		String[] data = StringFormat.SplitString(str);
+		try {
+			for (int i = 0; i < data.length; i++) {
+				con = oracle_link.oraclesql();
+				stmt = con.createStatement();
+				rs = stmt
+						.executeQuery("select bookid,bookname,nowprice,picture from book where bookid='"
+								+ data[i] + "'");
+				rs.next();
+				book b = new book();
+				b.setBookid(rs.getString("bookid"));
+				b.setBookname(rs.getString("bookname"));
+				b.setNowprice(rs.getString("nowprice"));
+				b.setPicture(rs.getString("picture"));
+				bookList.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;		
+		}finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return bookList;
 	}
 
 	public static boolean addMsg(String bookid, String superid,
