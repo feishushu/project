@@ -85,36 +85,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  
   </tr> <% } %>
   <% i=0; } %>
-  <!--  <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>￥10.0</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
-  </tr>-->
   </table><% } %>
   <% j=0; } %>
   
- <!--   <br><table width="80%"  border="1" class="tableid" align="center" name="tableid" id="tableid">
-  <tr>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>12345678</p></th>
-    <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订购日期</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>￥10.0</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
-  </tr>
-  <tr>
-    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>￥10.0</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
-  </tr>
-  </table>
- -->
  
   </form>
   </body>
