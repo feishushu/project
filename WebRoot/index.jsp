@@ -99,7 +99,7 @@ ul,li,dl,dt,dd{
 	<%if(session.getAttribute("login")==null){ %>
 		<a href="login.jsp"><div class="denglu">登录/注册<li class="fa fa-fw fa-bank"></li></div></a>
 	<%}else{ %>
-		<a href="#"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
+		<a href="servlet_order"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
 		<a href="servlet_fist?zhuxiao=1"><div class="zhuxiao">注销</div></a>
 	<%} %>
 	
@@ -169,7 +169,7 @@ ul,li,dl,dt,dd{
 		for(book hots:HotsBookList){
 			test = "test"+String.valueOf(i);
 	%>	
-			<a href="getAllMsgByBook?bookid=<%=hots.getBookid() %>"><figure class=<%=test %>>
+			<a href="getAllMsgByBook?bookid=<%=hots.getBookid() %>&xz=book.jsp"><figure class=<%=test %>>
 			<img src=<%=hots.getPicture() %> width="170" height="170"> 
 			<figcaption>
 			<p>售价：<%=hots.getNowprice() %></p>
@@ -196,7 +196,7 @@ ul,li,dl,dt,dd{
 		for(book Specia:SpeciaBookList){
 			fifth = "fifth-img"+String.valueOf(i);
 	%>
-		<a href="getAllMsgByBook?bookid=<%=Specia.getBookid() %>"><div class=<%=fifth %>><img src=<%=Specia.getPicture() %> width="170" height="170"></div></a>
+		<a href="getAllMsgByBook?bookid=<%=Specia.getBookid() %>&xz=book.jsp"><div class=<%=fifth %>><img src=<%=Specia.getPicture() %> width="170" height="170"></div></a>
 	<%i++;}}else{%>
 		<a href="#"><div class="fifth-img2"><img src="picture/dashengwu.jpg" width="170" height="170"></div></a>
 	<%} %>

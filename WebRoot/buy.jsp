@@ -1,7 +1,9 @@
+<%@page import="star.mvc.modle.*"%>
 <%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+ArrayList<order> orderlist = (ArrayList<order>) session.getAttribute("buy.jsp");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -64,31 +66,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="buy-title"><p>订单详情</p></div>
 			
 <br>
-<%int i=0;int j=0; %>
- <% if(true){ %>
-  <% for( j =0 ;j<=1;j++){ %>
+
+ <% if(orderlist.size() != 0){ %>
+  <% for(order or: orderlist){ %>
 <br><table width="80%"  border="1" class="tableid" align="center" name="tableid" id="tableid">
   <tr>
     <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订单编号</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>12345678</p></th>
+    <th scope="col" bgcolor="#33ff99" width="20%"><p><%=or.getOederid() %></p></th>
     <th scope="col" bgcolor="#33ffff" width="20%" height="35px"><p>订购日期</p></th>
-    <th scope="col" bgcolor="#33ff99" width="20%"><p>2016-2-2</p></th>
+    <th scope="col" bgcolor="#33ff99" width="20%"><p><%=or.getTime() %></p></th>
   </tr>
-  <% if(true){ %>
-  <% for( i =0 ;i<=3;i++){ %>
+  <% if(or.getOrbook() != null){ %>
+  <% for(book bo:or.getOrbook()){ %>
   <tr>
   
-    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src="picture/b1.jpg" width="70px" height="78px"></p></div></th>
-    <th scope="col"><p>非洲</p></th>
-     <th scope="col"><p>￥10.0</p></th>
-      <th scope="col"><a href="bookping.jsp"><input type="submit" value="评价" /></a></th>
+    <th scope="col" width="30%" height="50px"><div class="pic"><p><img src=<%=bo.getPicture() %> width="70px" height="78px"></p></div></th>
+    <th scope="col"><p><%=bo.getBookname() %></p></th>
+     <th scope="col"><p>￥<%=bo.getNowprice() %></p></th>
+      <th scope="col"><a href="getAllMsgByBook?bookid=<%=bo.getBookid() %>&xz=bookping.jsp"><input type="submit" value="评价" /></a></th>
  
-  </tr> <% } %>
-  <% i=0; } %>
-  </table><% } %>
-  <% j=0; } %>
-  
- 
-  </form>
+  </tr> <% } }%>
+  </table><% } }%>
+
   </body>
 </html>

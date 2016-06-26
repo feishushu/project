@@ -10,15 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import oracle.net.aso.i;
-import star.mvc.service.bookservice;
+import oracle.net.aso.r;
+import star.mvc.common.*;
+import star.mvc.dao.bookdao;
+import star.mvc.dao.orderdao;
+import star.mvc.modle.book;
+import star.mvc.modle.order;
+import star.mvc.service.orderservice;
 
-public class getAllMsgByBook extends HttpServlet {
+
+public class servlet_order extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public getAllMsgByBook() {
+	public servlet_order() {
 		super();
 	}
 
@@ -40,26 +46,40 @@ public class getAllMsgByBook extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		request.setCharacterEncoding("utf-8");
-		
-		String bookid = request.getParameter("bookid");
-		String xz	  = request.getParameter("xz");
-		
-		ArrayList allBook = bookservice.getAllMsgByBook(bookid);
-		
-		if(allBook != null){
-			session.setAttribute("allbook", allBook);
-		}else{
-			session.setAttribute("allbook", null);
-		}
-		
-		response.sendRedirect(xz);
-		
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		
+		String strbook[] = request.getParameterValues("bookid");
+		String time		 = Time.getorderidtime();
+		String orderid 	 = (String)session.getAttribute("login")+ "@" + time;
+		String numsum[]  = new String[strbook.length];
+		for(int i = 0; i < strbook.length; i ++){
+			numsum[i] = request.getParameter(strbook[i]);
+		}
+		
+		System.out.println(orderid);
+		
+		ArrayList<order> list;
+
+		if(strbook != null){
+			orderservice.addorder(orderid, StringFormat.CombString(strbook),
+					StringFormat.CombString(numsum), (String)session.getAttribute("login"), time);
+		}
+		
+		list = orderdao.getMsgByBuyer((String)session.getAttribute("login"));
+		
+		if(list.size() != 0){
+			for(int i = 0; i < list.size(); i ++){
+				list.get(i).setOrbook((ArrayList<book>)bookdao.getMsgByBookIDStr(list.get(i).getBookidsum()));
+			}
+			session.setAttribute("buy.jsp", list);
+			response.sendRedirect("buy.jsp");
+		}
 		
 		out.flush();
 		out.close();

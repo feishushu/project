@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <a href="#"><div class="caidan-shop">我的购物</div></a>
  </ul>
 </div>
-  
+  <form action="servlet_order" name="shop" method="post">
     <table id="cartTable">
     <thead>
         <tr>
@@ -47,37 +47,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </thead>
     <tbody>
         <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "1"/></td>
             <td class="goods"><img src="picture/caicai.jpg" alt=""/><span>猜猜我有多爱你</span></td>
             <td class="price">1111</td>
             <td class="count">
                 <span class="reduce"></span>
-                <input class="count-input" type="text" value="1"/>
+                <input class="count-input" name = "1"  type="text" value="1"/>
                 <span class="add">+</span></td>
             <td class="subtotal">1111</td>
             <td class="operation"><span class="delete">删除</span></td>
         </tr>
         <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "2"/></td>
             <td class="goods"><img src="picture/guoji.jpg" alt=""/><span>嘘！别提爱丽丝</span></td>
             <td class="price">2222</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="count"><span class="reduce"></span><input class="count-input" name = "2" type="text" value="1"/><span class="add">+</span></td>
             <td class="subtotal">2222</td>
             <td class="operation"><span class="delete">删除</span></td>
         </tr>
         <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "3"/></td>
             <td class="goods"><img src="picture/jiqi.jpg" alt=""/><span>机器学习实战</span></td>
             <td class="price">3333</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="count"><span class="reduce"></span><input class="count-input" name = "3"  type="text" value="1"/><span class="add">+</span></td>
             <td class="subtotal">3333</td>
             <td class="operation"><span class="delete">删除</span></td>
         </tr>
         <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "4"/></td>
             <td class="goods"><img src="picture/nba.jpg" alt=""/><span>MBA十日读</span></td>
             <td class="price">4444</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="count"><span class="reduce"></span><input class="count-input" name = "4"  type="text" value="1"/><span class="add">+</span></td>
             <td class="subtotal">4444</td>
             <td class="operation"><span class="delete">删除</span></td>
         </tr>
@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="foot" id="foot">
     <label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;全选</label>
     <a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
-    <div class="fr closing">结 算</div>
+    <div class="fr closing"><input class="fr closing" type="submit" value = "结算"></div>
     <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
     <div class="fr selected" id="selected">已选商品
         <span id="selectedTotal">0</span>件
@@ -100,5 +100,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <span class="arrow">◆<span>◆</span></span>
     </div>
 </div>
+</form>
   </body>
 </html>

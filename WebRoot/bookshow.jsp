@@ -76,7 +76,7 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
     			if(j % 4 == 0)
     				i ++;
     	%>
-    	<div class=<%=pic %> style="border:1px solid #000"><a href="getAllMsgByBook?bookid=<%=type.getBookid() %>"><img src=<%=type.getPicture() %> width="200" height="180"><span>简介：<%=type.getIntroduce() %></span></a>
+    	<div class=<%=pic %> style="border:1px solid #000"><a href="getAllMsgByBook?bookid=<%=type.getBookid() %>&xz=book.jsp"><img src=<%=type.getPicture() %> width="200" height="180"><span>简介：<%=type.getIntroduce() %></span></a>
     		<div class="title" style="border:1px solid #000">
     		<div class="title-price" style="border:1px solid #000">价格：<%=type.getNowprice() %></div>
     		<div class="title-detail" style="border:1px solid #000">作者：<%=type.getAuthor() %></div>

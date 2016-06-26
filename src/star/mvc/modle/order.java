@@ -1,11 +1,15 @@
 package star.mvc.modle;
 
+import java.util.ArrayList;
+
 public class order {
 	private String oederid;
 	private String bookidsum;
 	private String numsum;
 	private String buyer;
 	private String time;
+	private ArrayList<book> orbook;
+	
 	public String getOederid() {
 		return oederid;
 	}
@@ -35,6 +39,12 @@ public class order {
 	}
 	public void setTime(String time) {
 		this.time = time;
+	}
+	public ArrayList<book> getOrbook() {
+		return orbook;
+	}
+	public void setOrbook(ArrayList<book> orbook) {
+		this.orbook = orbook;
 	}
 	
 }
