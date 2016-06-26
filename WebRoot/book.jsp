@@ -84,6 +84,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
         };    
         </script>    
 
+ 
   </head>
   
   <body bgcolor="#d7f4db">
@@ -125,12 +126,13 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
     		<div class="book-shop-box-price1">￥<%=allbook.get(0).getPrice() %></div>
     		<div class="book-shop-box-price2">售价:(sale)</div>
     		<div class="book-shop-box-price3">￥<%=allbook.get(0).getNowprice() %></div>
-    		<div class="book-shop-box-mount">数量:(库存<%=allbook.get(0).getBooknum() %>本)</div>
+    		<div class="book-shop-box-mount" >数量:库存(<input id="kucun" value="<%=allbook.get(0).getBooknum() %>" readonly>)本</div>
     		<div class="book-shop-box-mount1">
     			<input id="min" name="" type="button" value="-" style="width:40px;"/>  
-				<input id="text_box" name="" type="text" value="1" style="width:60px ;"/>  
+				<input id="text_box" name="" type="text" value="1" onfocus="document.getElementById('text_box').value=this.value;" style="width:60px ;"  onkeyup="mount()"/>  
 				<input id="add" name="" type="button" value="+" style="width:40px;"/>  
 			</div>
+			<br><span id="tishi" class="tishi"></span>
     	</div>
     		<a href="servlet_shop"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
    		</div>
@@ -138,5 +140,23 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
     	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
     </div>
 </div>
+
+<script type="text/javascript">
+	function mount(){
+		var mount = document.getElementById("text_box").value;
+		var kucun = document.getElementById("kucun").value;
+		if(mount-kucun<=0){
+		
+		document.getElementById("tishi").innerHTML="<font color='red'>购买</font>"+mount+"<font color='red'>本</font>";
+			
+		}
+		if(mount-kucun>0)
+		{
+			alert("库存只有"+kucun+"本");
+		}
+		
+	}
+
+</script>
   </body>
 </html>
