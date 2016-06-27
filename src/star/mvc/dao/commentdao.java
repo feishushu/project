@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import star.mvc.common.oracle_link;
 import star.mvc.modle.comment;
 
