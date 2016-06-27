@@ -6,6 +6,7 @@ public class comment {
 	private String score;
 	private String content;
 	private String username;
+	
 	public String getCid() {
 		return cid;
 	}

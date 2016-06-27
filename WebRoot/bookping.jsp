@@ -171,7 +171,8 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
 					</tbody>
 			</table>
 		</div> 
-		<form id="form1" name="form1" action="" method="get">
+		<form id="form1" name="form1" action="getAllMsgByBook" method="post">
+			<input id="pointV" type="hidden" value=<%=allbook.get(0).getBookid() %> name="bookid" /> 
 			<input id="pointV1" type="hidden" value="5" name="pointV1" /> 
 			<input id="pointV2" type="hidden" value="5" name="pointV2" /> 
 			<input id="pointV3" type="hidden" value="5" name="pointV3" /> 

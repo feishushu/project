@@ -24,4 +24,16 @@ public class StringFormat {
 		}
 		return data;
 	}
+	
+	public static String CountpintV(String pin1,String pin2,String pin3){
+		float pin,pinv1,pinv2,pinv3;
+		
+		pinv1 = Float.parseFloat(pin1);
+		pinv2 = Float.parseFloat(pin2);
+		pinv3 = Float.parseFloat(pin3);
+		
+		pin = (pinv1 + pinv2 + pinv3)/3f;
+		
+		return String.valueOf(pin);
+	}
 }

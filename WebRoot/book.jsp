@@ -4,7 +4,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
+ArrayList<book> allbook 	= (ArrayList<book>) session.getAttribute("allbook");
+ArrayList<comment> comlist  = (ArrayList<comment>) session.getAttribute("comlist");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -140,18 +141,21 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
     	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
     </div>
     <div class="book-pinglun">
-    
-    <%int i=0; %>
-    <%if(true){ %>
-    <%for(i=0;i<=4;i++){ %>
+   
+    <%if(comlist.size() != 0){ %>
+    <%for(comment com:comlist){ %>
     <div class="pinglunall">
-    <div class="pinglunname"><br><br>评价用户：1212</div>
-    <div class="pinglunstar"><br><br>总评分数：10.0分</div>
-    <br><div class="pinglunneirong"><br><br><br><br>评论内容</div>
+    <div class="pinglunname"><br><br>评价用户：<%=com.getUsername() %></div>
+    <div class="pinglunstar"><br><br>总评分数：<%=com.getScore() %></div>
+    <br><div class="pinglunneirong"><br><br><br><br><%=com.getContent() %></div>
     </div>
     <br>
     <% } %>
-  <% } %>
+  <% }else{ %>
+  	<div class="pinglunall">
+    	无评论内容
+    </div>
+  <%} %>
     </div>
 </div>
 

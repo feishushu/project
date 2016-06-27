@@ -27,7 +27,7 @@ public class commentdao {
 							+ "','"
 							+ content
 							+ "','"
-							+ username + "',)");
+							+ username + "')");
 			if (i > 0) {
 				flag = true;
 			}
