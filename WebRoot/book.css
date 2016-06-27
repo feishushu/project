@@ -9,7 +9,7 @@
 	position:absolute;
 	left:38px;
 	width:1200px;
-	height:800px;
+	height:1500px;
 	background-image:url(picture/123.png);
 	
 }
@@ -178,7 +178,7 @@
 	top:630px;
 	left:30px;
 	width:1150px;
-	height:410px;
+	height:850px;
 	background-image:url(picture/123.png);
 }
 .book-detail-write{
@@ -234,4 +234,36 @@
 	height:40px;
 	color:#000;
 	font: 23px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+}
+.pinglunname{
+	border-radius:15px; 
+	width:200px;
+	height:70px;
+	background:#fff;
+	text-align:center;
+}
+
+.pinglunstar{
+	border-radius:15px; 
+	position:relative;
+	top:3px;
+	width:200px;
+	height:70px;
+	background:#fff;
+	text-align:center;
+}
+.pinglunneirong{
+	position:relative;
+	border-radius:20px; 
+	left:203px;
+	top:-156px;
+	width:940px;
+	height:143px;
+	background:#fff;
+	text-align:center;
+}
+.pinglunall{
+	position:relative;
+	height:140px;
+	
 }

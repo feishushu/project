@@ -139,6 +139,20 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
     <div class="book-detail">书目简介
     	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
     </div>
+    <div class="book-pinglun">
+    
+    <%int i=0; %>
+    <%if(true){ %>
+    <%for(i=0;i<=4;i++){ %>
+    <div class="pinglunall">
+    <div class="pinglunname"><br><br>评价用户：1212</div>
+    <div class="pinglunstar"><br><br>总评分数：10.0分</div>
+    <br><div class="pinglunneirong"><br><br><br><br>评论内容</div>
+    </div>
+    <br>
+    <% } %>
+  <% } %>
+    </div>
 </div>
 
 <script type="text/javascript">
