@@ -58,7 +58,7 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
-    <th scope="col"><img src="picture/b1.jpg" width="60px" height="58px"><input type="FILE" name="FILE1"></th>
+    <th scope="col"><div id="img"><img src="picture/b1.jpg" width="60px" height="58px" id="img" onfocus="document.getElementById('img').value=this.value;"></div><input type="FILE" name="FILE1" id="file" /><input type="button" id="sub" onclick="doSubmit()" value="12"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">页数</th>
@@ -115,6 +115,21 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
         }
     }  
 }
+		</script>
+		
+		<script>
+	  function doSubmit(){ 
+            var file = document.getElementById("file");
+            var img = document.getElementById("img");  
+        if (file.value == "") { 
+        	alert("传img的值");
+			return img;
+		}
+		if (file.value != ""){ 
+		alert("传file的值");
+		return file;
+} 
+       } 
 		</script>
   </body>
 </html>
