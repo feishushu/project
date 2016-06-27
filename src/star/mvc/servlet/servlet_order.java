@@ -57,16 +57,17 @@ public class servlet_order extends HttpServlet {
 		String strbook[] = request.getParameterValues("bookid");
 		String time		 = Time.getorderidtime();
 		String orderid 	 = (String)session.getAttribute("login")+ "@" + time;
-		String numsum[]  = new String[strbook.length];
-		for(int i = 0; i < strbook.length; i ++){
-			numsum[i] = request.getParameter(strbook[i]);
-		}
-		
-		System.out.println(orderid);
+		String[] numsum = null;
 		
 		ArrayList<order> list;
-
+		
 		if(strbook != null){
+			numsum  = new String[strbook.length];
+		
+			for(int i = 0; i < strbook.length; i ++){
+				numsum[i] = request.getParameter(strbook[i]);
+			}
+		
 			orderservice.addorder(orderid, StringFormat.CombString(strbook),
 					StringFormat.CombString(numsum), (String)session.getAttribute("login"), time);
 		}
