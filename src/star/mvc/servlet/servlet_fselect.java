@@ -3,7 +3,6 @@ package star.mvc.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,15 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import star.mvc.modle.book;
 import star.mvc.service.bookservice;
 
-public class servlet_search extends HttpServlet {
+public class servlet_fselect extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_search() {
+	public servlet_fselect() {
 		super();
 	}
 
@@ -43,33 +41,55 @@ public class servlet_search extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
-		request.setCharacterEncoding("utf-8");
-		
 		HttpSession session = request.getSession();
-		String search = request.getParameter("search");
+		ArrayList subList = null;
 		
-		System.out.print(search+":"+"ddklskl");
+		String	cou 	 = request.getParameter("cou");
+		Integer	page 	 = (Integer)session.getAttribute("page");
+		String	subty	 = (String)session.getAttribute("-->");
+		String	xz		 = (String)session.getAttribute("xz");
+		System.out.print(subty+":"+"ddklskl");
 		
-		ArrayList List = bookservice.getsearchMsgBystring(search,1);
-		
-		session.setAttribute("-->", search);
-		session.setAttribute("xz", "3");
-		session.setAttribute("page", 1);
-		
-		if(List.size() != 0){
-			session.setAttribute("booktype", List);
-			response.sendRedirect("bookshow.jsp");
+		if(cou.equals("add")){
+			if(xz.equals("1")){
+				subList = bookservice.getMsgBySuperID(subty,page+1);
+				session.setAttribute("booktype",subList);
+			}
+			
+			if(xz.equals("2")){
+				subList = bookservice.getMsgBySubID(subty,page+1);
+				session.setAttribute("booktype", subList);
+			}
+			
+			if(xz.equals("3")){
+				subList = bookservice.getsearchMsgBystring(subty,page+1);
+				session.setAttribute("booktype", subList);
+			}
+			
+			session.setAttribute("page", page+1);
 		}else{
-			session.setAttribute("booktype", null);
-			response.sendRedirect("bookshow.jsp");
+			if(xz.equals("1")){
+				subList = bookservice.getMsgBySuperID(subty,page-1);
+				session.setAttribute("booktype",subList);
+			}
+			
+			if(xz.equals("2")){
+				subList = bookservice.getMsgBySubID(subty,page-1);
+				session.setAttribute("booktype", subList);
+			}
+			
+			if(xz.equals("3")){
+				subList = bookservice.getsearchMsgBystring(subty,page-1);
+				session.setAttribute("booktype", subList);
+			}
+			
+			session.setAttribute("page", page-1);
 		}
 		
-		out.println("<script language = javascript>alert('search erry!');");
-		out.print("window.location.href='index.jsp#page3'");
-		out.println("</script>");
+		response.sendRedirect("bookshow.jsp");
 		
 		out.flush();
 		out.close();

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 import star.mvc.common.StringFormat;
 import star.mvc.common.oracle_link;
 import star.mvc.modle.book;
@@ -45,7 +46,7 @@ public class bookdao {
 		return bookList;
 	}
 
-	public static ArrayList getMsgBySuperID(String supertypeid) {
+	public static ArrayList getMsgBySuperID(String supertypeid,int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -53,9 +54,10 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt
-					.executeQuery("select picture,nowprice,introduce,bookname,bookid from book where supertypeid='"
-							+ supertypeid + "'");
+			rs = stmt 
+					.executeQuery("select * from (select a.*,rownum rn from "
+					+ "(select picture,nowprice,introduce,bookname,bookid from book where supertypeid='"
+							+ supertypeid + "') a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
 			while (rs.next()) {
 				book b = new book();
 				b.setPicture(rs.getString("picture"));
@@ -74,7 +76,7 @@ public class bookdao {
 		return supertypeList;
 	}
 
-	public static ArrayList getMsgBySubID(String subtypeid) {
+	public static ArrayList getMsgBySubID(String subtypeid,int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -83,8 +85,10 @@ public class bookdao {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
 			rs = stmt
-					.executeQuery("select picture,nowprice,introduce,bookname,bookid from book where subtypeid='"
-							+ subtypeid + "'");
+					.executeQuery("select * from (select a.*,rownum rn from "
+							+ "(select picture,nowprice,introduce,bookname,bookid from book where subtypeid='"
+							+ subtypeid + "' ) a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
+			
 			while (rs.next()) {
 				book b = new book();
 				b.setPicture(rs.getString("picture"));
@@ -102,7 +106,7 @@ public class bookdao {
 		}
 		return subtypeList;
 	}
-
+	
 	public static ArrayList getAllMsgByBookID(String BOOKID) {
 		Connection con = null;
 		Statement stmt = null;
@@ -245,7 +249,7 @@ public class bookdao {
 //		return detailList;
 //	}
 
-	public static ArrayList searchMsgBystring(String key) {
+	public static ArrayList searchMsgBystring(String key,int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -253,8 +257,9 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt
-					.executeQuery("select bookid, bookname, isbn, picture, nowprice, introduce, publisher, author from book where "
+			rs = stmt  
+					.executeQuery("select * from (select a.*,rownum rn from "
+					+ "(select bookid, bookname, isbn, picture, nowprice, introduce, publisher, author from book where "
 							+ "bookname like '%"
 							+ key
 							+ "%' or "
@@ -267,7 +272,7 @@ public class bookdao {
 							+ "publisher like '%"
 							+ key
 							+ "%' or "
-							+ "author like '%" + key + "%'");
+							+ "author like '%" + key + "%') a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
 			while (rs.next()) {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));

@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <td class="operation"><span class="delete">删除</span></td>
         </tr>
         <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "4"/></td>
+            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "4:id"/></td>
             <td class="goods"><img src="picture/nba.jpg" alt=""/><span>MBA十日读</span></td>
             <td class="price">4444</td>
             <td class="count"><span class="reduce"></span><input class="count-input" name = "4"  type="text" value="1"/><span class="add">+</span></td>

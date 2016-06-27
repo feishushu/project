@@ -26,16 +26,16 @@ public class bookservice {
 		return bookdao.getAllMsgByBookID(bookid);
 	}
 	
-	public static ArrayList getMsgBySuperID(String supertypeid){
-		return bookdao.getMsgBySuperID(supertypeid);
+	public static ArrayList getMsgBySuperID(String supertypeid,int page){
+		return bookdao.getMsgBySuperID(supertypeid,page);
 	}
 	
-	public static ArrayList getMsgBySubID(String subtypeid){
-		return bookdao.getMsgBySubID(subtypeid);
+	public static ArrayList getMsgBySubID(String subtypeid,int page){
+		return bookdao.getMsgBySubID(subtypeid,page);
 	}
 	
-	public static ArrayList getsearchMsgBystring(String key){
-		return bookdao.searchMsgBystring(key);
+	public static ArrayList getsearchMsgBystring(String key,int page){
+		return bookdao.searchMsgBystring(key,page);
 	}
 	
 	public static ArrayList getadmsearchMsgBystring(String key){

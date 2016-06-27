@@ -14,6 +14,7 @@ import oracle.net.aso.i;
 import star.mvc.common.StringFormat;
 import star.mvc.dao.commentdao;
 import star.mvc.service.bookservice;
+import star.mvc.service.comservice;
 
 public class getAllMsgByBook extends HttpServlet {
 
@@ -57,12 +58,12 @@ public class getAllMsgByBook extends HttpServlet {
 		if(pointV1 != null){
 			String score = StringFormat.CountpintV(pointV1, pointV2,pointV3);
 			
-			commentdao.addcomment(bookid, score, content,(String) session.getAttribute("login"));
+			comservice.addcomment(bookid, score, content,(String) session.getAttribute("login"));
 			xz = "book.jsp";
 		}
 		
 		ArrayList allBook = bookservice.getAllMsgByBook(bookid);
-		ArrayList comList = commentdao.getMsgByID(bookid);
+		ArrayList comList = comservice.getMsgByID(bookid);
 		
 		if(allBook != null){
 			session.setAttribute("allbook", allBook);

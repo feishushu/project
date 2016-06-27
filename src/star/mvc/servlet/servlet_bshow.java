@@ -49,12 +49,14 @@ public class servlet_bshow extends HttpServlet {
 		String xz	 = request.getParameter("xz");
 		
 		session.setAttribute("-->", subty);
+		session.setAttribute("xz",xz);
+		session.setAttribute("page", 1);
 		
 		if(xz.equals("1")){
-			subList = bookservice.getMsgBySuperID(subty);
+			subList = bookservice.getMsgBySuperID(subty,1);
 			session.setAttribute("booktype",subList);
 		}else{
-			subList = bookservice.getMsgBySubID(subty);
+			subList = bookservice.getMsgBySubID(subty,1);
 			session.setAttribute("booktype", subList);
 		}
 		

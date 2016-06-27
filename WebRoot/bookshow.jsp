@@ -65,7 +65,13 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
 </div>
 	
     <div class="bookshow" style="border:1px solid #000">
-    	<div class="hello"><div class="hello-title">首页 -- ><%=session.getAttribute("-->") %></div><div class="hello-word">您好！123 这里是您要的分类</div></div>
+    	<div class="hello"><div class="hello-title">首页 -- ><%=session.getAttribute("-->") %></div>
+    	<%if(session.getAttribute("login")!=null){ %>
+    		<div class="hello-word">您好！<%=session.getAttribute("login") %> 这里是您要的结果</div>
+    	<%}else{ %>
+    		<div class="hello-word">您好！游客 这里是您要的结果</div>
+    	<%} %>	
+    	</div>
     	<!-- 第一排 -->
     	<%if(booktype != null){ 
     		String pic = null;
@@ -85,8 +91,8 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
     	<%j++;} %>
 			<!-- 翻页 -->
     		<div class="page">
-    		<div class="back"><a href="#"><img src="picture/back.png" width=70px height=50px></a></div>
-    		<div class="forword"><a href="#"><img src="picture/forward.png" width=70px height=50px></a></div>
+    		<div class="back"><a href="servlet_fselect?cou=sub"><img src="picture/back.png" width=70px height=50px></a></div>
+    		<div class="forword"><a href="servlet_fselect?cou=add"><img src="picture/forward.png" width=70px height=50px></a></div>
     		</div>    	
     	<%}else{%>
     		
