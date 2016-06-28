@@ -340,6 +340,40 @@ public class bookdao {
 		return flag;
 	}
 
+	public static boolean updateBook(String bookid, String superid,
+			String subid, String bookname, String isbn, String introduce,
+			String price, String nowprice, String pages, String publisher,
+			String author, String intime, String booknum, String location,
+			String hotsbook, String newbook, String speciabook) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		boolean flag = false;
+		try {
+			con = oracle_link.oraclesql();
+			stmt = con.createStatement();
+			int i = stmt.executeUpdate("update cat set supertypeid='" + superid
+					+ "',subtypeid='" + subid + "',bookname='" + bookname
+					+ "',isbn='" + isbn + "',introduce='" + introduce
+					+ "',price='" + price + "',nowprice='" + nowprice
+					+ "',picture='" + location + "',pages='" + pages
+					+ "',publisher='" + publisher + "',author='" + author
+					+ "',intime='" + intime + "',newbook='" + newbook
+					+ "',hotsbook='" + hotsbook + "',speciabook='" + speciabook
+					+ "',booknum='" + booknum + "' where bookid='" + bookid
+					+ "' ");
+			if (i > 0) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return flag;
+		} finally {
+			oracle_link.close(con, stmt, rs);
+		}
+		return flag;
+	}
+
 	public static boolean delBookbyID(String id) {
 		Connection con = null;
 		Statement stmt = null;

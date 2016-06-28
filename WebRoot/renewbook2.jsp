@@ -26,7 +26,8 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   <table width="50%" height="50%" border="0.8" class="manage" align="center">
   <tr>
     <th scope="col" width="30%" height="50px">图书编号</th>
-    <th scope="col"><p><%=uplist.get(0).getBookid() %></p></th>
+    <th scope="col"><p> <%=uplist.get(0).getBookid() %></p>
+    <input type="hidden" name="bookid" value=<%=uplist.get(0).getBookid() %>> </th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
@@ -58,7 +59,11 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
-    <th scope="col"><div id="img"><img src="picture/b1.jpg" width="60px" height="58px" id="img" onfocus="document.getElementById('img').value=this.value;"></div><input type="FILE" name="FILE1" id="file" /><input type="button" id="sub" onclick="doSubmit()" value="12"></th>
+    <th scope="col"><div id="img">
+    <img src=<%=uplist.get(0).getPicture() %> width="60px" height="58px" id="img" ></div>
+    <input type="FILE" name="FILE1"  />
+    <input type="hidden" name="img" value=<%=uplist.get(0).getPicture() %>>
+    </th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">页数</th>
@@ -120,19 +125,5 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
 	<input type="submit" value="提交" class="button" />
 </form>
 		
-		<script>
-	  function doSubmit(){ 
-            var file = document.getElementById("file");
-            var img = document.getElementById("img");  
-        if (file.value == "") { 
-        	alert("传img的值");
-			return img;
-		}
-		if (file.value != ""){ 
-		alert("传file的值");
-		return file;
-} 
-       } 
-		</script>
   </body>
 </html>
