@@ -82,71 +82,43 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">热门书籍</th>
-    <th scope="col"><input type="radio" id="bookhot" name="bookhot" onClick="judgeRadioClicked()" checked/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <input type="radio" id="bookhot" name="bookhot" onClick="judgeRadioClicked()"/>否</th>
+    <th scope="col">
+    <%if(uplist.get(0).getHotsbook().equals("1")){ %>
+    <input type="radio" id="bookhot" name="bookhot" value="1" checked/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookhot" name="bookhot" value="0" />否</th>
+     <%}else{%>
+      <input type="radio" id="bookhot" name="bookhot" value="1"/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookhot" name="bookhot" value="0" checked/>否</th>
+     <%} %>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">特别推荐</th>
-    <th scope="col"><input type="radio" name="bookspecial" id="bookspecial" value="1" onClick="judgeRadioClicked1()" checked>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <input type="radio" id="bookspecial" name="bookspecial" value="0" onClick="judgeRadioClicked()1">否</th>
+    <th scope="col">
+    <%if(uplist.get(0).getSpeciabook().equals("1")){ %>
+    <input type="radio" name="bookspecial" id="bookspecial" value="1" checked>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookspecial" name="bookspecial" value="0" >否</th>
+    <%}else{ %>
+    <input type="radio" name="bookspecial" id="bookspecial" value="1" >是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookspecial" name="bookspecial" value="0" checked>否</th>
+    <%} %>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">新书</th>
-    <th scope="col"><div class="booknewD1"><input type="radio" id="booknew" name="booknew" value="1" onClick="judgeRadioClicked2()" checked>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-    <input type="radio" id="booknew" name="booknew" value="0" onClick="judgeRadioClicked2()">否
-    </div></th>
+    <th scope="col">
+    <div class="booknewD1">
+    <%if(uplist.get(0).getNewbook().equals("1")){ %>
+    <input type="radio" id="booknew" name="booknew" value="1" checked/ >是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    <input type="radio" id="booknew" name="booknew" value="0">否
+    </div>
+    <%}else{ %>
+    <input type="radio" name="booknew" id="booknew" value="1" >是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="booknew" name="booknew" value="0" checked>否</th>
+    <%} %></th>
   </tr>
 </table>
 <br>
 	<input type="submit" value="提交" class="button" />
 </form>
-		
-		<script>
-		function judgeRadioClicked() 
-{ 
-    var radios = document.getElementsByName("bookhot");                            
-    for(var i=0;i<radios.length;i++) 
-    {  
-        if(radios[i].checked) 
-        { 
-        radios[i].value=1; 
-        } else{
-            radios[i].value=0;
-        }
-    }  
-}
-		</script>
-		<script>
-		function judgeRadioClicked1() 
-{ 
-    var radios = document.getElementsByName("bookspecial");                            
-    for(var i=0;i<radios.length;i++) 
-    {  
-        if(radios[i].checked) 
-        { 
-        radios[i].value=1; 
-        } else{
-            radios[i].value=0;
-        }
-    }  
-}
-		</script>
-		<script>
-		function judgeRadioClicked2() 
-{ 
-    var radios = document.getElementsByName("booknew");                            
-    for(var i=0;i<radios.length;i++) 
-    {  
-        if(radios[i].checked) 
-        { 
-        radios[i].value=1; 
-        } else{
-            radios[i].value=0;
-        }
-    }  
-}
-		</script>
-		
 		
 		<script>
 	  function doSubmit(){ 
