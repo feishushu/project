@@ -26,7 +26,7 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   <table width="50%" height="50%" border="0.8" class="manage" align="center">
   <tr>
     <th scope="col" width="30%" height="50px">图书编号</th>
-    <th scope="col"><p>123</p></th>
+    <th scope="col"><p><%=uplist.get(0).getBookid() %></p></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
