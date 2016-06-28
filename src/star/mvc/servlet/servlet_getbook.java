@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import star.mvc.modle.book;
 import star.mvc.service.bookservice;
 
 public class servlet_getbook extends HttpServlet {
@@ -44,7 +45,8 @@ public class servlet_getbook extends HttpServlet {
 		String bookid = request.getParameter("bookid");
 		HttpSession session = request.getSession();
 		
-		ArrayList list = bookservice.getAllMsgByBook(bookid);
+		ArrayList<book> list = bookservice.getAllMsgByBook(bookid);
+		
 		session.setAttribute("uplist",list);
 		
 		response.sendRedirect("renewbook2.jsp");

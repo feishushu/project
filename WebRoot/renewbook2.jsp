@@ -31,31 +31,31 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">分类</th>
-    <th scope="col"><input type="text" name="supertypeid" value=<%=uplist.get(0).getSupertypeid() %>></th>
+    <th scope="col"><input type="text" name="supertypeid" value="<%=uplist.get(0).getSupertypeid() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">专题</th>
-    <th scope="col"><input type="text" name="subtypeid" value=<%=uplist.get(0).getSubtypeid() %>></th>
+    <th scope="col"><input type="text" name="subtypeid" value="<%=uplist.get(0).getSubtypeid() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">书名</th>
-    <th scope="col"><input type="text" name="bookname" value=<%=uplist.get(0).getBookname() %>></th>
+    <th scope="col"><input type="text" name="bookname" value="<%=uplist.get(0).getBookname() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">ISBN</th>
-    <th scope="col"><input type="text" name="isbn" value=<%=uplist.get(0).getIsbn() %>></th>
+    <th scope="col"><input type="text" name="isbn" value="<%=uplist.get(0).getIsbn() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">介绍</th>
-    <th scope="col"><input type="text" name="introduce" value=<%=uplist.get(0).getIntroduce() %>></th>
+    <th scope="col"><input type="text" name="introduce" value="<%=uplist.get(0).getIntroduce() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">价格</th>
-    <th scope="col"><input type="text" name="price" value=<%=uplist.get(0).getPrice() %>></th>
+    <th scope="col"><input type="text" name="price" value="<%=uplist.get(0).getPrice() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">现在价格</th>
-    <th scope="col"><input type="text" name="nowprice" value=<%=uplist.get(0).getNowprice() %>></th>
+    <th scope="col"><input type="text" name="nowprice" value="<%=uplist.get(0).getNowprice() %>"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
