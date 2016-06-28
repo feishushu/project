@@ -13,6 +13,12 @@ public class StringFormat {
 		return data;
 	}
 	
+	public static String Splitbookid(String str){
+		String[] data = str.split(":");
+		
+		return data[0];
+	}
+	
 	public static String Splitcarid(String str){
 		String[] data = str.split(":");
 		

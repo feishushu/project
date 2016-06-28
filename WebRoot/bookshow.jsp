@@ -60,7 +60,7 @@ ArrayList<book> booktype = (ArrayList<book>) session.getAttribute("booktype");
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <div class="caidan-shop"><a href="shop.jsp">我的购物</a></div></a>
+   <div class="caidan-shop"><a href="servlet_shop?xz=1">我的购物</a></div></a>
  </ul>
 </div>
 	

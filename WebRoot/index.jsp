@@ -100,6 +100,7 @@ ul,li,dl,dt,dd{
 		<a href="login.jsp"><div class="denglu">登录/注册<li class="fa fa-fw fa-bank"></li></div></a>
 	<%}else{ %>
 		<a href="servlet_order"><div class="denglu"><%=session.getAttribute("login") %><li class="fa fa-fw fa-bank"></li></div></a>
+		
 		<a href="servlet_fist?zhuxiao=1"><div class="zhuxiao">注销</div></a>
 	<%} %>
 	

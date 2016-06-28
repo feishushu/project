@@ -31,14 +31,14 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="#"><div class="caidan-shop">我的购物车</div></a>
+   <a href="shop.jsp"><div class="caidan-shop">我的购物车</div></a>
  </ul>
 </div>
   <form action="servlet_order" name="shop" method="post">
     <table id="cartTable">
     <thead>
         <tr>
-            <th><label><input class="check-all check" type="checkbox"/>&nbsp;全选</label></th>
+            <th><label><input class="check-all check" type="checkbox" onclick="check()" id="checkbox"/>&nbsp;全选</label></th>
             <th>商品</th>
             <th>单价</th>
             <th>数量</th>
@@ -53,7 +53,7 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
     	%>
     		 <tr>
 		            <td class="checkbox">
-		            <input class="check-one check" type="checkbox" name = "bookid" value = <%=ca.getbookid()+":"+ca.getId() %>>
+		            <input class="check-one check" type="checkbox" id="checkbox" name = "bookid" value = <%=ca.getbookid()+":"+ca.getId() %>>
 		            </td>
 		            <td class="goods">
 		            	<img src=<%=ca.getBookpic() %> alt=""/>
@@ -61,10 +61,10 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
 		            </td>
 		            <td class="price"><%=ca.getNowprice() %></td>
 		            <td class="count">
-		                <span class="reduce"></span>
-		                <input class="count-input" name =<%=ca.getbookid()+":"+ca.getId() %>  type="text" value=<%=ca.getBooknum() %>>
+		                <span class="reduce">-</span>
+		                <input class="count-input" id="count" name =<%=ca.getbookid()+":"+ca.getId() %>  type="text" value=<%=ca.getBooknum() %>>
 		                <input class="count-input" name = "id"  type="hidden" value=<%=ca.getId() %>>
-		                <span class="add">+</span>
+		            <span class="add">+</span>
 		            </td>
 		            <td class="subtotal"><%=Float.parseFloat(ca.getBooknum())*Float.parseFloat(ca.getNowprice()) %></td>
 		            <td class="operation"><span class="delete">删除</span></td>
@@ -74,21 +74,23 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
 </table>
 
 <div class="foot" id="foot">
-    <label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;全选</label>
-    <a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
-    <div class="fr closing"><input class="fr closing" type="submit" value = "结算"></div>
+    <label class="fl select-all"><input type="checkbox" class="check-all check" id="checkbox" onclick="check()"/>&nbsp;全选</label>
+    <a class="fl delete" id="deleteAll" href="servlet_delshop">删除</a>
+    <div class="fr closing"><input class="fr closing" type="submit" value = "结算" style="height:49px" onclick="check()"></div>
     <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
-    <div class="fr selected" id="selected">已选商品
+      <div class="fr selected" id="selected">已选商品
         <span id="selectedTotal">0</span>件
-        <span class="arrow up">︽</span>
-        <span class="arrow down">︾</span>
+        <!--  <span class="arrow up">︽</span>
+        <span class="arrow down">︾</span>-->
     </div>
     <div class="selected-view">
         <div id="selectedViewList" class="clearfix">
         </div>
-        <span class="arrow">◆<span>◆</span></span>
+       
     </div>
 </div>
+
 </form>
+
   </body>
 </html>

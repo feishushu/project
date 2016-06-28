@@ -46,11 +46,11 @@ public class servlet_shop extends HttpServlet {
 		String login = (String) session.getAttribute("login");
 		ArrayList showbook = null;
 		
-		String redir = "shop.jsp";
+		String redir = "login.jsp";
  		
-		if(login==null){
-			redir = "login.jsp";
-		}
+		if(login!=null){
+			redir = "shop.jsp";
+		
 		
 		String xz = request.getParameter("xz");
 		
@@ -66,7 +66,9 @@ public class servlet_shop extends HttpServlet {
 		
 		showbook = carservice.getMsgByIDEr(login);
 		
+		
 		session.setAttribute("showbook", showbook);
+		}
 		
 		response.sendRedirect(redir);
 	}

@@ -93,7 +93,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="servlet_shop"><div class="caidan-shop">我的购物</div></a>
+   <a href="servlet_shop?xz=1"><div class="caidan-shop">我的购物</div></a>
  </ul>
 </div>
   

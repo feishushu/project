@@ -10,22 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import oracle.net.aso.r;
-import star.mvc.common.*;
-import star.mvc.dao.bookdao;
-import star.mvc.dao.orderdao;
-import star.mvc.modle.book;
-import star.mvc.modle.order;
+import star.mvc.dao.cardao;
 import star.mvc.service.carservice;
-import star.mvc.service.orderservice;
 
-
-public class servlet_order extends HttpServlet {
+public class servlet_delshop extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_order() {
+	public servlet_delshop() {
 		super();
 	}
 
@@ -47,7 +40,6 @@ public class servlet_order extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
-	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -55,39 +47,24 @@ public class servlet_order extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
-		String strbook[] = request.getParameterValues("bookid");
-		String time		 = Time.getorderidtime();
-		String orderid 	 = (String)session.getAttribute("login")+ "@" + time;
-		String[] numsum = null;
-		String[] str = null;
-		
-		//String data = StringFormat.Splitcarid(strbook[0]);
-		
-		ArrayList<order> list;
-		
-		if(strbook != null){
-			numsum  = new String[strbook.length];
-			str     = new String[strbook.length];
-		
-			for(int i = 0; i < strbook.length; i ++){
-				carservice.delcarByID(StringFormat.Splitcarid(strbook[i]));
-				str[i]    = StringFormat.Splitbookid(strbook[i]);
-				numsum[i] = request.getParameter(strbook[i]);
+		String id = request.getParameter("id");
+		if(id != null){
+			if(carservice.delcarByID(id)){
+				out.println("<script language = javascript>alert('delete cheng gong');");
+				out.println("</script>");
 			}
-			
-			orderservice.addorder(orderid, StringFormat.CombString(str),
-					StringFormat.CombString(numsum), (String)session.getAttribute("login"), time);
+		}else{
+			if(carservice.delcarByBuyer((String)session.getAttribute("login"))){
+				out.println("<script language = javascript>alert('delete cheng gong');");
+				out.println("</script>");
+			}
 		}
 		
-		list = orderdao.getMsgByBuyer((String)session.getAttribute("login"));
+		ArrayList showbook = carservice.getMsgByIDEr((String)session.getAttribute("login"));
 		
-		if(list.size() != 0){
-			for(int i = 0; i < list.size(); i ++){
-				list.get(i).setOrbook((ArrayList<book>)bookdao.getMsgByBookIDStr(list.get(i).getBookidsum()));
-			}
-			session.setAttribute("buy.jsp", list);
-		}
-		response.sendRedirect("buy.jsp");
+		session.setAttribute("showbook", showbook);
+		
+		response.sendRedirect("shop.jsp");
 		out.flush();
 		out.close();
 	}

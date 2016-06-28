@@ -96,6 +96,20 @@
     <servlet-name>servlet_fselect</servlet-name>
     <servlet-class>star.mvc.servlet.servlet_fselect</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_delshop</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_delshop</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_upnum</servlet-name>
+    <servlet-class>star.mvc.servlet.servlet_upnum</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -170,6 +184,14 @@
   <servlet-mapping>
     <servlet-name>servlet_fselect</servlet-name>
     <url-pattern>/servlet_fselect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_delshop</servlet-name>
+    <url-pattern>/servlet_delshop</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_upnum</servlet-name>
+    <url-pattern>/servlet_upnum</url-pattern>
   </servlet-mapping>
     <welcome-file-list>
         <welcome-file>first.jsp</welcome-file>

@@ -29,7 +29,7 @@ window.onload = function () {
     var selectedViewList = document.getElementById('selectedViewList');
     var deleteAll = document.getElementById('deleteAll');
 
-    //计算
+    //璁＄畻
     function getTotal() {
         var seleted = 0;
         var price = 0;
@@ -39,7 +39,7 @@ window.onload = function () {
                 tr[i].className = 'on';
                 seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
                 price += parseFloat(tr[i].cells[4].innerHTML);
-                HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
+                HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">鍙栨秷閫夋嫨</span></div>'
             }
             else {
                 tr[i].className = '';
@@ -55,7 +55,7 @@ window.onload = function () {
         }
     }
 
-    //小计
+    
     function getSubTotal(tr) {
         var tds = tr.cells;
         var price = parseFloat(tds[2].innerHTML);
@@ -74,6 +74,7 @@ window.onload = function () {
             if (this.checked == false) {
                 for (var k = 0; k < checkAllInputs.length; k++) {
                     checkAllInputs[k].checked = false;
+                    alert("请至少选择一件商品，若无需购买，请点“删除”");
                 }
             }
             getTotal();
@@ -108,6 +109,7 @@ window.onload = function () {
             var el = e.srcElement;
             var cls = el.className;
             var input = this.getElementsByTagName('input')[1];
+            var input2 = this.getElementsByTagName('input')[2];
             var val = parseInt(input.value);
             var reduce = this.getElementsByTagName('span')[1];
             switch (cls) {
@@ -115,23 +117,23 @@ window.onload = function () {
                     input.value = val + 1;
                     reduce.innerHTML = '-';
                     getSubTotal(this);
+                    window.location.href="servlet_upnum?id="+input2.value+"&carnum="+input.value;
                     break;
                 case 'reduce':
                     if (val > 1) {
                         input.value = val - 1;
                     }
                     if (input.value <= 1) {
-                        reduce.innerHTML = '';
+                        reduce.innerHTML = '-';
                     }
                     getSubTotal(this);
+                    window.location.href="servlet_upnum?id="+input2.value+"&carnum="+input.value;
                     break;
-               case 'delete':
-                     conf = confirm('确定要删除？');
-                    if (conf) {
-                        this.parentNode.removeChild(this);
-                    }
+                case 'delete':
+                    window.location.href="servlet_delshop?id="+input2.value;
                     break
                 default :
+                	//window.location.href="servlet_upnum?id="+input2.value+"&carnum="+input.value;
                     break;
             }
             getTotal();
@@ -157,8 +159,8 @@ window.onload = function () {
 
     deleteAll.onclick = function () {
         if (selectedTotal.innerHTML != '0') {
-            var conf = confirm('确定删除吗？');
-            if (conf) {
+          
+            if (true) {
                 for (var i = 0; i < tr.length; i++) {
                     var input = tr[i].getElementsByTagName('input')[0];
                     if (input.checked) {
@@ -167,6 +169,7 @@ window.onload = function () {
                     }
                 }
             }
+            window.location.href="index.jsp";
         }
     }
 

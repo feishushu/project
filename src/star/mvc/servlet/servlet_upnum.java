@@ -10,22 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import oracle.net.aso.r;
-import star.mvc.common.*;
-import star.mvc.dao.bookdao;
-import star.mvc.dao.orderdao;
-import star.mvc.modle.book;
-import star.mvc.modle.order;
 import star.mvc.service.carservice;
-import star.mvc.service.orderservice;
 
-
-public class servlet_order extends HttpServlet {
+public class servlet_upnum extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public servlet_order() {
+	public servlet_upnum() {
 		super();
 	}
 
@@ -47,47 +39,24 @@ public class servlet_order extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
-	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
+		ArrayList showbook = null;
 		
-		String strbook[] = request.getParameterValues("bookid");
-		String time		 = Time.getorderidtime();
-		String orderid 	 = (String)session.getAttribute("login")+ "@" + time;
-		String[] numsum = null;
-		String[] str = null;
+		String id 	  = request.getParameter("id");
+		String carnum = request.getParameter("carnum");
 		
-		//String data = StringFormat.Splitcarid(strbook[0]);
-		
-		ArrayList<order> list;
-		
-		if(strbook != null){
-			numsum  = new String[strbook.length];
-			str     = new String[strbook.length];
-		
-			for(int i = 0; i < strbook.length; i ++){
-				carservice.delcarByID(StringFormat.Splitcarid(strbook[i]));
-				str[i]    = StringFormat.Splitbookid(strbook[i]);
-				numsum[i] = request.getParameter(strbook[i]);
-			}
-			
-			orderservice.addorder(orderid, StringFormat.CombString(str),
-					StringFormat.CombString(numsum), (String)session.getAttribute("login"), time);
+		if(carservice.updatecarByIDNum(id, carnum)){
+			showbook = carservice.getMsgByIDEr((String) session.getAttribute("login"));
+			session.setAttribute("showbook", showbook);
 		}
 		
-		list = orderdao.getMsgByBuyer((String)session.getAttribute("login"));
+		response.sendRedirect("shop.jsp");
 		
-		if(list.size() != 0){
-			for(int i = 0; i < list.size(); i ++){
-				list.get(i).setOrbook((ArrayList<book>)bookdao.getMsgByBookIDStr(list.get(i).getBookidsum()));
-			}
-			session.setAttribute("buy.jsp", list);
-		}
-		response.sendRedirect("buy.jsp");
 		out.flush();
 		out.close();
 	}

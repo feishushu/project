@@ -644,3 +644,7 @@ text-align:center;
 	.rw-words-2 span { font-size: 70%; }
 	.rw-sentence > span:first-child{ font-size: 60%;}
 }
+.index-shop{
+	color:#fff;
+	font-size:100px;
+}
