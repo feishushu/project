@@ -67,7 +67,7 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
 		                <span class="add">+</span>
 		            </td>
 		            <td class="subtotal"><%=Float.parseFloat(ca.getBooknum())*Float.parseFloat(ca.getNowprice()) %></td>
-		            <td class="operation"><span class="delete" id="del">删除</span></td>
+		            <td class="operation"><span class="delete">删除</span></td>
 		        </tr>
         <%}} %>
     </tbody>
@@ -90,6 +90,5 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
     </div>
 </div>
 </form>
-
   </body>
 </html>
