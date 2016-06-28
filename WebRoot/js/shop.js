@@ -125,10 +125,12 @@ window.onload = function () {
                     }
                     getSubTotal(this);
                     break;
-                case 'delete':
-                    var conf = confirm('确定要删除吗？');
+               case 'delete':
+                	
+                     conf = confirm('确定要删除？');
                     if (conf) {
                         this.parentNode.removeChild(this);
+        
                     }
                     break
                 default :
