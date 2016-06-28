@@ -81,7 +81,7 @@ public class cardao {
 		return flag;
 	}
 
-	public static ArrayList getMsgByNameEr(String bookid, String buyer) {
+	public static ArrayList getMsgByIDEr(String buyer) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -89,16 +89,18 @@ public class cardao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery("");
-			rs.next();
-			car c = new car();
-			c.setId(rs.getString("id"));
-			c.setbookid(rs.getString("bookid"));
-			c.setBookpic(rs.getString("bookpic"));
-			c.setNowprice(rs.getString("nowprice"));
-			c.setBooknum(rs.getString("booknum"));
-			c.setBuyer(rs.getString("buyer"));
-			carList.add(c);
+			rs = stmt.executeQuery("select * from car where buyer = '" + buyer
+					+ "'");
+			while (rs.next()) {
+				car c = new car();
+				c.setId(rs.getString("id"));
+				c.setbookid(rs.getString("bookid"));
+				c.setBookpic(rs.getString("bookpic"));
+				c.setNowprice(rs.getString("nowprice"));
+				c.setBooknum(rs.getString("booknum"));
+				c.setBuyer(rs.getString("buyer"));
+				carList.add(c);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -108,8 +110,7 @@ public class cardao {
 		return carList;
 	}
 
-	public static boolean updatecarByNameEr(String id, String bookpic,
-			String nowprice, String booknum) {
+	public static boolean updatecarByIDNum(String id, String booknum) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -117,8 +118,7 @@ public class cardao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			int i = stmt.executeUpdate("update car set bookpic='" + bookpic
-					+ "',nowprice='" + nowprice + "',booknum='" + booknum
+			int i = stmt.executeUpdate("update car set booknum='" + booknum
 					+ "' where id='" + id + "' ");
 			if (i > 0) {
 				flag = true;
