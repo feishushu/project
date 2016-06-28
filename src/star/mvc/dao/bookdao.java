@@ -235,32 +235,6 @@ public class bookdao {
 		return flag;
 	}
 
-	// public static ArrayList getPicByID(String BOOKID) {
-	// Connection con = null;
-	// Statement stmt = null;
-	// ResultSet rs = null;
-	// ArrayList detailList = new ArrayList();
-	// try {
-	// con = oracle_link.oraclesql();
-	// stmt = con.createStatement();
-	// rs = stmt
-	// .executeQuery("select bookid,picture from book where bookid='"
-	// + BOOKID + "'");
-	// while (rs.next()) {
-	// book b = new book();
-	// b.setBookid(rs.getString(1));
-	// b.setPicture(rs.getString(2));
-	// detailList.add(b);
-	// }
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// return null;
-	// } finally {
-	// oracle_link.close(con, stmt, rs);
-	// }
-	// return detailList;
-	// }
-
 	public static ArrayList searchMsgBystring(String key, int page) {
 		Connection con = null;
 		Statement stmt = null;
