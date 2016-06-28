@@ -53,7 +53,7 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
     	%>
     		 <tr>
 		            <td class="checkbox">
-		            <input class="check-one check" type="checkbox" name = "bookid" value = <%=ca.getbookid()+":"+ca.getId() %>/>
+		            <input class="check-one check" type="checkbox" name = "bookid" value = <%=ca.getbookid()+":"+ca.getId() %>>
 		            </td>
 		            <td class="goods">
 		            	<img src=<%=ca.getBookpic() %> alt=""/>
@@ -62,14 +62,14 @@ ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
 		            <td class="price"><%=ca.getNowprice() %></td>
 		            <td class="count">
 		                <span class="reduce"></span>
-		                <input class="count-input" name =<%=i %>  type="text" value=<%=ca.getBooknum() %>>
-		                <input class="count-input" name = "id"  type="hidden" value=<%=ca.getId() %>/>
+		                <input class="count-input" name =<%=ca.getbookid()+":"+ca.getId() %>  type="text" value=<%=ca.getBooknum() %>>
+		                <input class="count-input" name = "id"  type="hidden" value=<%=ca.getId() %>>
 		                <span class="add">+</span>
 		            </td>
 		            <td class="subtotal"><%=Float.parseFloat(ca.getBooknum())*Float.parseFloat(ca.getNowprice()) %></td>
 		            <td class="operation"><span class="delete">删除</span></td>
 		        </tr>
-        <%i++;}} %>
+        <%}} %>
     </tbody>
 </table>
 

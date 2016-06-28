@@ -16,6 +16,7 @@ import star.mvc.dao.bookdao;
 import star.mvc.dao.orderdao;
 import star.mvc.modle.book;
 import star.mvc.modle.order;
+import star.mvc.service.carservice;
 import star.mvc.service.orderservice;
 
 
@@ -59,15 +60,18 @@ public class servlet_order extends HttpServlet {
 		String orderid 	 = (String)session.getAttribute("login")+ "@" + time;
 		String[] numsum = null;
 		
+		String data = StringFormat.Splitcarid(strbook[0]);
+		
 		ArrayList<order> list;
 		
 		if(strbook != null){
 			numsum  = new String[strbook.length];
 		
 			for(int i = 0; i < strbook.length; i ++){
+				carservice.delcarByID(StringFormat.Splitcarid(strbook[i]));
 				numsum[i] = request.getParameter(strbook[i]);
 			}
-		
+			
 			orderservice.addorder(orderid, StringFormat.CombString(strbook),
 					StringFormat.CombString(numsum), (String)session.getAttribute("login"), time);
 		}
@@ -79,9 +83,8 @@ public class servlet_order extends HttpServlet {
 				list.get(i).setOrbook((ArrayList<book>)bookdao.getMsgByBookIDStr(list.get(i).getBookidsum()));
 			}
 			session.setAttribute("buy.jsp", list);
-			response.sendRedirect("buy.jsp");
 		}
-		
+		response.sendRedirect("buy.jsp");
 		out.flush();
 		out.close();
 	}

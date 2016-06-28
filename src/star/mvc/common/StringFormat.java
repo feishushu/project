@@ -13,6 +13,12 @@ public class StringFormat {
 		return data;
 	}
 	
+	public static String Splitcarid(String str){
+		String[] data = str.split(":");
+		
+		return data[1];
+	}
+	
 	public static String CombString(String[] strings){
 		String data = new String();
 		for(int i = 0; i < strings.length; i++){
