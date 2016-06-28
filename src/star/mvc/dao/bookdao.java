@@ -46,7 +46,7 @@ public class bookdao {
 		return bookList;
 	}
 
-	public static ArrayList getMsgBySuperID(String supertypeid,int page) {
+	public static ArrayList getMsgBySuperID(String supertypeid, int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -54,12 +54,14 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt 
+			rs = stmt
 					.executeQuery("select * from (select a.*,rownum rn from "
-					+ "(select picture,nowprice,introduce,bookname,bookid from book where supertypeid='"
-							+ supertypeid + "') a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
+							+ "(select author,picture,nowprice,introduce,bookname,bookid from book where supertypeid='"
+							+ supertypeid + "') a where rownum<='" + page
+							+ "'*2) where rn>=('" + page + "'-1)*2+1");
 			while (rs.next()) {
 				book b = new book();
+				b.setAuthor(rs.getString("author"));
 				b.setPicture(rs.getString("picture"));
 				b.setNowprice(rs.getString("nowprice"));
 				b.setIntroduce(rs.getString("introduce"));
@@ -76,7 +78,7 @@ public class bookdao {
 		return supertypeList;
 	}
 
-	public static ArrayList getMsgBySubID(String subtypeid,int page) {
+	public static ArrayList getMsgBySubID(String subtypeid, int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -86,11 +88,13 @@ public class bookdao {
 			stmt = con.createStatement();
 			rs = stmt
 					.executeQuery("select * from (select a.*,rownum rn from "
-							+ "(select picture,nowprice,introduce,bookname,bookid from book where subtypeid='"
-							+ subtypeid + "' ) a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
-			
+							+ "(select author,picture,nowprice,introduce,bookname,bookid from book where subtypeid='"
+							+ subtypeid + "' ) a where rownum<='" + page
+							+ "'*2) where rn>=('" + page + "'-1)*2+1");
+
 			while (rs.next()) {
 				book b = new book();
+				b.setAuthor(rs.getString("author"));
 				b.setPicture(rs.getString("picture"));
 				b.setNowprice(rs.getString("nowprice"));
 				b.setIntroduce(rs.getString("introduce"));
@@ -106,7 +110,7 @@ public class bookdao {
 		}
 		return subtypeList;
 	}
-	
+
 	public static ArrayList getAllMsgByBookID(String BOOKID) {
 		Connection con = null;
 		Statement stmt = null;
@@ -115,12 +119,13 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt
-					.executeQuery("select bookid,bookname,isbn,introduce,price,nowprice,picture,pages,publisher,author,intime,booknum from book where bookid='"
-							+ BOOKID + "'");
+			rs = stmt.executeQuery("select * from book where bookid='" + BOOKID
+					+ "'");
 			while (rs.next()) {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));
+				b.setSupertypeid(rs.getString("supertypeid"));
+				b.setSubtypeid(rs.getString("subtypeid"));
 				b.setBookname(rs.getString("bookname"));
 				b.setIsbn(rs.getString("isbn"));
 				b.setIntroduce(rs.getString("introduce"));
@@ -131,6 +136,10 @@ public class bookdao {
 				b.setPublisher(rs.getString("publisher"));
 				b.setAuthor(rs.getString("author"));
 				b.setIntime(rs.getString("intime"));
+				b.setNewbook(rs.getString("newbook"));
+				b.setSalesbook(rs.getString("salesbook"));
+				b.setHotsbook(rs.getString("hotsbook"));
+				b.setSpeciabook(rs.getString("speciabook"));
 				b.setBooknum(rs.getString("booknum"));
 				detailList.add(b);
 			}
@@ -142,8 +151,8 @@ public class bookdao {
 		}
 		return detailList;
 	}
-	
-	public static ArrayList getMsgByBookIDStr(String str){
+
+	public static ArrayList getMsgByBookIDStr(String str) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -166,17 +175,17 @@ public class bookdao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;		
-		}finally {
+			return null;
+		} finally {
 			oracle_link.close(con, stmt, rs);
 		}
 		return bookList;
 	}
 
-	public static boolean addMsg(String bookid, String superid,
-			String subid, String bookname, String isbn, String introduce,
-			String price, String nowprice, String pages, String publisher,
-			String author, String intime, String booknum, String location) {
+	public static boolean addMsg(String bookid, String superid, String subid,
+			String bookname, String isbn, String introduce, String price,
+			String nowprice, String pages, String publisher, String author,
+			String intime, String booknum, String location) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -210,7 +219,10 @@ public class bookdao {
 							+ "','"
 							+ author
 							+ "','"
-							+ intime + "','" + booknum + "')");
+							+ intime
+							+ "','"
+							+ booknum
+							+ "')");
 			if (i > 0) {
 				flag = true;
 			}
@@ -223,33 +235,33 @@ public class bookdao {
 		return flag;
 	}
 
-//	public static ArrayList getPicByID(String BOOKID) {
-//		Connection con = null;
-//		Statement stmt = null;
-//		ResultSet rs = null;
-//		ArrayList detailList = new ArrayList();
-//		try {
-//			con = oracle_link.oraclesql();
-//			stmt = con.createStatement();
-//			rs = stmt
-//					.executeQuery("select bookid,picture from book where bookid='"
-//							+ BOOKID + "'");
-//			while (rs.next()) {
-//				book b = new book();
-//				b.setBookid(rs.getString(1));
-//				b.setPicture(rs.getString(2));
-//				detailList.add(b);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return null;
-//		} finally {
-//			oracle_link.close(con, stmt, rs);
-//		}
-//		return detailList;
-//	}
+	// public static ArrayList getPicByID(String BOOKID) {
+	// Connection con = null;
+	// Statement stmt = null;
+	// ResultSet rs = null;
+	// ArrayList detailList = new ArrayList();
+	// try {
+	// con = oracle_link.oraclesql();
+	// stmt = con.createStatement();
+	// rs = stmt
+	// .executeQuery("select bookid,picture from book where bookid='"
+	// + BOOKID + "'");
+	// while (rs.next()) {
+	// book b = new book();
+	// b.setBookid(rs.getString(1));
+	// b.setPicture(rs.getString(2));
+	// detailList.add(b);
+	// }
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// return null;
+	// } finally {
+	// oracle_link.close(con, stmt, rs);
+	// }
+	// return detailList;
+	// }
 
-	public static ArrayList searchMsgBystring(String key,int page) {
+	public static ArrayList searchMsgBystring(String key, int page) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -257,22 +269,15 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt  
+			rs = stmt
 					.executeQuery("select * from (select a.*,rownum rn from "
-					+ "(select bookid, bookname, isbn, picture, nowprice, introduce, publisher, author from book where "
-							+ "bookname like '%"
-							+ key
-							+ "%' or "
-							+ "isbn like '%"
-							+ key
-							+ "%' or "
-							+ "introduce like '%"
-							+ key
-							+ "%' or "
-							+ "publisher like '%"
-							+ key
-							+ "%' or "
-							+ "author like '%" + key + "%') a where rownum<='"+page+"'*2) where rn>=('"+page+"'-1)*2+1");
+							+ "(select bookid, bookname, isbn, picture, nowprice, introduce, publisher, author from book where "
+							+ "bookname like '%" + key + "%' or "
+							+ "isbn like '%" + key + "%' or "
+							+ "introduce like '%" + key + "%' or "
+							+ "publisher like '%" + key + "%' or "
+							+ "author like '%" + key + "%') a where rownum<='"
+							+ page + "'*2) where rn>=('" + page + "'-1)*2+1");
 			while (rs.next()) {
 				book b = new book();
 				b.setBookid(rs.getString("bookid"));
@@ -293,7 +298,7 @@ public class bookdao {
 		}
 		return dataList;
 	}
-	
+
 	public static ArrayList admSearchMsgBystring(String key) {
 		Connection con = null;
 		Statement stmt = null;
@@ -321,7 +326,7 @@ public class bookdao {
 				b.setBooknum(rs.getString("booknum"));
 				b.setPrice(rs.getString("price"));
 				b.setNowprice(rs.getString("nowprice"));
-				
+
 				dataList.add(b);
 			}
 		} catch (Exception e) {
@@ -332,24 +337,25 @@ public class bookdao {
 		}
 		return dataList;
 	}
-	
-	public static boolean updateNowprice(String bookid, String nowprice){
+
+	public static boolean updateNowprice(String bookid, String nowprice) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		boolean flag = false;
 		con = oracle_link.oraclesql();
-		String sql = "update book set nowprice = ? where bookid = '"+bookid+"'";
+		String sql = "update book set nowprice = ? where bookid = '" + bookid
+				+ "'";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, nowprice);
 			int i = ps.executeUpdate();
-			if( i > 0){
+			if (i > 0) {
 				flag = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return flag;
-		} finally{
+		} finally {
 			try {
 				con.close();
 				ps.close();
@@ -359,8 +365,8 @@ public class bookdao {
 		}
 		return flag;
 	}
-	
-	public static boolean delBookbyID(String id){
+
+	public static boolean delBookbyID(String id) {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -368,8 +374,9 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			int i = stmt.executeUpdate("delete book where bookid = '"+id+"'");
-			if ( i > 0){
+			int i = stmt.executeUpdate("delete book where bookid = '" + id
+					+ "'");
+			if (i > 0) {
 				flag = true;
 			}
 		} catch (Exception e) {
