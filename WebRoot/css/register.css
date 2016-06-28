@@ -6,7 +6,7 @@
 }
 body{
 	font-family: "";
-	background: url(picture/background2.jpg) fixed center center;
+	background: url(../picture/background2.jpg) fixed center center;
 }
 .register_box{
 	width: 280px;

@@ -21,7 +21,7 @@ ArrayList<comment> comlist  = (ArrayList<comment>) session.getAttribute("comlist
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="book.css">
+	<link rel="stylesheet" type="text/css" href="css/book.css">
 	<link media="screen" href="statics/grade.css" type="text/css" rel="stylesheet" /> 
 
 <script src="statics/jquery-latest.pack.js" type="text/javascript"></script> 

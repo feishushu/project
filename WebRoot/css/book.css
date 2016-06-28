@@ -10,7 +10,7 @@
 	left:38px;
 	width:1200px;
 	height:1500px;
-	background-image:url(picture/123.png);
+	background-image:url(../picture/123.png);
 	
 }
 .book-title{
@@ -36,7 +36,7 @@
 	left:290px;
 	width:500px;
 	height:180px;
-	background-image:url(picture/123.png);
+	background-image:url(../picture/123.png);
 }
 .book-shop{
 	position:absolute;
@@ -44,7 +44,7 @@
 	left:800px;
 	width:380px;
 	height:300px;
-	background-image:url(picture/123.png);
+	background-image:url(../picture/123.png);
 }
 .book-detail{
 	text-align:center;
@@ -54,7 +54,7 @@
 	width:1150px;
 	height:270px;
 	font: 28px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
-	background-image:url(picture/123.png);
+	background-image:url(../picture/123.png);
 }
 .book-shop-title{
 	position:relative;
@@ -179,7 +179,7 @@
 	left:30px;
 	width:1150px;
 	height:850px;
-	background-image:url(picture/123.png);
+	background-image:url(../picture/123.png);
 }
 .book-detail-write{
 	position:relative;

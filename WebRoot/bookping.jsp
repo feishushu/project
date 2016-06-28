@@ -20,7 +20,7 @@ ArrayList<book> allbook = (ArrayList<book>) session.getAttribute("allbook");
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="bookping.css">
+	<link rel="stylesheet" type="text/css" href="css/bookping.css">
 	<link media="screen" href="statics/grade.css" type="text/css" rel="stylesheet" /> 
 
 <script src="statics/jquery-latest.pack.js" type="text/javascript"></script> 

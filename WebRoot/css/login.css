@@ -6,7 +6,7 @@
 }
 body{
 	font-family: "";
-	background: url(picture/background2.jpg) fixed center center;
+	background: url(../picture/background2.jpg) fixed center center;
 }
 .logo_box{
 	width: 280px;
@@ -48,7 +48,7 @@ body{
 .u_user{
 	width: 25px;
 	height: 25px;
-	background: url(image/login_ico.png);
+	background: url(../image/login_ico.png);
 	background-position:  -125px 0;
 	position: absolute;
 	margin: 12px 13px;
@@ -56,7 +56,7 @@ body{
 .us_uer{
 	width: 25px;
 	height: 25px;
-	background-image: url(image/login_ico.png);
+	background-image: url(../image/login_ico.png);
 	background-position: -125px -34px;
 	position: absolute;
 	margin: 12px 13px;
