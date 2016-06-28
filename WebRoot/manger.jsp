@@ -32,6 +32,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div style="float: left">
     		<span style="font-size: 16px;line-height: 45px;padding-left: 20px;color:white">starbooks管理后台
     		</span>
+    		<a href="index.jsp#page1"><span class="top-first" style="font-size: 16px;color:white;padding-left: 80px">首页</span></a>
+    		<a href="index.jsp#page2"><span class="top-first"style="font-size: 16px;color:white;padding-left: 30px">图书分类</span></a>
+    		<a href="index.jsp#page3"><span class="top-first"style="font-size: 16px;color:white;padding-left: 30px">图书搜索</span></a>
+    		<a href="index.jsp#page4"><span class="top-first"style="font-size: 16px;color:white;padding-left: 30px">关于我们</span></a>
     	</div>
     	
     	<div id="people" class="people">

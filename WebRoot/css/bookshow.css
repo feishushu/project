@@ -254,10 +254,15 @@
 }
 .back{
 	position:relative;
-	top:-903px;
+	top:-110px;
 }
 .forword{
 	position:relative;
-	top:-953px;
+	top:-160px;
 	left:320px;
+}
+.page{
+	position:absolute;
+	top:700px;
+	left:300px;
 }

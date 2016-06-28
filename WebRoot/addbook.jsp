@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">图片</th>
-    <th scope="col"><img src="picture/b1.jpg" width="60px" height="58px"><input type="FILE" name="FILE1" id="input-pic"></th>
+    <th scope="col"><input type="FILE" name="FILE1" id="input-pic"></th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">页数</th>

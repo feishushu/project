@@ -82,18 +82,18 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">热门书籍</th>
-    <th scope="col"><input type="radio" name="bookhot" onClick="judgeRadioClicked()"/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <input type="radio" name="bookhot" onClick="judgeRadioClicked()"/>否</th>
+    <th scope="col"><input type="radio" id="bookhot" name="bookhot" onClick="judgeRadioClicked()" checked/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookhot" name="bookhot" onClick="judgeRadioClicked()"/>否</th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">特别推荐</th>
-    <th scope="col"><input type="radio" name="bookspecial" value="1">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <input type="radio" name="bookspecial" value="0">否</th>
+    <th scope="col"><input type="radio" name="bookspecial" id="bookspecial" value="1" onClick="judgeRadioClicked1()" checked>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" id="bookspecial" name="bookspecial" value="0" onClick="judgeRadioClicked()1">否</th>
   </tr>
   <tr>
     <th scope="col" width="30%" height="50px">新书</th>
-    <th scope="col"><div class="booknewD1"><input type="radio" name="booknew" value="1">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-    <input type="radio" name="booknew" value="0">否
+    <th scope="col"><div class="booknewD1"><input type="radio" id="booknew" name="booknew" value="1" onClick="judgeRadioClicked2()" checked>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    <input type="radio" id="booknew" name="booknew" value="0" onClick="judgeRadioClicked2()">否
     </div></th>
   </tr>
 </table>
@@ -116,6 +116,37 @@ ArrayList<book> uplist = (ArrayList<book>) session.getAttribute("uplist");
     }  
 }
 		</script>
+		<script>
+		function judgeRadioClicked1() 
+{ 
+    var radios = document.getElementsByName("bookspecial");                            
+    for(var i=0;i<radios.length;i++) 
+    {  
+        if(radios[i].checked) 
+        { 
+        radios[i].value=1; 
+        } else{
+            radios[i].value=0;
+        }
+    }  
+}
+		</script>
+		<script>
+		function judgeRadioClicked2() 
+{ 
+    var radios = document.getElementsByName("booknew");                            
+    for(var i=0;i<radios.length;i++) 
+    {  
+        if(radios[i].checked) 
+        { 
+        radios[i].value=1; 
+        } else{
+            radios[i].value=0;
+        }
+    }  
+}
+		</script>
+		
 		
 		<script>
 	  function doSubmit(){ 
