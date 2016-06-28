@@ -3,6 +3,8 @@ package star.mvc.modle;
 public class car {
 	private String id;
 	private String bookid;
+	private String bookname;
+	
 	private String bookpic;
 	private String nowprice;
 	private String booknum;
@@ -18,6 +20,12 @@ public class car {
 	}
 	public void setbookid(String bookid) {
 		this.bookid = bookid;
+	}
+	public String getBookname() {
+		return bookname;
+	}
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
 	}
 	public String getBookpic() {
 		return bookpic;

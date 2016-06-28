@@ -89,8 +89,9 @@ public class cardao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			rs = stmt.executeQuery("select * from car where buyer = '" + buyer
-					+ "'");
+			rs = stmt
+					.executeQuery("select c.id,c.bookid,c.bookpic,c.nowprice,c.booknum,c.buyer,b.bookname from car c,book b where c.buyer = '"
+							+ buyer + "' and c.bookid = b.bookid ");
 			while (rs.next()) {
 				car c = new car();
 				c.setId(rs.getString("id"));
@@ -99,6 +100,7 @@ public class cardao {
 				c.setNowprice(rs.getString("nowprice"));
 				c.setBooknum(rs.getString("booknum"));
 				c.setBuyer(rs.getString("buyer"));
+				c.setBookname(rs.getString("bookname"));
 				carList.add(c);
 			}
 		} catch (Exception e) {
