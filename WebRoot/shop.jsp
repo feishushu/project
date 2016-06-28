@@ -1,7 +1,8 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,star.mvc.modle.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+ArrayList<car> showbook =(ArrayList<car>) session.getAttribute("showbook");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -30,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="#"><div class="caidan-shop">我的购物</div></a>
+   <a href="#"><div class="caidan-shop">我的购物车</div></a>
  </ul>
 </div>
   <form action="servlet_order" name="shop" method="post">
@@ -46,41 +47,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "1"/></td>
-            <td class="goods"><img src="picture/caicai.jpg" alt=""/><span>猜猜我有多爱你</span></td>
-            <td class="price">1111</td>
-            <td class="count">
-                <span class="reduce"></span>
-                <input class="count-input" name = "1"  type="text" value="1"/>
-                <span class="add">+</span></td>
-            <td class="subtotal">1111</td>
-            <td class="operation"><span class="delete">删除</span></td>
-        </tr>
-        <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "2"/></td>
-            <td class="goods"><img src="picture/guoji.jpg" alt=""/><span>嘘！别提爱丽丝</span></td>
-            <td class="price">2222</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" name = "2" type="text" value="1"/><span class="add">+</span></td>
-            <td class="subtotal">2222</td>
-            <td class="operation"><span class="delete">删除</span></td>
-        </tr>
-        <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "3"/></td>
-            <td class="goods"><img src="picture/jiqi.jpg" alt=""/><span>机器学习实战</span></td>
-            <td class="price">3333</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" name = "3"  type="text" value="1"/><span class="add">+</span></td>
-            <td class="subtotal">3333</td>
-            <td class="operation"><span class="delete">删除</span></td>
-        </tr>
-        <tr>
-            <td class="checkbox"><input class="check-one check" type="checkbox" name = "bookid" value = "4:id"/></td>
-            <td class="goods"><img src="picture/nba.jpg" alt=""/><span>MBA十日读</span></td>
-            <td class="price">4444</td>
-            <td class="count"><span class="reduce"></span><input class="count-input" name = "4"  type="text" value="1"/><span class="add">+</span></td>
-            <td class="subtotal">4444</td>
-            <td class="operation"><span class="delete">删除</span></td>
-        </tr>
+    	<%if(showbook.size() != 0){ 
+    		int i = 1;
+    		for(car ca:showbook){
+    	%>
+    		 <tr>
+		            <td class="checkbox">
+		            <input class="check-one check" type="checkbox" name = "bookid" value = <%=ca.getbookid()+":"+ca.getId() %>/>
+		            </td>
+		            <td class="goods">
+		            	<img src=<%=ca.getBookpic() %> alt=""/>
+		            	<span><%=ca.getBookname() %></span>
+		            </td>
+		            <td class="price"><%=ca.getNowprice() %></td>
+		            <td class="count">
+		                <span class="reduce"></span>
+		                <input class="count-input" name =<%=i %>  type="text" value=<%=ca.getBooknum() %>>
+		                <input class="count-input" name = "id"  type="hidden" value=<%=ca.getId() %>/>
+		                <span class="add">+</span>
+		            </td>
+		            <td class="subtotal"><%=Float.parseFloat(ca.getBooknum())*Float.parseFloat(ca.getNowprice()) %></td>
+		            <td class="operation"><span class="delete">删除</span></td>
+		        </tr>
+        <%i++;}} %>
     </tbody>
 </table>
 

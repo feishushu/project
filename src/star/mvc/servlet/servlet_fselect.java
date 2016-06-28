@@ -51,7 +51,6 @@ public class servlet_fselect extends HttpServlet {
 		Integer	page 	 = (Integer)session.getAttribute("page");
 		String	subty	 = (String)session.getAttribute("-->");
 		String	xz		 = (String)session.getAttribute("xz");
-		System.out.print(subty+":"+"ddklskl");
 		
 		if(cou.equals("add")){
 			if(xz.equals("1")){

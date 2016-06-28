@@ -2,12 +2,15 @@ package star.mvc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import star.mvc.service.carservice;
 
 public class servlet_shop extends HttpServlet {
 
@@ -40,9 +43,32 @@ public class servlet_shop extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("login")==null){
-			response.sendRedirect("login.jsp");
+		String login = (String) session.getAttribute("login");
+		ArrayList showbook = null;
+		
+		String redir = "shop.jsp";
+ 		
+		if(login==null){
+			redir = "login.jsp";
 		}
+		
+		String xz = request.getParameter("xz");
+		
+		
+		if(xz == null){
+			String carnum 	= request.getParameter("carnum");
+			String bookid 	= request.getParameter("bookid");
+			String bookpic 	= request.getParameter("bookpic");
+			String nowprice = request.getParameter("nowprice");
+			
+			carservice.addcar(bookid, bookpic, nowprice, carnum, login);
+		}
+		
+		showbook = carservice.getMsgByIDEr(login);
+		
+		session.setAttribute("showbook", showbook);
+		
+		response.sendRedirect(redir);
 	}
 
 	/**

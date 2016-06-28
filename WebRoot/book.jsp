@@ -95,7 +95,7 @@ ArrayList<comment> comlist  = (ArrayList<comment>) session.getAttribute("comlist
    <li><a href="index.jsp#page2">图书分类</a></li>
    <li><a href="index.jsp#page3">图书搜索</a></li>
    <li><a href="index.jsp#page4">关于我们</a></li>
-   <a href="servlet_shop"><div class="caidan-shop">我的购物</div></a>
+   <a href="servlet_shop?xz=1"><div class="caidan-shop">我的购物</div></a>
  </ul>
 </div>
   
@@ -123,19 +123,24 @@ ArrayList<comment> comlist  = (ArrayList<comment>) session.getAttribute("comlist
     		购买详情
     	</div>
     	<div class="book-shop-box">
+    	<form action="servlet_shop" name = "form1" method = "post">
     		<div class="book-shop-box-price">原价:</div>
     		<div class="book-shop-box-price1">￥<%=allbook.get(0).getPrice() %></div>
     		<div class="book-shop-box-price2">售价:(sale)</div>
     		<div class="book-shop-box-price3">￥<%=allbook.get(0).getNowprice() %></div>
     		<div class="book-shop-box-mount" >数量:库存(<input id="kucun" value="<%=allbook.get(0).getBooknum() %>" readonly>)本</div>
     		<div class="book-shop-box-mount1">
+    			<input name = "bookid" type = "hidden" value = <%=allbook.get(0).getBookid() %>>
+    			<input name = "bookpic" type = "hidden" value = <%=allbook.get(0).getPicture() %>>
+    			<input name = "nowprice" type = "hidden" value = <%=allbook.get(0).getNowprice() %>>
     			<input id="min" name="" type="button" value="-" style="width:40px;"/>  
-				<input id="text_box" name="" type="text" value="1" onfocus="document.getElementById('text_box').value=this.value;" style="width:60px ;"  onkeyup="mount()"/>  
+				<input id="text_box" name="carnum" type="text" value="1" onfocus="document.getElementById('text_box').value=this.value;" style="width:60px ;"  onkeyup="mount()"/>  
 				<input id="add" name="" type="button" value="+" style="width:40px;"/>  
 			</div>
 			<br><span id="tishi" class="tishi"></span>
     	</div>
-    		<a href="servlet_shop"><div class="book-shop-pic"><img src="picture/4.png" width=100px height=40px></div></a>
+    		<div class="book-shop-pic"><input name = "submit" type = "submit" value = "加入购物车"></div>
+    	</form>
    		</div>
     <div class="book-detail">书目简介
     	<div class="book-detail-write"><%=allbook.get(0).getIntroduce() %></div>
