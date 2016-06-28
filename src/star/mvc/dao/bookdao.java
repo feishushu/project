@@ -352,7 +352,7 @@ public class bookdao {
 		try {
 			con = oracle_link.oraclesql();
 			stmt = con.createStatement();
-			int i = stmt.executeUpdate("update cat set supertypeid='" + superid
+			int i = stmt.executeUpdate("update book set supertypeid='" + superid
 					+ "',subtypeid='" + subid + "',bookname='" + bookname
 					+ "',isbn='" + isbn + "',introduce='" + introduce
 					+ "',price='" + price + "',nowprice='" + nowprice
@@ -361,7 +361,7 @@ public class bookdao {
 					+ "',intime='" + intime + "',newbook='" + newbook
 					+ "',hotsbook='" + hotsbook + "',speciabook='" + speciabook
 					+ "',booknum='" + booknum + "' where bookid='" + bookid
-					+ "' ");
+					+ "'");
 			if (i > 0) {
 				flag = true;
 			}
