@@ -144,7 +144,7 @@ ul,li,dl,dt,dd{
   	</td>
   </tr>
 </table>
-
+<div class="hot-book"><li class="fa fa-fw fa-heart"></li>热门书籍</div>
 <table class="third" width="280" height="700" border="0">
   <tr>
     <th scope="col" height="233"><a href="servlet_bshow?subtypeid=时尚&xz=2"><img src="picture/fasion2.jpg" width="280" height="233" class="third-img1"></a>
@@ -187,7 +187,7 @@ ul,li,dl,dt,dd{
 	<%} %>
 		
 </div>
-
+<div class="sp-book"><li class="fa fa-fw fa-leaf"></li>特别推荐</div>
 <div class="fifth">
  
 	

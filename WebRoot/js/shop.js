@@ -29,7 +29,7 @@ window.onload = function () {
     var selectedViewList = document.getElementById('selectedViewList');
     var deleteAll = document.getElementById('deleteAll');
 
-    //璁＄畻
+    
     function getTotal() {
         var seleted = 0;
         var price = 0;
